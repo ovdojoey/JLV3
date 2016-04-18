@@ -136,11 +136,15 @@
 
       </div>
       <div class="screen--container">
-        <div class="screen--left align-right  screen-collapse">
+        <div class="screen--left screen-collapse">
           <div class="screen-center">
-            <h1 class="h1">
-              Ottoform
-            </h1>
+
+            <span class="label absolute">PERSONAL PROJECT | <a href="/portfolio/">VIEW ALL <img src="/img/grid_icon.svg" class="icon" alt="Portfolio" /></a></span>
+            <div class="overflower t-5x">
+              <h1 class="h1 in-overflower">
+                Ottoform
+              </h1>
+            </div>
             <span class="label after-line">PROJECT BRIEF</span>
 
             <p class="intro-desc">
