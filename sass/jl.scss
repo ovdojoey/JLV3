@@ -1,0 +1,248 @@
+$color-dark: #282828;
+$color-red: #FF5253;
+
+
+html, body{
+  margin: 0;
+  padding: 0;
+  background: #fefefe;
+}
+body{
+
+  color: #282828;
+
+  font-size: 22px;
+  font-family: "adobe-text-pro", serif;
+  // font-style: italic;
+
+}
+
+.body{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 500px;
+  margin: 0;
+  padding: 0;
+}
+.menu{
+  position: absolute;
+  top: 30px;
+  right: 35px;
+  .menu--text{
+    border: 2px solid #222;
+    font-family: "brandon-grotesque", serif;
+    font-size: 18px;
+    padding: 2px 10px;
+    display: inline-block;
+  }
+}
+.side--thread{
+  cursor: pointer;
+  // background: #f2f2f2;
+  width: 10px;
+  height: 100vh;
+  border-right: 5px solid $color-red;
+  top: 0;
+  right: 10px;
+  padding-right: 5px;
+  position: fixed;
+  opacity: 0.9;
+  transition: opacity 200ms, transform 200ms;
+  // transform: scale(1,0.99);
+  // transform-origin: 50% 100%;
+
+  &:hover{
+    opacity: 1;
+    transform: scale(1);
+    .build-thread{
+      transform: scale(1);
+    }
+    .handle{
+      transform: rotate(-90deg) translateY(-3px);
+      .handle--text{
+        border-color: #333;
+      }
+    }
+  }
+  .build-thread{
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    top: 0;
+    left: 10px;
+    // z-index: 3;
+    border-left: 3px solid #ccc;
+    transition: transform 1200ms linear;
+    transform: scale(1,0);
+    transform-origin: 50% 100%;
+
+
+  }
+  .handle{
+    // background: lighten($color-red,10%);
+    position: absolute;
+    right: 15px;
+    bottom: 100px;
+    width: 90px;
+    text-align: center;
+    height: 20px;
+    color: #111;
+    // font-size: 15px;
+    line-height: 20px;
+    text-transform: lowercase;
+    transform-origin: 100% 100%;
+    transform: rotate(-90deg);
+    transition: transform 200ms;
+    .handle--text{
+      display: inline-block;
+      padding: 10px 10px 12px 10px;
+      border: 3px solid transparent;
+      transition: border-color 200ms;
+    }
+  }
+}
+.sidebar {
+  height: 100vh;
+  width: 22%;
+  min-height: 500px;
+
+  .sidebar--foot-overflow{
+
+    height: 100vh;
+    width: 100px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+
+  }
+
+  .sidebar--foot {
+    position: fixed;
+    left: -48.5vh;
+    top: 50vh;
+    height: 5px;
+    padding-right: 10px;
+    width: 101vh;
+    border-top: 5px solid #333;
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+
+    color: #888;
+
+    a{
+      display: inline-block;;
+      padding: 5px 2px;
+      margin: 2px 0;
+      text-decoration: none;
+      color: $color-dark;
+      &:hover{
+        color: #555;
+      }
+    }
+
+    @media (min-width: 800px) {
+      font-size: 18px;
+    }
+
+  }
+
+
+  .sidebar--head{
+
+    position: relative;
+    left: 0;
+    bottom: 0px;
+
+    width: 90%;
+    height: 120px;
+
+
+    align-content: center;
+    align-items: center;
+
+  }
+
+
+  .logo-container{
+    width: 80%;
+  }
+
+
+  .logo{
+    padding: 0 0 0 60px;
+    margin: 0;
+
+    font-family: "brandon-grotesque", serif;
+    font-style: normal;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 32px;
+    line-height: 100px;
+    width: 100%;
+    max-width: 100%;
+    transition: font-size 300ms;
+
+
+    @media (min-width: 400px){
+      font-size: 42px;
+    }
+    @media (min-width: 500px){
+      font-size: 62px;
+    }
+    @media (min-width: 600px){
+      font-size: 72px;
+    }
+    @media (min-width: 700px){
+      font-size: 82px;
+    }
+    @media (min-width: 800px){
+      font-size: 120px;
+    }
+
+
+    .logo--text{
+      position: relative;
+      display: inline-block;
+      background: url(https://images.unsplash.com/photo-1451906278231-17b8ff0a8880?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=1fbb817fbfe2b13a0c81de025e89a890) 50% 50%;
+      background-size: cover;;
+
+      // transform: rotate(-90deg);
+      color: #2a2a2f;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: #fff;
+      white-space: nowrap;
+
+
+    }
+
+  }
+}
+
+.main{
+  width: 70%;
+  max-width: 800px;
+}
+
+@media (min-height: 500px){
+  .main{
+    margin-bottom: 100px;
+  }
+  .menu{
+    // top: 10px;
+  }
+  .sidebar .sidebar--head{
+    position: absolute;
+    bottom: 10px;
+  }
+}
+
+p.main-text{
+  font-size: 26px;
+
+}
