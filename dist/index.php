@@ -124,12 +124,12 @@
                   </div>
                 </li>
               </ul>
-              <div class="overflower">
+              <div class="overflower t-4x">
                 <span class="label in-overflower">RECENT PROJECTS</span>
               </div>
               <ul class="project-grid">
                 <li class="project-grid-li">
-                  <div class="overflower t-2x">
+                  <div class="overflower t-5x">
                     <a href="#" class="in-overflower" onclick="controller.toggle('home', 'ottoform');">
                       <span class="title">OTTOFORM</span>
                       <span class="description">Setup contact forms in seconds</span>
@@ -137,7 +137,7 @@
                   </div>
                 </li>
                 <li class="project-grid-li">
-                  <div class="overflower t-3x">
+                  <div class="overflower t-6x">
                     <a href="#" class="in-overflower" onclick="controller.toggle('home', 'frnkrok');">
                       <span class="title">FRNKROK</span>
                       <span class="description">A local DJ's website</span>
@@ -145,7 +145,7 @@
                   </div>
                 </li>
                 <li class="project-grid-li">
-                  <div class="overflower t-4x">
+                  <div class="overflower t-7x">
                     <a href="#" class="in-overflower" onclick="controller.toggle('home', 'jlv3');">
                       <span class="title">V3</span>
                       <span class="description">A new year, a new website</span>
@@ -153,7 +153,7 @@
                   </div>
                 </li>
                 <li class="project-grid-li">
-                  <div class="overflower t-5x">
+                  <div class="overflower t-8x">
                     <a href="#" class="in-overflower">
                       <span class="title">JUICED</span>
                       <span class="description">A flexbox based CSS Framework</span>

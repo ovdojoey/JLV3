@@ -1,7 +1,7 @@
 
 (function(){
   'use strict';
-  var minTimeout = 400;
+  var minTimeout = 900;
   var domLoaded = false;
   var stillNeedToLoad = false;
 
@@ -59,7 +59,6 @@ window.controller = (function(){
       for(var screen in this.screens) {
         if (screen !== from) {
           this.screens[screen].classList.remove("slide-out");
-
         }
       }
 

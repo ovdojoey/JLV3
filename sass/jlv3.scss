@@ -742,6 +742,7 @@ a.label{
   .in-overflower{
     animation: inOverlowTopOut 600ms 50ms 1 forwards ease-in-out;
     transform: translateY(0%);
+    animation-delay: 0s !important;
   }
 }
 .slide-in .overflower{
@@ -766,6 +767,21 @@ a.label{
   &.t-5x{
     .in-overflower{
       animation-delay: 1.5s;
+    }
+  }
+  &.t-6x{
+    .in-overflower{
+      animation-delay: 1.6s;
+    }
+  }
+  &.t-7x{
+    .in-overflower{
+      animation-delay: 1.7s;
+    }
+  }
+  &.t-8x{
+    .in-overflower{
+      animation-delay: 1.8s;
     }
   }
 }
@@ -797,6 +813,21 @@ a.label{
   &.t-5x{
     .in-overflower{
       animation-delay: 500ms;
+    }
+  }
+  &.t-6x{
+    .in-overflower{
+      animation-delay: 600ms;
+    }
+  }
+  &.t-7x{
+    .in-overflower{
+      animation-delay: 700ms;
+    }
+  }
+  &.t-8x{
+    .in-overflower{
+      animation-delay: 800ms;
     }
   }
 }
