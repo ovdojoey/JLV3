@@ -27,6 +27,116 @@ html, body{
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
 }
+.loader{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: $color-white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  z-index: 11;
+  text-align: center;
+  &.out{
+    transition: opacity 400ms, visibility 1ms 800ms;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .container{
+    width: 100%;
+    align-self: flex-start;
+  }
+  .loader--circle-container{
+    width: calc(100% - 200px);
+    position: relative;
+    bottom: 100px;
+  }
+  .loader--circle{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    animation: pulse 2s infinite alternate-reverse;
+    // background: $color-blue;
+    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    // border: 2px solid #fff;
+    position: absolute;
+    div{
+      width: 100%;
+    }
+    #flask{
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: -30px;
+    }
+    #flask--potion{
+      fill: $color-blue;
+    }
+
+    &:after,&:before{
+      content:'';
+      border: 4px solid #fff;
+      border-top: 4px solid $color-blue;
+      position: absolute;
+      display: block;
+      border-radius: 100%;
+      width: 140%;
+      height: 140%;
+      left: -20%;
+      top: -20%;
+      animation: rotate 2s infinite reverse ease-in-out;
+      @keyframes rotate {
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+    }
+    &:before{
+      width: 120%;
+      height: 120%;
+      left: calc(-10% - 5px);
+      top: calc(-10% - 5px);
+      animation-direction: normal;
+      border-width: 10px;
+      border-top-color: $color-blue;
+      animation-duration: 2.5s;
+      animation-timing-function: linear;
+    }
+
+    @keyframes pulse {
+      0%{
+        transform: scale(0.9);
+        // opacity: 0;
+      }
+      50%{
+        transform: scale(1);
+        opacity: 1;
+      }
+      100%{
+        transform: scale(1.12);
+        // opacity: 0;
+        // background: #fff;
+        // border-color: $color-green;
+
+      }
+    }
+  }
+  .loader--text{
+    display: block;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+
+
+@keyframes showApp {
+  100% {
+    opacity: 1;
+  }
+}
 
 .header{
   width: 100%;
@@ -122,15 +232,19 @@ html, body{
   display: block;
   transition: background 300ms, transform 400ms;
   overflow: hidden;
+  display: none;
 
   &.slide-out{
-    animation: slideOut .8s 1s 1 forwards cubic-bezier(0.175, 0.785, 0.32, 1.05);
+    display: block;
+    animation: slideOut .8s .5s 1 forwards cubic-bezier(0.175, 0.785, 0.32, 1.05);
     .screen--container{
 
     }
   }
   &.slide-in{
-    animation: slideIn .8s 1 forwards cubic-bezier(0.175, 0.785, 0.32, 1.05);
+    transform: translateY(100%);
+    animation: slideIn .8s .5s 1 forwards cubic-bezier(0.175, 0.785, 0.32, 1.05);
+    display: block;
   }
   &.fade-out{
     opacity: 0;
@@ -142,6 +256,7 @@ html, body{
   }
 
   @keyframes slideOut {
+
     100%{
       transform: translateY(-100%);
     }
@@ -261,9 +376,20 @@ html, body{
   top: 0;
   left: 0;
   z-index: -1;
+  transition:  visibility 0s 2s, opacity 1s .2s;
+  visibility: hidden;
+
+  &[data-enable='true']{
+    transition:  visibility 0s 1ms, opacity 1s .5s;
+    visibility: visible;
+    opacity: 1;
+  }
   video{
     // width: 100%;
     // height: 100%
+  }
+  .fullscreen{
+    width: 100%;
   }
 }
 .video-clouds{
@@ -273,7 +399,19 @@ html, body{
   visibility: hidden;
   animation: showVideo 8s 13s forwards 2;
 }
-
+.video-ottoform{
+  background: url(/img/otter.jpg) 50% 50%;
+  background-size: cover;
+  opacity: 0;
+}
+.video-frnkrok{
+  opacity: 0;
+}
+.video-jlv3{
+  opacity: 0;
+  background: url(https://joeylea.com/img/leaves.jpeg) 50% 50%;
+  background-size: cover;
+}
 @keyframes showVideo {
   0%,100%{
     visibility: hidden;
@@ -284,7 +422,10 @@ html, body{
 }
 
 .screen--home{
-
+  display: none;
+  &.active{
+    display: block;
+  }
   &:after{
     position: fixed;
     top: 0;
@@ -292,20 +433,17 @@ html, body{
     content: '';
     width: 100%;
     height: 100%;
-    background: rgba(darken($color-yellow,10%),0.8);
+    background: rgba(darken($color-green,10%),0.8);
     // background: rgba($color-green,0.8);
     // background: rgba(lighten(purple,50%),0.8);
-    background: rgba($color-red,0.8);
+    // background: rgba($color-red,0.8);
     z-index: -1;
     min-height: 100vh;
   }
 
 }
 .screen--ottoform{
-  .video-ottoform{
-    background: url(/img/otter.jpg) 50% 50%;
-    background-size: cover;
-  }
+
   &:after{
     position: fixed;
     top: 0;
@@ -314,11 +452,47 @@ html, body{
     width: 100%;
     height: 100%;
     // background: rgba(darken($color-yellow,10%),0.8);
-    // // background: rgba($color-green,0.8);
+    background: rgba($color-blue,0.8);
+    // background: rgba(lighten(purple,50%),0.8);
+    // background: rgba($color-red,0.8);
+    z-index: -1;
+    min-height: 100vh;
+  }
+
+}
+.screen--frnkrok{
+
+  &:after{
+    position: fixed;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    // background: rgba(darken($color-yellow,10%),0.8);
+    background: rgba($color-green,0.8);
     background: rgba(lighten(purple,50%),0.8);
     // background: rgba($color-red,0.8);
     z-index: -1;
     min-height: 100vh;
+  }
+
+}
+.screen--jlv3{
+
+  &:after{
+    position: fixed;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(#292a93,0.8);
+    z-index: -1;
+    min-height: 100vh;
+  }
+  .screen--right{
+    color: #ccc;
   }
 
 }
@@ -330,9 +504,19 @@ html, body{
   }
 }
 
+@keyframes inFadeOut{
+  100%{
+    opacity: 0;
+  }
+}
 @keyframes inOverlowTopIn{
   100%{
     transform: translateY(0);
+  }
+}
+@keyframes inOverlowTopOut{
+  100%{
+    transform: translateY(200%);
   }
 }
 
@@ -350,6 +534,12 @@ html, body{
     font-size: 0.35em;
   }
 }
+.slide-out .intro-desc{
+  animation: inFadeOut 1s 600ms 1 forwards;
+}
+.slide-in .intro-desc{
+  animation-delay: 1.6s;
+}
 .intro-desc{
   font-size: 18px;
   color: #fff;
@@ -361,8 +551,8 @@ html, body{
   @media (min-width: 800px) {
     font-size: 28px;
   }
-
 }
+
 .answer{
   font-size: 15px;
   a{
@@ -477,9 +667,14 @@ html, body{
   }
 }
 
-
+.slide-out .label.absolute {
+  animation:none;
+  transition: opacity 800ms;
+  opacity: 0;
+}
 a.label{
   text-decoration: none;
+  display: inline-block;
   &.after-line{
     &:hover{
       &:after{
@@ -521,6 +716,8 @@ a.label{
   &.absolute{
     position: absolute;
     z-index: 3;
+    opacity: 0;
+    animation: inFadeIn 2s 1s 1 forwards;
   }
   a{
     color: inherit;
@@ -541,11 +738,42 @@ a.label{
     transition: opacity 200ms;
   }
 }
-
+.slide-out .overflower{
+  .in-overflower{
+    animation: inOverlowTopOut 600ms 50ms 1 forwards ease-in-out;
+    transform: translateY(0%);
+  }
+}
+.slide-in .overflower{
+  .in-overflower{
+    animation-delay: 1s;
+  }
+  &.t-2x{
+    .in-overflower{
+      animation-delay: 1.2s;
+    }
+  }
+  &.t-3x{
+    .in-overflower{
+      animation-delay: 1.3s;
+    }
+  }
+  &.t-4x{
+    .in-overflower{
+      animation-delay: 1.4s;
+    }
+  }
+  &.t-5x{
+    .in-overflower{
+      animation-delay: 1.5s;
+    }
+  }
+}
 .overflower{
   position: relative;
   overflow: hidden;
-  padding: 0;
+  padding: 0 10px;
+  right: 10px;
 
   .in-overflower{
     animation: inOverlowTopIn 600ms 50ms 1 forwards ease-in-out;
