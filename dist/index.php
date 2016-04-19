@@ -72,7 +72,7 @@
       </div>
       <div class="screen--video video-frnkrok">
         <video autoplay loop class="fullscreen">
-            <source src="//frnkrok.com/frnkrok-hq.mp4" type="video/mp4"  />
+            <source src="/video/frnkrok-hq.mp4" type="video/mp4"  />
         </video>
       </div>
       <div class="screen--video video-jlv3">
@@ -191,16 +191,31 @@
 
           <div class="screen--right">
             <div class="screen-center">
-              <span class="label">START DATE</span>
-              <div class="answer">April, 2016</div>
-              <span class="label">STATUS</span>
-              <div class="answer">In Public Beta &amp; Early Development</div>
-              <span class="label">TECH USED</span>
-              <div class="answer">Lumen Framework, HTML, Sass, PHP, JavaScript</div>
-              <span class="label">WEBSITE</span>
-              <div class="answer"><a href="https://ottoform.com" target="_blank">https://ottoform.com</a></div>
+              <div class="overflower">
+                <div class="in-overflower">
+                  <span class="label">START DATE</span>
+                  <div class="answer">April, 2016</div>
+                </div>
+              </div>
+              <div class="overflower t-2x">
+                <div class="in-overflower">
+                  <span class="label">STATUS</span>
+                  <div class="answer">In Public Beta &amp; Early Development</div>
+                </div>
+              </div>
+              <div class="overflower t-3x">
+                <div class="in-overflower">
+                  <span class="label">TECH USED</span>
+                  <div class="answer">Lumen Framework, HTML, Sass, PHP, JavaScript</div>
+                </div>
+              </div>
+              <div class="overflower t-4x">
+                <div class="in-overflower">
+                  <span class="label">WEBSITE</span>
+                  <div class="answer"><a href="https://ottoform.com" target="_blank">https://ottoform.com</a></div>
+                </div>
+              </div>
             </div>
-
           </div>
 
         </div>
@@ -261,9 +276,8 @@
                 </div>
               </div>
 
-        
-            </div>
 
+            </div>
           </div>
 
         </div>
@@ -292,16 +306,36 @@
 
           <div class="screen--right">
             <div class="screen-center">
-              <span class="label">START DATE</span>
-              <div class="answer">February, 2015</div>
-              <span class="label">LAUNCH DATE</span>
-              <div class="answer">February, 2016</div>
-              <span class="label">STATUS</span>
-              <div class="answer">Live</div>
-              <span class="label">TECH USED</span>
-              <div class="answer">HTML, Sass, PHP, JavaScript</div>
-              <span class="label">WEBSITE</span>
-              <div class="answer"><a href="https://v3.joeylea.com" target="_blank">https://v3.joeylea.com</a></div>
+              <div class="overflower">
+                <div class="in-overflower">
+                  <span class="label">START DATE</span>
+                  <div class="answer">February, 2015</div>
+                </div>
+              </div>
+              <div class="overflower t-2x">
+                <div class="in-overflower">
+                  <span class="label">LAUNCH DATE</span>
+                  <div class="answer">February, 2016</div>
+                </div>
+              </div>
+              <div class="overflower t-3x">
+                <div class="in-overflower">
+                  <span class="label">STATUS</span>
+                  <div class="answer">Live</div>
+                </div>
+              </div>
+              <div class="overflower t-4x">
+                <div class="in-overflower">
+                  <span class="label">TECH USED</span>
+                  <div class="answer">HTML, Sass, PHP, JavaScript</div>
+                </div>
+              </div>
+              <div class="overflower t-5x">
+                <div class="in-overflower">
+                  <span class="label">WEBSITE</span>
+                  <div class="answer"><a href="https://v3.joeylea.com" target="_blank">https://v3.joeylea.com</a></div>
+                </div>
+              </div>
             </div>
 
           </div>
