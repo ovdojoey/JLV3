@@ -18,9 +18,12 @@ html{
   background: $color-black;
 }
 
-html, body{
+html,
+body{
   margin: 0;
   padding: 0;
+}
+body{
   font-size: 22px;
   font-family: "adobe-text-pro", serif;
   -webkit-font-smoothing: antialiased;
@@ -216,6 +219,75 @@ html, body{
   }
 
 }
+.footer{
+  width: 100%;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: table;
+  display: flex;
+  flex-wrap: nowrap;
+
+  z-index: 10;
+
+  .copyright{
+    width:100%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 12px;
+    a{
+      color: inherit;
+    }
+  }
+}
+.aside{
+  position: absolute;
+  left: 5%;
+  bottom: 50%;
+  width: 100px;
+  height: 50px;
+  display: block;
+  font-family: "adobe-text-pro";
+  font-style: italic;
+  font-size: 32px;
+  color: rgba(255,255,255,0.8);
+
+  .aside--number,.aside--slash{
+    display: block;
+    line-height: 10px;
+    position: relative;
+  }
+  .aside--slash{
+    padding: 5px 12px;
+    transform: rotate(12deg);
+  }
+  #slide-number{
+    .number{
+      display: inline-block;
+      transform: scale(0);
+      opacity: 0;
+      animation: displayIn 1s 1 forwards;
+      position: relative;
+      @keyframes displayIn {
+        30%{
+          transform: scale(1.4);
+        }
+        100%{
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    }
+
+  }
+  .number-two{
+    bottom: 3px;
+    left: 14px;
+  }
+}
+
 .screens{
   overflow: hidden;
   width: 100%;
@@ -735,6 +807,10 @@ a.label{
     position: relative;
     top: 1px;
     transition: opacity 200ms;
+  }
+  .icon-scroll{
+    height: 22px;
+    top: 2px;
   }
 }
 .slide-out .overflower{

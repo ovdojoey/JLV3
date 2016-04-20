@@ -35,7 +35,7 @@
       </span>
     </div>
   </div>
-  <div class="app">
+  <div class="app" id="app">
     <header class="header">
       <div class="menu">
         <span class="logo--l">MENU</span>
@@ -55,15 +55,28 @@
         </a>
       </div>
     </header>
+    <footer class="footer">
+      <div class="aside">
+        <span class="aside--number" id="slide-number">1</span>
+        <span class="aside--slash">/</span>
+        <span class="aside--number number-two">10</span>
+      </div>
+
+      <div class="copyright">
+        Copyright Joey Lea.  &nbsp; <a href="#credits">Credits</a>.
+      </div>
+
+    </footer>
+
     <div class="screen-bgs">
       <div class="screen--video video-clouds" data-screen="home">
-        <video autoplay loop class="fillWidth">
+        <video autoplay muted loop class="fillWidth">
             <source src="/video/Up.mp4" type="video/mp4"  />
             <source src="/video/Up.webm" type="video/webm" />
         </video>
       </div>
       <div class="screen--video video-under" data-screen="home">
-        <video autoplay loop class="fillWidth">
+        <video autoplay muted loop class="fillWidth">
             <source src="/video/Under.mp4" type="video/mp4"  />
             <source src="/video/Under.webm" type="video/webm" />
         </video>
@@ -71,7 +84,7 @@
       <div class="screen--video video-ottoform">
       </div>
       <div class="screen--video video-frnkrok">
-        <video autoplay loop class="fullscreen">
+        <video autoplay muted loop class="fullscreen">
             <source src="/video/frnkrok-hq.mp4" type="video/mp4"  />
         </video>
       </div>
@@ -79,7 +92,7 @@
       </div>
     </div>
     <div class="screens">
-       <div  class="screen screen--home">
+       <div  class="screen screen--home" id="screen-home">
         <div class="screen--container">
           <div class="screen--left">
             <div class="screen-center">
@@ -95,16 +108,18 @@
                 I am a full-stack web designer and software engineer.
                 I take projects from inception through completion.
               </p>
-
-              <div class="screen--right-hidden">
-                <a class="label after-line" href="/posts/">RECENT WRITINGS</a>
+              <div class="overflower t-2x">
+                <span class="label in-overflower">SCROLL TO SEE WHAT I'VE BEEN UP TO <img class="icon icon-scroll" src="/img/scroll.svg" alt="Scroll"></span>
               </div>
+              <!-- <div class="screen--right-hidden">
+                <a class="label after-line" href="/posts/">RECENT WRITINGS</a>
+              </div> -->
             </div>
           </div>
 
           <div class="screen--right">
             <div class="screen-center">
-              <div class="overflower">
+              <!-- <div class="overflower">
                 <span class="label in-overflower">RECENT WRITINGS</span>
               </div>
               <ul class="writings-list">
@@ -123,7 +138,7 @@
                     <a href="#" class="in-overflower">Building a web app</a>
                   </div>
                 </li>
-              </ul>
+              </ul> -->
               <div class="overflower t-4x">
                 <span class="label in-overflower">RECENT PROJECTS</span>
               </div>
@@ -167,7 +182,7 @@
         </div>
       </div>
 
-      <div class="screen screen--ottoform fade-out">
+      <div class="screen screen--ottoform fade-out" id="screen-ottoform">
 
         <div class="screen--container">
           <div class="screen--left screen-collapse">
@@ -221,7 +236,7 @@
         </div>
       </div>
 
-      <div class="screen screen--frnkrok fade-out">
+      <div class="screen screen--frnkrok fade-out" id="screen-frnkrok">
 
         <div class="screen--container">
           <div class="screen--left screen-collapse">
@@ -282,7 +297,7 @@
 
         </div>
       </div>
-      <div class="screen screen--jlv3 fade-out">
+      <div class="screen screen--jlv3 fade-out" id="screen-jlv3">
 
         <div class="screen--container">
           <div class="screen--left screen-collapse">
@@ -321,7 +336,7 @@
               <div class="overflower t-3x">
                 <div class="in-overflower">
                   <span class="label">STATUS</span>
-                  <div class="answer">Live</div>
+                  <div class="answer">Retired</div>
                 </div>
               </div>
               <div class="overflower t-4x">
@@ -333,7 +348,7 @@
               <div class="overflower t-5x">
                 <div class="in-overflower">
                   <span class="label">WEBSITE</span>
-                  <div class="answer"><a href="https://v3.joeylea.com" target="_blank">https://v3.joeylea.com</a></div>
+                  <div class="answer"><a href="https://v3.joeylea.com" target="_blank">https://joeylea.com</a></div>
                 </div>
               </div>
             </div>
