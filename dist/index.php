@@ -38,10 +38,12 @@
   <div class="app" id="app">
     <header class="header">
       <div class="menu">
-        <span class="logo--l">MENU</span>
-        <span class="logo--menu">
-          <span class="logo--menu-bars"></span>
-        </span>
+        <a class="menu-btn">
+          <span class="logo--menu-text">MENU</span>
+          <span class="logo--menu">
+            <span class="logo--menu-bars"></span>
+          </span>
+        </a>
       </div>
       <div class="social">
         <a href="https://github.com/ovdojoey" target="_blank" class="icon">
@@ -69,18 +71,18 @@
     </footer>
 
     <div class="screen-bgs">
-      <div class="screen--video video-clouds" data-screen="home">
+      <div class="screen--video video-home" data-screen="home" data-enable="true">
         <video autoplay muted loop class="fillWidth">
             <source src="/video/Up.mp4" type="video/mp4"  />
             <source src="/video/Up.webm" type="video/webm" />
         </video>
       </div>
-      <div class="screen--video video-under" data-screen="home">
+      <!-- <div class="screen--video video-under" data-screen="home">
         <video autoplay muted loop class="fillWidth">
             <source src="/video/Under.mp4" type="video/mp4"  />
             <source src="/video/Under.webm" type="video/webm" />
         </video>
-      </div>
+      </div> -->
       <div class="screen--video video-ottoform">
       </div>
       <div class="screen--video video-frnkrok">
@@ -195,7 +197,9 @@
                 </h1>
               </div>
               <div class="overflower t-2x">
-                <span class="label after-line in-overflower">PROJECT BRIEF</span>
+                <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
+                <a class="label after-line in-overflower" href="https://ottoform.com">VISIT</a>
+
               </div>
               <p class="intro-desc">
                 The easiest form you will ever create.
@@ -215,13 +219,13 @@
               <div class="overflower t-2x">
                 <div class="in-overflower">
                   <span class="label">STATUS</span>
-                  <div class="answer">In Public Beta &amp; Early Development</div>
+                  <div class="answer">Beta &amp; Early Dev</div>
                 </div>
               </div>
               <div class="overflower t-3x">
                 <div class="in-overflower">
                   <span class="label">TECH USED</span>
-                  <div class="answer">Lumen Framework, HTML, Sass, PHP, JavaScript</div>
+                  <div class="answer">Lumen Framework, HTML, Sass, PHP, JS</div>
                 </div>
               </div>
               <div class="overflower t-4x">
@@ -249,7 +253,9 @@
                 </h1>
               </div>
               <div class="overflower t-2x">
-                <span class="label after-line in-overflower">PROJECT BRIEF</span>
+                <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
+                <a class="label after-line in-overflower" href="https://frnkrok.com">VISIT</a>
+
               </div>
               <p class="intro-desc">
                 A punchy DJ website to kickstart 2016.
@@ -281,7 +287,7 @@
               <div class="overflower t-4x">
                 <div class="in-overflower">
                   <span class="label">TECH USED</span>
-                  <div class="answer">HTML, Sass, PHP, JavaScript</div>
+                  <div class="answer">HTML, Sass, PHP, JS</div>
                 </div>
               </div>
               <div class="overflower t-5x">
@@ -310,10 +316,11 @@
                 </h1>
               </div>
               <div class="overflower t-2x">
-                <span class="label after-line in-overflower">PROJECT BRIEF</span>
+                <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
+                <a class="label after-line in-overflower" href="https://v3.joeylea.com">VISIT</a>
               </div>
               <p class="intro-desc">
-                Unlock achievements and meet FØRM on my version 3 mid-2016 website.
+                Unlock achievements and meet FØRM on my mid-2016 website.
               </p>
             </div>
           </div>
@@ -322,7 +329,7 @@
               <div class="overflower">
                 <div class="in-overflower">
                   <span class="label">START DATE</span>
-                  <div class="answer">February, 2015</div>
+                  <div class="answer">February, 2016</div>
                 </div>
               </div>
               <div class="overflower t-2x">
@@ -340,7 +347,7 @@
               <div class="overflower t-4x">
                 <div class="in-overflower">
                   <span class="label">TECH USED</span>
-                  <div class="answer">HTML, Sass, PHP, JavaScript</div>
+                  <div class="answer">HTML, Sass, PHP, JS</div>
                 </div>
               </div>
               <div class="overflower t-5x">
@@ -367,7 +374,9 @@
                 </h1>
               </div>
               <div class="overflower t-2x">
-                <span class="label after-line in-overflower">PROJECT BRIEF</span>
+                <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
+                <a class="label after-line in-overflower" href="http://juicedcss.com">VISIT</a>
+
               </div>
               <p class="intro-desc">
                 A flexbox based CSS-framework for prototyping layouts using Flexbox.
@@ -385,13 +394,13 @@
               <div class="overflower t-2x">
                 <div class="in-overflower">
                   <span class="label">LAUNCH DATE</span>
-                  <div class="answer">August, 2016</div>
+                  <div class="answer">August, 2015</div>
                 </div>
               </div>
               <div class="overflower t-3x">
                 <div class="in-overflower">
                   <span class="label">STATUS</span>
-                  <div class="answer">No longer maitained</div>
+                  <div class="answer">Inactive</div>
                 </div>
               </div>
               <div class="overflower t-4x">
