@@ -72,11 +72,21 @@ body{
     div{
       width: 100%;
     }
-    #flask{
+    #j-load-icon{
       position: absolute;
-      width: 100%;
-      left: 0;
-      top: -30px;
+      width: 80%;
+      left: 10%;
+      top: 10px;
+      .a{
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: buildInOutLine 5s 1 forwards;
+        @keyframes buildInOutLine {
+          100%{
+            stroke-dashoffset: 0;
+          }
+        }
+      }
     }
     #flask--potion{
       fill: $color-blue;
@@ -315,6 +325,7 @@ body{
   }
 }
 
+
 .screens{
   overflow: hidden;
   width: 100%;
@@ -336,11 +347,11 @@ body{
 
   &.slide-out{
     display: block;
-    animation: slideOut .8s .5s 1 forwards cubic-bezier(0.175, 0.785, 0.32, 1);
+    animation: slideOut .8s .5s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
   }
   &.slide-in{
     transform: translateY(100%);
-    animation: slideIn .8s .5s 1 forwards cubic-bezier(0.175, 0.785, 0.32, 1);
+    animation: slideIn .8s .5s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
     display: block;
     z-index: 2;
   }

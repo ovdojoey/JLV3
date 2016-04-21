@@ -48,6 +48,7 @@ window.controller = (function(){
       }
 
       if ( e.type === 'touchmove' && this.scrollSettings.pos ) {
+        e.preventDefault();
         var _scrollDelta = ( this.scrollSettings.pos - e.touches[0].clientY ) * 2;
         if ( _scrollDelta > 10 ) {
           this.slide({}, { distance: 0.55, direction: -1 });
@@ -55,7 +56,6 @@ window.controller = (function(){
           this.slide({}, { distance: 0.55, direction: 1 });
         }
         this.scrollSettings.pos = null;
-        e.preventDefault();
       }
     };
 
