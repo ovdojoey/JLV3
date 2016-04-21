@@ -59,7 +59,7 @@
       <div class="aside">
         <span class="aside--number" id="slide-number">1</span>
         <span class="aside--slash">/</span>
-        <span class="aside--number number-two">10</span>
+        <span class="aside--number number-two" id="slide-number-total">10</span>
       </div>
 
       <div class="copyright">
@@ -88,8 +88,8 @@
             <source src="/video/frnkrok-hq.mp4" type="video/mp4"  />
         </video>
       </div>
-      <div class="screen--video video-jlv3">
-      </div>
+      <div class="screen--video video-jlv3"></div>
+      <div class="screen--video video-juiced"></div>
     </div>
     <div class="screens">
        <div  class="screen screen--home" id="screen-home">
@@ -169,7 +169,7 @@
                 </li>
                 <li class="project-grid-li">
                   <div class="overflower t-8x">
-                    <a href="#" class="in-overflower">
+                    <a href="#" class="in-overflower" onclick="controller.toggle('home', 'juiced');">
                       <span class="title">JUICED</span>
                       <span class="description">A flexbox based CSS Framework</span>
                     </a>
@@ -297,8 +297,8 @@
 
         </div>
       </div>
-      <div class="screen screen--jlv3 fade-out" id="screen-jlv3">
 
+      <div class="screen screen--jlv3 fade-out" id="screen-jlv3">
         <div class="screen--container">
           <div class="screen--left screen-collapse">
             <div class="screen-center">
@@ -315,10 +315,8 @@
               <p class="intro-desc">
                 Unlock achievements and meet FØRM on my version 3 mid-2016 website.
               </p>
-
             </div>
           </div>
-
           <div class="screen--right">
             <div class="screen-center">
               <div class="overflower">
@@ -352,11 +350,68 @@
                 </div>
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
+
+
+      <div class="screen screen--juiced fade-out" id="screen-juiced">
+        <div class="screen--container">
+          <div class="screen--left screen-collapse">
+            <div class="screen-center">
+
+              <span class="label absolute"><a href="#" onclick="controller.toggle('juiced', 'home');">&larr;</a> PERSONAL PROJECT | <a href="/portfolio/">VIEW ALL <img src="/img/grid_icon.svg" class="icon" alt="Portfolio" /></a></span>
+              <div class="overflower">
+                <h1 class="h1 in-overflower">
+                  Juiced
+                </h1>
+              </div>
+              <div class="overflower t-2x">
+                <span class="label after-line in-overflower">PROJECT BRIEF</span>
+              </div>
+              <p class="intro-desc">
+                A flexbox based CSS-framework for prototyping layouts using Flexbox.
+              </p>
+            </div>
+          </div>
+          <div class="screen--right">
+            <div class="screen-center">
+              <div class="overflower">
+                <div class="in-overflower">
+                  <span class="label">START DATE</span>
+                  <div class="answer">August, 2015</div>
+                </div>
+              </div>
+              <div class="overflower t-2x">
+                <div class="in-overflower">
+                  <span class="label">LAUNCH DATE</span>
+                  <div class="answer">August, 2016</div>
+                </div>
+              </div>
+              <div class="overflower t-3x">
+                <div class="in-overflower">
+                  <span class="label">STATUS</span>
+                  <div class="answer">No longer maitained</div>
+                </div>
+              </div>
+              <div class="overflower t-4x">
+                <div class="in-overflower">
+                  <span class="label">TECH USED</span>
+                  <div class="answer">HTML, Sass, CSS</div>
+                </div>
+              </div>
+              <div class="overflower t-5x">
+                <div class="in-overflower">
+                  <span class="label">WEBSITE</span>
+                  <div class="answer"><a href="http://juicedcss.com" target="_blank">http://juicedcss.com</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
   <script src="/js/jl.js"></script>

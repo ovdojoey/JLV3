@@ -1,7 +1,7 @@
 
 (function(){
   'use strict';
-  var minTimeout = 900;
+  var minTimeout = 400;
   var domLoaded = false;
   var stillNeedToLoad = false;
 
@@ -31,6 +31,7 @@ window.controller = (function(){
 
 
     this.slideNumberEle = document.getElementById("slide-number");
+    this.slideNumberTotalEle = document.getElementById("slide-number-total");
     this.app = document.getElementById("app");
     this.scrollSettings = {
       slide : 1,
@@ -38,23 +39,40 @@ window.controller = (function(){
     };
     this.working = false;
 
+    /**
+    * Slide Event.  Fired on wheel event change
+    *
+    * @param e - event - the wheel event that fired
+    */
     this.slide = function(e) {
 
       if ( this.working ) {
         return false;
       }
+
       this.working = true;
 
-      var _deltaY = e.deltaY;
+      /** Helper function to return wheel direction
+      *
+      * @return integer - direction of scroll down = -1, up = 1
+      */
+      function returnDirection(evt) {
+         return (evt.detail<0) ? 1 : (evt.wheelDelta>0) ? 1 : -1;
+      }
+
+
+      // var _deltaY = e.deltaY;
       var _screenOn;
       var _keyFrom = this.screenKeys[this.scrollSettings.slide];
       var _keyTo;
 
-      if ( _deltaY >= 1  ) {
+      var _direction = returnDirection(e);
+
+      if ( _direction === -1 ) {
         // increase screen
         _screenOn = this.scrollSettings.slide + 1;
         _screenOn = ( _screenOn === this.screenKeys.length  ) ? 1 : _screenOn; // fix later remove static num
-      } else if ( _deltaY < 1 ) {
+      } else if ( _direction === 1 ) {
         // decrease screen
         _screenOn = this.scrollSettings.slide - 1;
         _screenOn = ( _screenOn === 0 ) ? this.screenKeys.length - 1 : _screenOn; // fix later remove static num
@@ -62,13 +80,10 @@ window.controller = (function(){
 
       _keyTo = this.screenKeys[_screenOn];
 
-      // this.scrollSettings.slide = _screenOn;
-
       this.toggle(_keyFrom, _keyTo);
 
     };
 
-    document.body.addEventListener("wheel", this.slide.bind(this));
 
     this.screens = {
       loading : document.querySelector(".loader"),
@@ -76,14 +91,16 @@ window.controller = (function(){
       ottoform: document.querySelector(".screen--ottoform"),
       frnkrok: document.querySelector(".screen--frnkrok"),
       jlv3: document.querySelector(".screen--jlv3"),
+      juiced: document.querySelector(".screen--juiced"),
     };
 
     this.screenKeys = Object.keys( this.screens );
 
     this.backgrounds = {
       ottoform: document.querySelector(".video-ottoform"),
-      jlv3: document.querySelector(".video-jlv3"),
       frnkrok: document.querySelector(".video-frnkrok"),
+      jlv3: document.querySelector(".video-jlv3"),
+      juiced: document.querySelector(".video-juiced"),
     };
 
     this.toggle = function(from, to) {
@@ -120,13 +137,19 @@ window.controller = (function(){
       var that = this;
       this.scrollSettings.timeout = setTimeout(function(){
         that.working = false;
-      }, 1300);
+      }, 1500);
 
     };
 
+    /**
+    * Fires the home loader to load the first screen. Also fires the wheel
+    * listener to listen for scroll events.
+    */
     this.loadHome = function() {
       this.screens.loading.classList.add("out");
       this.screens.home.classList.add("active");
+      this.slideNumberTotalEle.innerText = this.screenKeys.length - 1;
+      document.body.addEventListener("wheel", this.slide.bind(this));
     };
 
   }
