@@ -659,7 +659,8 @@ body{
     // animation-duration: 0.4s;
     visibility: visible;
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0,0);
+    transition: none;
     animation: menuOut 1s .5s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
     .overflower{
       .in-overflower{
