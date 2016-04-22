@@ -12,14 +12,14 @@
   <div class="loader">
     <div class="loader--circle-container">
       <span class="loader--circle">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 109.33" id="j-load-icon"><defs><style>.a{font-size:150px;fill:transparent;stroke:#222;stroke-miterlimit:10;font-family:Cochin;font-style:italic;}</style></defs><title>letter-j</title><text class="a" transform="translate(5.33 103.33)">J</text></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 109.33" id="j-load-icon"><defs><style>.a{font-size:150px;fill:transparent;stroke:#50aad0;stroke-miterlimit:10;font-family:Cochin;font-style:italic;}</style></defs><title>letter-j</title><text class="a" transform="translate(5.33 103.33)">J</text></svg>
       </span>
     </div>
   </div>
   <div class="app" id="app">
     <header class="header">
       <div class="menu">
-        <a class="menu-btn">
+        <a class="menu-btn" onclick="controller.toggleMenu();">
           <span class="logo--menu-text">MENU</span>
           <span class="logo--menu">
             <span class="logo--menu-bars"></span>
@@ -53,10 +53,10 @@
 
     <div class="screen-bgs">
       <div class="screen--video video-home" data-screen="home" data-enable="true">
-        <video autoplay muted loop class="fillWidth">
+        <!-- <video autoplay muted loop class="fillWidth">
             <source src="/video/Up.mp4" type="video/mp4"  />
             <source src="/video/Up.webm" type="video/webm" />
-        </video>
+        </video> -->
       </div>
       <!-- <div class="screen--video video-under" data-screen="home">
         <video autoplay muted loop class="fillWidth">
@@ -206,7 +206,7 @@
               <div class="overflower t-3x">
                 <div class="in-overflower">
                   <span class="label">TECH USED</span>
-                  <div class="answer">Lumen Framework, HTML, Sass, PHP, JS</div>
+                  <div class="answer">Lumen, HTML, Sass, PHP, JS</div>
                 </div>
               </div>
               <div class="overflower t-4x">
@@ -396,6 +396,42 @@
                   <div class="answer"><a href="http://juicedcss.com" target="_blank">http://juicedcss.com</a></div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen screen--menu fade-out" id="screen-menu">
+        <div class="screen--container">
+          <div class="screen--left screen-collapse">
+            <div class="screen-center">
+              <nav>
+                <a href="/">
+                  <div class="overflower t-7x">
+                    <span class="h1 menu--item in-overflower">HOME</span>
+                  </div>
+                </a>
+                <a href="/work/">
+                  <div class="overflower t-8x">
+                    <span class="h1 menu--item in-overflower">WORK</span>
+                  </div>
+                </a>
+                <a href="/writings/">
+                  <div class="overflower t-9x">
+                    <span class="h1 menu--item in-overflower">WRITINGS</span>
+                  </div>
+                </a>
+                
+                <div class="overflower t-10x">
+                  <span class="h1 menu--item in-overflower">ME</span></a>
+                </div>
+              </nav>
+
+            </div>
+          </div>
+          <div class="screen--right">
+            <div class="screen-center">
+
             </div>
           </div>
         </div>

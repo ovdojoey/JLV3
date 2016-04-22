@@ -13,7 +13,7 @@
     stillNeedToLoad = true;
   }, minTimeout);
 
-  document.addEventListener("DOMContentLoaded", function(event) {
+  window.addEventListener("DOMContentLoaded", function(event) {
 
     domLoaded = true;
 
@@ -40,7 +40,31 @@ window.controller = (function(){
       pos: null,
     };
     this.working = false;
+    this.screens = {
+      loading : document.querySelector(".loader"),
+      home : document.querySelector(".screen--home"),
+      ottoform: document.querySelector(".screen--ottoform"),
+      frnkrok: document.querySelector(".screen--frnkrok"),
+      jlv3: document.querySelector(".screen--jlv3"),
+      juiced: document.querySelector(".screen--juiced"),
+    };
 
+    this.menu = document.querySelector(".screen--menu");
+    this.menuOpen = false;
+
+    this.screenKeys = Object.keys( this.screens );
+
+    this.backgrounds = {
+      home: document.querySelector(".video-home"),
+      ottoform: document.querySelector(".video-ottoform"),
+      frnkrok: document.querySelector(".video-frnkrok"),
+      jlv3: document.querySelector(".video-jlv3"),
+      juiced: document.querySelector(".video-juiced"),
+    };
+
+
+
+    /* Touch event function */
     this.touchEvent = function(e){
       // touch event
       if (e.type === 'touchstart') {
@@ -139,35 +163,22 @@ window.controller = (function(){
     };
 
 
-    this.screens = {
-      loading : document.querySelector(".loader"),
-      home : document.querySelector(".screen--home"),
-      ottoform: document.querySelector(".screen--ottoform"),
-      frnkrok: document.querySelector(".screen--frnkrok"),
-      jlv3: document.querySelector(".screen--jlv3"),
-      juiced: document.querySelector(".screen--juiced"),
-    };
-
-    this.screenKeys = Object.keys( this.screens );
-
-    this.backgrounds = {
-      home: document.querySelector(".video-home"),
-      ottoform: document.querySelector(".video-ottoform"),
-      frnkrok: document.querySelector(".video-frnkrok"),
-      jlv3: document.querySelector(".video-jlv3"),
-      juiced: document.querySelector(".video-juiced"),
-    };
 
     this.toggle = function(from, to) {
 
+      if ( this.menuOpen === true ) {
+        this.working = false;
+        return false;
+      }
+
       this.screens.home.classList.remove("active");
-      this.screens[from].classList.add("slide-out");
+
       this.screens[from].classList.remove("slide-in");
       this.screens[from].classList.remove("fade-out");
+      this.screens[from].classList.add("slide-out");
+
       this.screens[to].classList.add("slide-in");
       this.screens[to].classList.remove("slide-out");
-
-
 
       // remove slide out from all
       var _slideCount = 0;
@@ -196,6 +207,43 @@ window.controller = (function(){
       }, 1500);
 
     };
+
+
+    this.openMenu = function() {
+
+      this.menu.classList.remove("fade-out-slow");
+
+      for(var screen in this.screens) {
+        this.screens[screen].classList.add("fade-out-slow");
+      }
+
+      this.menu.classList.add("fade-in");
+      this.menuOpen = true;
+
+    };
+
+    this.closeMenu = function() {
+
+      this.menu.classList.remove("fade-in");
+
+      for(var screen in this.screens) {
+        this.screens[screen].classList.remove("fade-out-slow");
+      }
+
+      this.menu.classList.remove("fade-in");
+      this.menu.classList.add("fade-out-slow");
+      this.menuOpen = false;
+
+    };
+
+    this.toggleMenu = function() {
+      if ( this.menuOpen ) {
+        this.closeMenu();
+      } else {
+        this.openMenu();
+      }
+    };
+
 
     /**
     * Fires the home loader to load the first screen. Also fires the wheel
