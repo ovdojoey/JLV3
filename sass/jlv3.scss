@@ -149,13 +149,6 @@ body{
 }
 
 
-
-@keyframes showApp {
-  100% {
-    opacity: 1;
-  }
-}
-
 .header{
   width: 100%;
   padding: 10px 0;
@@ -227,10 +220,18 @@ body{
     padding: 50px;
     left: 0px;
     top:0;
-    transition: opacity 400ms;
+    transition: opacity 400ms, transform 400ms;
     opacity: 0.9;
+    padding-left: 20px;
+    z-index: 15;
+    @media (min-width: 800px){
+      padding-left: 50px;
+    }
     &:hover{
-      opacity: 1;
+      opacity: 0.6;
+      // transform:
+      .x,.x-2{
+      }
     }
     .x,.x-2{
       width: 60px;
@@ -239,15 +240,15 @@ body{
       display: block;
       position: relative;
       transform: scale(0);
-      opacity: 0;
+      opacity: 0.6;
       animation: sliceIn .3s 1.2s 1 forwards;
     }
     @keyframes sliceIn{
-      30%{
-        transform: scale(.5) translate(50%,50%);
+      0%{
+        transform: translate(50%,50%) scale(2,1);
       }
       60%{
-        transform: scale(2,1) translate(-5%,-5%);
+        transform: translate(-5%,-5%) scale(1);
       }
       100%{
         transform: scale(1);
@@ -266,7 +267,7 @@ body{
     }
     .x-2{
       animation-delay: 1.5s;
-      transform-origin: top right;
+      transform-origin: bottom left;
     }
   }
   .menu-btn{
@@ -408,12 +409,22 @@ body{
 
   &.slide-out{
     display: block;
-    animation: slideOut .4s .5s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
+    animation: slideOut .6s .6s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
+    &:after{
+      transition: transform .6s;
+      transform: scale(0.93);
+    }
   }
   &.slide-in{
     transform: translateY(100%);
-    animation: slideIn .4s .5s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
+    animation: slideIn .6s .6s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
+    transform: translateY(0%);
+    animation: inFadeIn .6s .6s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
     display: block;
+    opacity: 0;
+    &:after{
+      transform: scale(1);
+    }
     // z-index: 2;
   }
   &.fade-out{
@@ -436,6 +447,9 @@ body{
     // animation: none;
   }
   @keyframes slideOut {
+    0%{
+      transform: translateY(0);
+    }
     100%{
       transform: translateY(-100%);
       visibility: hidden;
@@ -618,6 +632,46 @@ body{
     visibility: visible;
   }
 }
+.animation-pictures-block{
+  position: absolute;
+  top: calc(50% - 110px);
+  right: 3%;
+  display: none;
+  height: 120px;
+  width: 180px;
+  border: 55px solid #fff;
+  border-top-width: 45px;
+  border-bottom-width: 45px;
+  opacity: 0;
+  transition: opacity .7s;
+  z-index: 1;
+  // transform: rotate(90deg);
+  animation: inFadeIn .4s 1 forwards;
+
+  &:after{
+    background:rgba(darken($color-red,10%), .5);
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 0;
+  }
+
+}
+
+.home-animation-block{
+  background: #111 url('/img/home_reel.jpg') 0px 50% no-repeat;
+  animation: homeAnimation 1s steps(4,end) infinite;
+  background-size: 718px;
+}
+@keyframes homeAnimation{
+  100%{
+    background-position: -720px 50%;
+  }
+}
 .screen--menu{
   display: none;
   // z-index: 5;
@@ -628,8 +682,21 @@ body{
       color: #222;
       transition: transform .4s;
       text-decoration: none;
-
       font-weight: 600;
+      z-index: 2;
+      .h1{
+        font-size: 42px;
+        line-height: .7em;
+        @media (min-width: 500px){
+          font-size: 60px;
+        }
+        @media (min-width: 600px){
+          font-size: 72px;
+        }
+        @media (min-width: 800px){
+          font-size: 92px;
+        }
+      }
       &:after{
         content:'';
         width: 60px;
@@ -655,9 +722,16 @@ body{
         &:after{
           animation: slideLine .6s  1 forwards;
         }
+        &+.animation-pictures-block{
+          opacity: 1;
+          @media(min-width: 600px){
+            display: block;
+          }
+        }
       }
     }
   }
+
   .screen--container .screen--left, .screen--container .screen--left, {
     border-left-color: #eee;
     border-right-color: #eee;
@@ -857,6 +931,10 @@ body{
 }
 
 @keyframes inFadeIn{
+  0%{
+    opacity: 0;
+    transform: translateY(0);
+  }
   100%{
     opacity: 1;
     visibility: visible;
@@ -1208,6 +1286,11 @@ a.label{
   &.t-10x{
     .in-overflower{
       animation-delay: 1000ms;
+    }
+  }
+  &.t-11x{
+    .in-overflower{
+      animation-delay: 1100ms;
     }
   }
 }

@@ -182,7 +182,7 @@
               </div>
               <div class="overflower t-2x">
                 <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
-                <a class="label after-line in-overflower" href="https://ottoform.com">VISIT</a>
+                <a class="label after-line in-overflower" href="https://ottoform.com" target="_blank">VISIT</a>
 
               </div>
               <p class="intro-desc">
@@ -238,7 +238,7 @@
               </div>
               <div class="overflower t-2x">
                 <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
-                <a class="label after-line in-overflower" href="https://frnkrok.com">VISIT</a>
+                <a class="label after-line in-overflower" href="https://frnkrok.com" target="_blank">VISIT</a>
 
               </div>
               <p class="intro-desc">
@@ -301,7 +301,7 @@
               </div>
               <div class="overflower t-2x">
                 <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
-                <a class="label after-line in-overflower" href="https://v3.joeylea.com">VISIT</a>
+                <a class="label after-line in-overflower" href="https://v3.joeylea.com" target="_blank">VISIT</a>
               </div>
               <p class="intro-desc">
                 Unlock achievements and meet FØRM on my mid-2016 website.
@@ -351,7 +351,7 @@
           <div class="screen--left screen-collapse">
             <div class="screen-center">
 
-              <span class="label absolute"><a href="#" onclick="controller.toggle('juiced', 'home');">&larr;</a> PERSONAL PROJECT | <a href="/portfolio/">VIEW ALL <img src="/img/grid_icon.svg" class="icon" alt="Portfolio" /></a></span>
+              <span class="label absolute"><a href="#" onclick="controller.toggle('juiced', 'home');">&larr;</a> OPEN SOURCE | <a href="/portfolio/">VIEW ALL <img src="/img/grid_icon.svg" class="icon" alt="Portfolio" /></a></span>
               <div class="overflower">
                 <h1 class="h1 in-overflower">
                   Juiced
@@ -359,7 +359,7 @@
               </div>
               <div class="overflower t-2x">
                 <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
-                <a class="label after-line in-overflower" href="http://juicedcss.com">VISIT</a>
+                <a class="label after-line in-overflower" href="http://juicedcss.com" target="_blank">VISIT</a>
 
               </div>
               <p class="intro-desc">
@@ -410,23 +410,26 @@
             <div class="screen-center">
               <nav>
                 <a href="/">
-                  <div class="overflower t-7x">
+                  <div class="overflower t-8x">
                     <span class="h1 menu--item in-overflower">HOME</span>
                   </div>
                 </a>
-                <a href="/code/">
-                  <div class="overflower t-8x">
-                    <span class="h1 menu--item in-overflower">CODE</span>
+                <div class="animation-pictures-block home-animation-block">
+
+                </div>
+                <a href="/portfolio/">
+                  <div class="overflower t-9x">
+                    <span class="h1 menu--item in-overflower">PORTFOLIO</span>
                   </div>
                 </a>
                 <a href="/writings/">
-                  <div class="overflower t-9x">
+                  <div class="overflower t-10x">
                     <span class="h1 menu--item in-overflower">WRITINGS</span>
                   </div>
                 </a>
                 <a href="/me/">
-                  <div class="overflower t-10x">
-                    <span class="h1 menu--item in-overflower">ME</span></a>
+                  <div class="overflower t-11x">
+                    <span class="h1 menu--item in-overflower">ME</span>
                   </div>
                 </a>
               </nav>
