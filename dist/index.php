@@ -18,13 +18,20 @@
   </div>
   <div class="app" id="app">
     <header class="header">
-      <div class="menu">
+      <div class="menu" id="jl-menu">
+
+        <a class="exit-btn" onclick="controller.toggleMenu();">
+          <div class="x-45"><span class="x"></span></div>
+          <div class="x-135"><span class="x-2"></span></div>
+        </a>
+
         <a class="menu-btn" onclick="controller.toggleMenu();">
           <span class="logo--menu-text">MENU</span>
           <span class="logo--menu">
             <span class="logo--menu-bars"></span>
           </span>
         </a>
+
       </div>
       <div class="social">
         <a href="https://github.com/ovdojoey" target="_blank" class="icon">
@@ -53,10 +60,6 @@
 
     <div class="screen-bgs">
       <div class="screen--video video-home" data-screen="home" data-enable="true">
-        <!-- <video autoplay muted loop class="fillWidth">
-            <source src="/video/Up.mp4" type="video/mp4"  />
-            <source src="/video/Up.webm" type="video/webm" />
-        </video> -->
       </div>
       <!-- <div class="screen--video video-under" data-screen="home">
         <video autoplay muted loop class="fillWidth">
@@ -411,9 +414,9 @@
                     <span class="h1 menu--item in-overflower">HOME</span>
                   </div>
                 </a>
-                <a href="/work/">
+                <a href="/code/">
                   <div class="overflower t-8x">
-                    <span class="h1 menu--item in-overflower">WORK</span>
+                    <span class="h1 menu--item in-overflower">CODE</span>
                   </div>
                 </a>
                 <a href="/writings/">
@@ -421,10 +424,11 @@
                     <span class="h1 menu--item in-overflower">WRITINGS</span>
                   </div>
                 </a>
-                
-                <div class="overflower t-10x">
-                  <span class="h1 menu--item in-overflower">ME</span></a>
-                </div>
+                <a href="/me/">
+                  <div class="overflower t-10x">
+                    <span class="h1 menu--item in-overflower">ME</span></a>
+                  </div>
+                </a>
               </nav>
 
             </div>

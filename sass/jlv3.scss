@@ -209,6 +209,66 @@ body{
       }
     }
   }
+  .menu.activate{
+    .exit-btn{
+      display: block;
+    }
+    .menu-btn{
+      transition: opacity 200ms;
+      opacity: 0;
+    }
+  }
+  .exit-btn{
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    display: none;
+    cursor: pointer;
+    padding: 50px;
+    left: 0px;
+    top:0;
+    transition: opacity 400ms;
+    opacity: 0.9;
+    &:hover{
+      opacity: 1;
+    }
+    .x,.x-2{
+      width: 60px;
+      background: #222;
+      height: 2px;
+      display: block;
+      position: relative;
+      transform: scale(0);
+      opacity: 0;
+      animation: sliceIn .3s 1.2s 1 forwards;
+    }
+    @keyframes sliceIn{
+      30%{
+        transform: scale(.5) translate(50%,50%);
+      }
+      60%{
+        transform: scale(2,1) translate(-5%,-5%);
+      }
+      100%{
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    .x-45{
+      transform: rotate(45deg);
+    }
+    .x-135{
+      transform: rotate(135deg);
+
+    }
+    .x{
+      transform-origin: top left;
+    }
+    .x-2{
+      animation-delay: 1.5s;
+      transform-origin: top right;
+    }
+  }
   .menu-btn{
     display: inline-block;
     white-space: nowrap;
@@ -306,7 +366,7 @@ body{
       display: inline-block;
       transform: scale(0);
       opacity: 0;
-      animation: displayIn 1s 1 forwards;
+      animation: displayIn 1s .1s 1 forwards;
       position: relative;
       @keyframes displayIn {
         30%{
@@ -348,11 +408,11 @@ body{
 
   &.slide-out{
     display: block;
-    animation: slideOut .6s .5s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
+    animation: slideOut .4s .5s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
   }
   &.slide-in{
     transform: translateY(100%);
-    animation: slideIn .6s .5s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
+    animation: slideIn .4s .5s 1 forwards cubic-bezier(0.345, 0.045, 0.355, 1);
     display: block;
     // z-index: 2;
   }
@@ -524,7 +584,7 @@ body{
 //   animation: showVideo 8s 13s forwards 2;
 // }
 .video-home{
-  background: url(/img/lion.jpeg) 50% 50%;
+  background: url(/img/lion.jpg) 50% 50%;
   background-size: cover;
   opacity: 0;
 }

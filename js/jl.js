@@ -21,6 +21,18 @@
       controller.loadHome();
     }
   });
+
+  function handleOrientation(e) {
+    setTimeout(function(){
+      // Hide the address bar!
+      window.scrollTo(0, 1);
+    }, 0);
+  }
+
+  window.addEventListener("load", handleOrientation, false);
+
+  window.addEventListener("deviceorientation", handleOrientation, true);
+
 })();
 
 window.controller = (function(){
@@ -28,7 +40,6 @@ window.controller = (function(){
   'use strict';
 
   function Screen() {
-
 
     this.slideNumberEle = document.getElementById("slide-number");
     this.slideNumberTotalEle = document.getElementById("slide-number-total");
@@ -50,6 +61,7 @@ window.controller = (function(){
     };
 
     this.menu = document.querySelector(".screen--menu");
+    this.menuContainer = document.getElementById("jl-menu");
     this.menuOpen = false;
 
     this.screenKeys = Object.keys( this.screens );
@@ -129,8 +141,7 @@ window.controller = (function(){
         _distance = returnWheelDistance(e);
       }
 
-
-      if ( _distance < 0.5 && _distance > -0.5 ) {
+      if ( _distance <= 0.25 && _distance >= -0.25 ) {
         this.working = true;
         var that = this;
         setTimeout(function(){
@@ -219,6 +230,7 @@ window.controller = (function(){
 
       this.menu.classList.add("fade-in");
       this.menuOpen = true;
+      this.menuContainer.classList.add("activate");
 
     };
 
@@ -233,6 +245,8 @@ window.controller = (function(){
       this.menu.classList.remove("fade-in");
       this.menu.classList.add("fade-out-slow");
       this.menuOpen = false;
+      this.menuContainer.classList.remove("activate");
+
 
     };
 
