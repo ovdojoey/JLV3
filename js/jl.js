@@ -2,32 +2,46 @@
 (function(){
   'use strict';
   var minTimeout = 400;
+  var maxTimeout = 2200;
   var domLoaded = false;
   var stillNeedToLoad = false;
+  var fontLoaded = false;
 
   setTimeout(function(){
-    if ( domLoaded ) {
+    var htmlClass = [].slice.call(document.documentElement.classList);
+    if ( htmlClass.indexOf("wf-active") !== -1 ) {
+      fontLoaded = true;
+    }
+    if ( domLoaded && fontLoaded ) {
       controller.loadHome();
       return false;
     }
     stillNeedToLoad = true;
   }, minTimeout);
 
+  setTimeout(function(){
+    if (stillNeedToLoad) {
+      controller.loadHome();
+    }
+  }, maxTimeout);
+
   window.addEventListener("DOMContentLoaded", function(event) {
 
     domLoaded = true;
 
     if ( stillNeedToLoad ) {
+      stillNeedToLoad = false;
       controller.loadHome();
     }
+
   });
 
-  function handleOrientation(e) {
+  window.handleOrientation = function(e){
     setTimeout(function(){
       // Hide the address bar!
       window.scrollTo(0, 1);
     }, 0);
-  }
+  };
 
   window.addEventListener("load", handleOrientation, false);
 
@@ -181,6 +195,8 @@ window.controller = (function(){
         this.working = false;
         return false;
       }
+
+      window.handleOrientation();
 
       this.screens.home.classList.remove("active");
 

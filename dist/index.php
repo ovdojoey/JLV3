@@ -20,12 +20,12 @@
     <header class="header">
       <div class="menu" id="jl-menu">
 
-        <a class="exit-btn" onclick="controller.toggleMenu();">
+        <a class="exit-btn" onclick="controller.toggleMenu();" title="Exit">
           <div class="x-45"><span class="x"></span></div>
           <div class="x-135"><span class="x-2"></span></div>
         </a>
 
-        <a class="menu-btn" onclick="controller.toggleMenu();">
+        <a class="menu-btn" onclick="controller.toggleMenu();" title="Menu">
           <span class="logo--menu-text">MENU</span>
           <span class="logo--menu">
             <span class="logo--menu-bars"></span>
@@ -53,29 +53,23 @@
       </div>
 
       <div class="copyright">
-        Copyright Joey Lea.  &nbsp; <a href="#credits">Credits</a>.
+        Copyright Joey Lea.
       </div>
 
     </footer>
 
     <div class="screen-bgs">
-      <div class="screen--video video-home" data-screen="home" data-enable="true">
+      <div class="screen--video video-home" data-screen="home" data-enable="true" role="presentation">
       </div>
-      <!-- <div class="screen--video video-under" data-screen="home">
-        <video autoplay muted loop class="fillWidth">
-            <source src="/video/Under.mp4" type="video/mp4"  />
-            <source src="/video/Under.webm" type="video/webm" />
-        </video>
-      </div> -->
-      <div class="screen--video video-ottoform">
+      <div class="screen--video video-ottoform" role="presentation">
       </div>
-      <div class="screen--video video-frnkrok">
+      <div class="screen--video video-frnkrok" role="presentation">
         <video autoplay muted loop class="fullscreen">
             <source src="/video/frnkrok-hq.mp4" type="video/mp4"  />
         </video>
       </div>
-      <div class="screen--video video-jlv3"></div>
-      <div class="screen--video video-juiced"></div>
+      <div class="screen--video video-jlv3" role="presentation"></div>
+      <div class="screen--video video-juiced" role="presentation"></div>
     </div>
     <div class="screens">
        <div  class="screen screen--home" id="screen-home">
@@ -409,36 +403,50 @@
           <div class="screen--left screen-collapse">
             <div class="screen-center">
               <nav>
-                <a href="/">
-                  <div class="overflower t-8x">
-                    <span class="h1 menu--item in-overflower">HOME</span>
-                  </div>
-                </a>
-                <div class="animation-pictures-block home-animation-block">
 
-                </div>
-                <a href="/portfolio/">
+                <a href="/" data-count="1">
+                  <div class="overflower t-8x">
+                    <span class="h1 menu--item in-overflower">Home</span>
+                  </div>
+                  <span class="menu--desc">What I've been up to recently</span>
+                </a>
+                <div class="animation-pictures-block home-animation-block"></div>
+
+                <a href="/portfolio/" data-count="2">
                   <div class="overflower t-9x">
-                    <span class="h1 menu--item in-overflower">PORTFOLIO</span>
+                    <span class="h1 menu--item in-overflower">Portfolio</span>
                   </div>
+                  <span class="menu--desc">A sampling of my work</span>
+
                 </a>
-                <a href="/writings/">
+                <div class="animation-pictures-block portfolio-animation-block"></div>
+
+                <a href="/writings/"  data-count="3">
                   <div class="overflower t-10x">
-                    <span class="h1 menu--item in-overflower">WRITINGS</span>
+                    <span class="h1 menu--item in-overflower">Writings</span>
                   </div>
+                  <span class="menu--desc">Words about code and other randomness</span>
                 </a>
-                <a href="/me/">
+                <a href="/me/"  data-count="4">
                   <div class="overflower t-11x">
-                    <span class="h1 menu--item in-overflower">ME</span>
+                    <span class="h1 menu--item in-overflower">Me</span>
                   </div>
+                  <span class="menu--desc">The man behind the code</span>
+
                 </a>
               </nav>
 
             </div>
           </div>
           <div class="screen--right">
-            <div class="screen-center">
+            <div class="screen--bottom">
 
+              <div class="overflower t-12x">
+                <div class="in-overflower">
+                  <span class="label before-line">EMAIL ME</span>
+                  <div class="answer"><a href="mailto:joey@w3by.com">joey@w3by.com</a></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
