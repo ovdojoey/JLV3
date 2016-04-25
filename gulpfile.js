@@ -1,4 +1,6 @@
 var gulp = require('gulp');
+var babel = require('gulp-babel');
+var babelify = require("babelify");
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
@@ -12,12 +14,14 @@ var uglify = require('gulp-uglify');
 gulp.task('js', function () {
 
   return gulp.src('js/**/*.js', {read: false}) // no need of reading file because browserify does.
-
+    .pipe(babel({
+      presets: ['es2015']
+    }))
     // transform file objects using gulp-tap plugin
     .pipe(tap(function (file) {
       gutil.log('bundling ' + file.path);
       // replace file contents with browserify's bundle stream
-      file.contents = browserify(file.path, {debug: true}).bundle();
+      file.contents = browserify(file.path, {debug: true}).transform(babelify).bundle();
     }))
 
     // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)

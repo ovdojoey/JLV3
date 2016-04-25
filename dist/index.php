@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joey Lea | Web Developer &amp; Full-stack Engineer</title>
+  <title>Joey Lea - Web Developer &amp; Full-stack Engineer</title>
   <link rel="stylesheet" href="/css/jlv3.css" media="screen" charset="utf-8">
   <script src="https://use.typekit.net/ryf7prd.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -16,7 +16,7 @@
       </span>
     </div>
   </div>
-  <div class="app" id="app">
+  <div class="app" id="app" data-scroll="screens">
     <header class="header">
       <div class="menu" id="jl-menu">
 
@@ -59,20 +59,20 @@
     </footer>
 
     <div class="screen-bgs">
-      <div class="screen--video video-home" data-screen="home" data-enable="true" role="presentation">
+      <div class="screen--video video-home" data-background-screen="home" data-enable="true" role="presentation">
       </div>
-      <div class="screen--video video-ottoform" role="presentation">
+      <div class="screen--video video-ottoform" data-background-screen="ottoform" role="presentation">
       </div>
-      <div class="screen--video video-frnkrok" role="presentation">
+      <div class="screen--video video-frnkrok" data-background-screen="frnkrok" role="presentation">
         <video autoplay muted loop class="fullscreen">
             <source src="/video/frnkrok-hq.mp4" type="video/mp4"  />
         </video>
       </div>
-      <div class="screen--video video-jlv3" role="presentation"></div>
-      <div class="screen--video video-juiced" role="presentation"></div>
+      <div class="screen--video video-jlv3"  data-background-screen="jlv3" role="presentation"></div>
+      <div class="screen--video video-juiced" data-background-screen="juiced" role="presentation"></div>
     </div>
     <div class="screens">
-       <div  class="screen screen--home" id="screen-home">
+       <div  class="screen screen--home" id="screen-home" data-screen="home">
         <div class="screen--container">
           <div class="screen--left">
             <div class="screen-center">
@@ -82,7 +82,7 @@
                 </h1>
               </div>
               <div class="overflower">
-                <a class="label after-line in-overflower" href="/about/">ABOUT ME</a>
+                <a class="label after-line in-overflower" href="/me/">ABOUT ME</a>
               </div>
               <p class="intro-desc">
                 I am a full-stack web designer and software engineer.
@@ -162,7 +162,7 @@
         </div>
       </div>
 
-      <div class="screen screen--ottoform fade-out" id="screen-ottoform">
+      <div class="screen screen--ottoform fade-out" id="screen-ottoform" data-screen="ottoform">
 
         <div class="screen--container">
           <div class="screen--left screen-collapse">
@@ -218,7 +218,7 @@
         </div>
       </div>
 
-      <div class="screen screen--frnkrok fade-out" id="screen-frnkrok">
+      <div class="screen screen--frnkrok fade-out" id="screen-frnkrok" data-screen="frnkrok">
 
         <div class="screen--container">
           <div class="screen--left screen-collapse">
@@ -282,7 +282,7 @@
         </div>
       </div>
 
-      <div class="screen screen--jlv3 fade-out" id="screen-jlv3">
+      <div class="screen screen--jlv3 fade-out" id="screen-jlv3" data-screen="jlv3">
         <div class="screen--container">
           <div class="screen--left screen-collapse">
             <div class="screen-center">
@@ -340,7 +340,7 @@
       </div>
 
 
-      <div class="screen screen--juiced fade-out" id="screen-juiced">
+      <div class="screen screen--juiced fade-out" id="screen-juiced"  data-screen="juiced">
         <div class="screen--container">
           <div class="screen--left screen-collapse">
             <div class="screen-center">
@@ -427,6 +427,8 @@
                   </div>
                   <span class="menu--desc">Words about code and other randomness</span>
                 </a>
+                <div class="animation-pictures-block writings-animation-block"></div>
+
                 <a href="/me/"  data-count="4">
                   <div class="overflower t-11x">
                     <span class="h1 menu--item in-overflower">Me</span>
