@@ -402,6 +402,10 @@ window.controller = (function(){
         // this.addSmoothScrollers();
         // document.body.addEventListener("wheel", this.scroll.bind(this));
 
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        });
+
         var VirtualScroll = new vs();
         var targetY = 0;
         var section = document.getElementById("about-me-scroll");
