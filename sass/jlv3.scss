@@ -621,10 +621,36 @@ body{
 //   visibility: hidden;
 //   animation: showVideo 8s 13s forwards 2;
 // }
+.video-person,
+.video-code{
+  &.video-person{
+    background: $color-yellow;
+  }
+  background: $color-blue;
+  opacity: 0;
+  visibility: visible;
+
+  &.fadeIn{
+    transition:  visibility 0s 0s, opacity 1s 0s;
+    opacity: 1;
+  }
+  &.fadeOut{
+    opacity: 0;
+    transition:  visibility 0s 0s, opacity 1s .1s;
+  }
+}
 .video-about-me{
   background: url(/img/building_sky.jpeg) 50% 50%;
   background-size: cover;
   opacity: 0;
+  transform: translateZ(0);
+  &[data-enable='true']{
+    transition:  visibility 0s 0s, opacity .6s 0s;
+  }
+  &.fadeOut{
+    opacity: 0;
+    transition:  visibility 0s 0s, opacity 1s .1s;
+  }
 }
 .video-home{
   background: url(/img/lion.jpg) 50% 50%;
@@ -1020,6 +1046,12 @@ body{
     z-index: -1;
     min-height: 100vh;
   }
+  #scroll-section-background{
+    text-align: right;
+    .screen--container {
+
+    }
+  }
   .screen--container{
     flex-wrap: wrap;
     align-items: flex-start;;
@@ -1038,6 +1070,19 @@ body{
         margin-bottom: 0;
         display: block;
       }
+      .h1.clip-text{
+        line-height: 1em;
+        font-size: 180px;
+        background: url(/video/cheerUp.gif) 50% 50%;
+        background-size: cover;
+        filter: hue-rotate(180deg);
+        display: inline-block;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        left: 100px;;
+      }
+
       .h1 + .answer{
         // font-size: 22px;
         display: block;
@@ -1061,6 +1106,7 @@ body{
 
     }
   }
+
 }
 .screen--home{
   display: none;
@@ -1180,6 +1226,17 @@ body{
     transform: translateY(210%);
   }
 }
+
+.clip-text{
+  position: relative;
+  display: block;
+  text-align: right;
+  color: #fff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .h2{
   font-size: 56px;
   font-family: "lust-display-didone";

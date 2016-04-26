@@ -61,6 +61,10 @@
     <div class="screen-bgs">
       <div class="screen--video video-about-me" data-screen="home" data-enable="true" role="presentation">
       </div>
+      <div class="screen--video video-code" data-screen="code" data-enable="false" role="presentation">
+      </div>
+      <div class="screen--video video-person" data-screen="code" data-enable="false" role="presentation">
+      </div>
       <!-- <div class="screen--video video-ottoform" role="presentation">
       </div>
       <div class="screen--video video-frnkrok" role="presentation">
@@ -73,7 +77,36 @@
     </div>
     <div class="screens">
        <div  class="screen screen--about-me" id="screen-home" data-screen="home">
-        <div class="screen--container" style="height: auto; position:absolute;" id="about-me-scroll">
+        <div class="screen--container" style="height: auto; position:absolute;" id="scroll-section-background">
+
+          <div class="screen--left">
+            <div class="screen-center">
+              <span class="clip-text h1">27</span>
+            </div>
+          </div>
+
+          <div class="screen--left">
+            <div class="screen-center">
+              <span class="clip-text h1">40</span>
+            </div>
+          </div>
+
+          <div class="screen--left">
+            <div class="screen-center">
+              <span class="clip-text h1">27</span>
+
+            </div>
+          </div>
+
+          <div class="screen--left">
+            <div class="screen-center">
+              <span class="clip-text h1">27</span>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="screen--container" style="height: auto; position:absolute;" id="scroll-section">
           <div class="screen--left">
             <div class="screen-center">
 
@@ -83,14 +116,54 @@
                   The man behind the code
                 </h1>
               </div>
-              <p class="intro-desc" >
-                Hi! I'm Joey.  I write code to create
-                create usable, interactive designs.  I am highly skilled in both front-end web design and
-                back-end development.
+
+            </div>
+          </div>
+
+          <div class="screen--left">
+            <div class="screen-center">
+
+              <div class="overflower" data-actpoint='{ "fadeIn" : ".video-code" }' >
+                <h1 class="h2 in-overflower">
+                  the coder
+                </h1>
+              </div>
+              <p class="intro-desc" data-actpoint='{ "fadeOut" : ".video-about-me" }'>
+                I help people create exceptional websites.
+                I prefer to design with code, not Photoshop.  I am meticulous and enjoy the tiny details.
+                I am highly skilled in both front-end web design and
+                back-end software development.
               </p>
 
+            </div>
+          </div>
+
+          <div class="screen--left">
+            <div class="screen-center" data-actpoint='{ "fadeOut" : ".video-code" }'>
+
+              <div class="overflower" data-actpoint='{ "fadeIn" : ".video-person" }' >
+                <h1 class="h2 in-overflower">
+                  the person
+                </h1>
+              </div>
+              <p class="intro-desc">
+                I graduated from UCF.
+                I have lived in Orlando, Florida my whole life.
+                I have a dog named Duke who is pretty awesome.
+              </p>
+
+            </div>
+          </div>
+
+          <div class="screen--left">
+            <div class="screen-center" >
+              <div class="overflower">
+                <h1 class="h2 in-overflower">
+                  shorts
+                </h1>
+              </div>
               <span class="h1">Name</span>
-              <span class="label answer">Joey Lea</span>
+              <span class="label answer">Joey</span>
               <span class="h1">Age</span>
               <span class="label answer">26</span>
               <span class="h1">Projects</span>
@@ -101,35 +174,6 @@
 
             </div>
           </div>
-
-          <div class="screen--left">
-            <div class="screen-center">
-
-
-              <div class="overflower">
-                <h1 class="h2 in-overflower">
-                  The man behind the code
-                </h1>
-              </div>
-              <p class="intro-desc" >
-                Hi! I'm Joey.  I write code to create
-                create usable, interactive designs.  I am highly skilled in both front-end web design and
-                back-end development.
-              </p>
-
-              <span class="h1">Name</span>
-              <span class="label answer">Joey Lea</span>
-              <span class="h1">Age</span>
-              <span class="label answer">26</span>
-              <span class="h1">Projects</span>
-              <span class="label answer">30+</span>
-              <span class="h1">Languages</span>
-              <span class="label answer">HTML, Sass, CSS <br>JavaScript, PHP, SQL</span>
-
-
-            </div>
-          </div>
-
 
         </div>
       </div>

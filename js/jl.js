@@ -13,7 +13,7 @@ import vs from 'virtual-scroll';
 // console.log(smooth);
 (function(){
   'use strict';
-  var minTimeout = 400;
+  var minTimeout = 50;
   var maxTimeout = 2200;
   var domLoaded = false;
   var stillNeedToLoad = false;
@@ -85,6 +85,10 @@ window.controller = (function(){
     };
     this.rAFStart = null;
     this.working = false;
+    this.resizingScreenTimeout = null;
+    this.vScroll = null;
+
+
     this.screens = {
       loading : document.querySelector(".loader"),
       // home : document.querySelector(".screen--home"),
@@ -377,7 +381,92 @@ window.controller = (function(){
       });
     };
 
+    this.resize = function() {
+      clearTimeout(this.resizingScreenTimeout);
+      var that = this;
+      this.resizingScreenTimeout = setTimeout(function(){
+        that.virtualScroll(true);
+      }, 100);
+    };
 
+
+    this.virtualScroll = function(destroy) {
+
+      if ( destroy ) {
+        this.vScroll.off();
+      }
+
+      this.vScroll = new vs({firefoxMultiplier: 25});
+      console.log(this.vScroll);
+      var targetY = 0;
+      var section = document.getElementById("scroll-section");
+      var sectionBG = document.getElementById("scroll-section-background");
+      var sectionHeight = section.getBoundingClientRect().height;
+
+      var actPoints = [];
+      var actPointEles = [].slice.call(document.querySelectorAll('[data-actpoint]'));
+      for(var x = 0; x < actPointEles.length; x++ ) {
+        let _actPoint = actPointEles[x];
+        let _actPointAction = _actPoint.getAttribute("data-actpoint") || null;
+        if ( _actPointAction ){
+          var action = JSON.parse(_actPointAction);
+          var _offset = _actPoint.offsetTop - window.innerHeight;
+          if ( action ) {
+            var actionKey = Object.keys(action);
+            let ele = document.querySelector(action[actionKey[0]]);
+            actPoints.push({ "point" : _offset, "class" : actionKey[0], "element" : ele });
+          }
+        }
+      }
+
+      this.vScroll.on(function(e) {
+          targetY += e.deltaY;
+          targetY = Math.max( (sectionHeight - window.innerHeight) * -1, targetY);
+          targetY = Math.min(0, targetY);
+      });
+
+      var currentY = 0, ease = 0.1;
+      var currentYBG = 0, easeBG = 0.075;
+      var run = function() {
+          requestAnimationFrame(run);
+          currentY += Math.round((targetY - currentY) * ease,2);
+          currentYBG += Math.round((targetY - currentYBG) * easeBG,2);
+
+          for (let x = 0; x < actPoints.length; x++ ) {
+
+            let ap = actPoints[x];
+            let point = ap.point * -1;
+            let classAdd = ap.class;
+            let ele = ap.element;
+
+            if ( currentY < point ) {
+              ele.classList.add(classAdd);
+            } else {
+              ele.classList.remove(classAdd);
+            }
+
+          }
+
+          var t = 'translateY(' + currentY + 'px) translateZ(0)';
+          var s = section.style;
+          s["transform"] = t;
+          s["webkitTransform"] = t;
+          s["mozTransform"] = t;
+          s["msTransform"] = t;
+
+          var tB = 'translateY(' + currentYBG + 'px) translateZ(0)';
+          var sB = sectionBG.style;
+          sB["transform"] = tB;
+          sB["webkitTransform"] = tB;
+          sB["mozTransform"] = tB;
+          sB["msTransform"] = tB;
+
+
+      };
+
+      run();
+
+    };
 
     /**
     * Fired from controller.loadHome() outside of this scope.
@@ -406,30 +495,8 @@ window.controller = (function(){
             e.preventDefault();
         });
 
-        var VirtualScroll = new vs();
-        var targetY = 0;
-        var section = document.getElementById("about-me-scroll");
-        var sectionHeight = section.getBoundingClientRect().height;
-
-        VirtualScroll.on(function(e) {
-            targetY += e.deltaY;
-            targetY = Math.max( (sectionHeight - window.innerHeight) * -1, targetY);
-            targetY = Math.min(0, targetY);
-        });
-
-        var currentY = 0, ease = 0.11;
-        var run = function() {
-            requestAnimationFrame(run);
-            currentY += Math.round((targetY - currentY) * ease,2);
-            var t = 'translateY(' + currentY + 'px) translateZ(0)';
-            var s = section.style;
-            s["transform"] = t;
-            s["webkitTransform"] = t;
-            s["mozTransform"] = t;
-            s["msTransform"] = t;
-        };
-
-        run();
+        window.addEventListener('resize', this.resize.bind(this));
+        this.virtualScroll();
 
       }
 
