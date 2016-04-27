@@ -443,19 +443,19 @@ controller = (function(){
             }
           }
 
-          var t = 'translateY(' + currentY + 'px) translateZ(0)';
+          var t = 'translateY(' + currentY + 'px)';
           var s = section.style;
           s["transform"] = t;
           s["webkitTransform"] = t;
           s["mozTransform"] = t;
           s["msTransform"] = t;
 
-          var tB = 'translateY(' + currentYBG + 'px) translateZ(0)';
-          var sB = sectionBG.style;
-          sB["transform"] = tB;
-          sB["webkitTransform"] = tB;
-          sB["mozTransform"] = tB;
-          sB["msTransform"] = tB;
+          // var tB = 'translateY(' + currentYBG + 'px)';
+          // var sB = sectionBG.style;
+          // sB["transform"] = tB;
+          // sB["webkitTransform"] = tB;
+          // sB["mozTransform"] = tB;
+          // sB["msTransform"] = tB;
 
 
       };
