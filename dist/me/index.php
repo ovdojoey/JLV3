@@ -193,9 +193,11 @@
           <div class="screen--left">
             <div class="screen-center" >
               <div class="h2 header-letters">
+                <span class="letr l-a-0">A</span>
                 <span class="letr l-p">P</span>
                 <span class="letr l-j">J</span>
                 <span class="letr l-s">S</span>
+                <span class="letr l-do">.</span>
                 <span class="letr l-o">O</span>
                 <span class="letr l-t">T</span>
                 <span class="letr l-c">C</span>
@@ -213,31 +215,35 @@
                 <span class="letr l-p-3">P</span>
                 <span class="letr l-y">Y</span>
                 <span class="letr l-d">D</span>
-                <span class="letr l-o">O</span>
+                <span class="letr l-o-2">O</span>
                 <span class="letr l-t-3">T</span>
+                <span class="letr l-do-2">.</span>
                 <span class="letr l-s-2">S</span>
+                <span class="letr l-a-2">A</span>
                 <span class="letr l-q">Q</span>
                 <span class="letr l-e-3">E</span>
-                <span class="letr l-s-2">S</span>
+                <span class="letr l-s-3">S</span>
                 <span class="letr l-l">L</span>
                 <span class="letr l-v-2">V</span>
                 <span class="letr l-m">M</span>
                 <span class="letr l-e-4">E</span>
-                <span class="letr l-a-2">A</span>
+                <span class="letr l-a-3">A</span>
                 <span class="letr l-u">U</span>
                 <span class="letr l-n-2">N</span>
-                <span class="letr l-s">S</span>
+                <span class="letr l-s-4">S</span>
                 <span class="letr l-i">I</span>
-                <span class="letr l-c">C</span>
+                <span class="letr l-c-2">C</span>
+                <span class="letr l-t-4">T</span>
+                <span class="letr l-o-3">O</span>
               </div>
               <div class="question-letters">
-                <span class="h1" data-answer="l-j,l-o,l-e,l-y,l-l,l-e-4,l-a-2" onclick="controller.revealLetterAnswers(this)">Name</span>
-                <span class="h1" data-answer="l-t,l-w,l-e,l-n,l-t-2,l-y,l-s-2,l-e-3,l-v-2,l-e-4,l-n-2" onclick="controller.revealLetterAnswers(this)">Age</span>
-                <span class="h1">Food</span>
-                <span class="h1">Languages</span>
-                <span class="h1">IDE</span>
-                <span class="h1">Hobby</span>
-                <span class="h1">PC/MAC</span>
+                <span class="h1" data-answer="l-j,l-o,l-e,l-y,l-l,l-e-4,l-a-3" onclick="controller.revealLetterAnswers(this)">Name</span>
+                <span class="h1" data-answer="l-t,l-w,l-e,l-n,l-t-2,l-y,l-do-2,l-s-2,l-e-3,l-v-2,l-e-4,l-n-2" onclick="controller.revealLetterAnswers(this)">Age</span>
+                <span class="h1" data-answer="l-s,l-t,l-e,l-a,l-k,l-am,l-p-3,l-o-2,l-t-3,l-a-2,l-t-4,l-o-3" onclick="controller.revealLetterAnswers(this)">Food</span>
+                <span class="h1" data-answer="l-j,l-s,l-do,l-p-2,l-h,l-p-3,l-do-2,l-s-2,l-a-2,l-s-3,l-s-4" onclick="controller.revealLetterAnswers(this)">Languages</span>
+                <span class="h1" data-answer="l-a-0,l-t-2,l-o-2,l-m" onclick="controller.revealLetterAnswers(this)">IDE</span>
+                <span class="h1" data-answer="l-m,l-u,l-s-4,l-i,l-c-2" onclick="controller.revealLetterAnswers(this)">Hobby</span>
+                <span class="h1" data-answer="l-a-0,l-p,l-p-2,l-l,l-e-4" onclick="controller.revealLetterAnswers(this)">PC/MAC</span>
                 <!-- <span class="label answer">HTML, Sass, CSS <br>JavaScript, PHP, SQL</span> -->
               </div>
 

@@ -1069,25 +1069,33 @@ body{
   }
   .header-letters{
     margin: 40px 0;
-    // white-space: nowrap;
+    line-height: 1em;
+    position: relative;
+    font-size: 22px;
+    @media (min-width: 600px){
+      font-size: 60px;
+    }
+    $i: 60;
+    @while $i > 0 {
+      .active:nth-child(#{$i}) { transition-delay: #{$i * 3}0ms; }
+      $i: $i - 1;
+    }
   }
   .letr{
-    letter-spacing: -.65em;
+    letter-spacing: -.25em;
     opacity: 0.2;
     transition: opacity 600ms, transform 400ms, letter-spacing 400ms;
     position: relative;
     display: inline-block;
+
     &.active{
       opacity: 1;
-      transform: scale(2);
+      transform: scale(1.5) translateY(-100%);
       letter-spacing: -.3em;
-      $i: 72;
-      @while $i > 0 {
-        &:nth-of-type(#{$i}) { transition-delay: #{$i}00ms; }
-        $i: $i - 1;
-      }
+      position: absolute;
+      left: 0;
+      top: 0;
     }
-
 
   }
   .no-list{

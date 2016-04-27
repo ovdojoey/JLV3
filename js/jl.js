@@ -501,25 +501,54 @@ controller = (function(){
     };
 
     this.clearLetterTimeout = null;
-    this.clearLetterAnswers = function() {
+    this.removeLettersState = [];
+    this.instantRemoveState = [];
+    this.clearLetterAnswers = function(instantRemove) {
 
-      var _actives = [].slice.call(document.querySelectorAll('.letr.active'));
-      _actives.forEach(function(e) {
+      var removeSet;
+
+      if ( instantRemove ) {
+        removeSet = instantRemove;
+      } else {
+        removeSet = this.removeLettersState;
+        this.instantRemoveState = [];
+        this.removeLettersState = [];
+      }
+
+      removeSet.forEach(function(e) {
         e.classList.remove('active');
+        e.style.left = 0;
+
       });
+
+
 
     };
 
     this.revealLetterAnswers = function(ele){
 
       clearTimeout(this.clearLetterTimeout);
+
+      this.instantRemoveState = this.removeLettersState;
+      if ( this.instantRemoveState.length > 0 ) {
+        this.clearLetterAnswers(this.instantRemoveState);
+      }
+
       var answer = ele.getAttribute('data-answer');
       var answers = answer.split(',');
+
       for ( var x = 0; x < answers.length; x++ ) {
         var _activateE = document.querySelector('.' + answers[x]);
+        var _size = Math.min((window.innerWidth / 18), 55);
+        var _left = (x * _size) + "px";
         _activateE.classList.add('active');
+        _activateE.style.left = _left;
+        this.removeLettersState.push(_activateE);
+
       }
-      this.clearLetterTimeout = setTimeout(this.clearLetterAnswers, 4400);
+
+      this.instantRemoveState = [];
+      this.clearLetterTimeout = setTimeout(this.clearLetterAnswers.bind(this), 4400);
 
     };
 
