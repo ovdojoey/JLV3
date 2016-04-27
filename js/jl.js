@@ -1,16 +1,7 @@
 import vs from 'virtual-scroll';
 
+var controller;
 
-// const section = document.querySelector('#about-me-intro-text');
-// const smooth = new Smooth({
-//   native: false,
-//   section: section,
-//   ease: 0.1
-// });
-//
-// smooth.init();
-// smooth.on();
-// console.log(smooth);
 (function(){
   'use strict';
   var minTimeout = 50;
@@ -19,9 +10,10 @@ import vs from 'virtual-scroll';
   var stillNeedToLoad = false;
   var fontLoaded = false;
 
-  setTimeout(function(){
+  setTimeout(function() {
+
     var htmlClass = [].slice.call(document.documentElement.classList);
-    if ( htmlClass.indexOf("wf-active") !== -1 ) {
+    if ( htmlClass.indexOf('wf-active') !== -1 ) {
       fontLoaded = true;
     }
     if ( domLoaded && fontLoaded ) {
@@ -37,7 +29,7 @@ import vs from 'virtual-scroll';
     }
   }, maxTimeout);
 
-  window.addEventListener("DOMContentLoaded", function(event) {
+  window.addEventListener('DOMContentLoaded', function() {
 
     domLoaded = true;
 
@@ -48,20 +40,20 @@ import vs from 'virtual-scroll';
 
   });
 
-  window.handleOrientation = function(e){
+  window.handleOrientation = function(){
     setTimeout(function(){
       // Hide the address bar!
       window.scrollTo(0, 1);
     }, 0);
   };
 
-  window.addEventListener("load", handleOrientation, false);
+  window.addEventListener('load', handleOrientation, false);
 
   window.addEventListener("deviceorientation", handleOrientation, true);
 
 })();
 
-window.controller = (function(){
+controller = (function(){
 
   'use strict';
 
@@ -389,16 +381,18 @@ window.controller = (function(){
       }, 100);
     };
 
+    var currentY = 0, ease = 0.1;
+    var currentYBG = 0, easeBG = 0.0725;
+    var targetY = 0;
 
     this.virtualScroll = function(destroy) {
 
       if ( destroy ) {
+        targetY = currentY;
         this.vScroll.off();
       }
 
       this.vScroll = new vs({firefoxMultiplier: 25});
-      console.log(this.vScroll);
-      var targetY = 0;
       var section = document.getElementById("scroll-section");
       var sectionBG = document.getElementById("scroll-section-background");
       var sectionHeight = section.getBoundingClientRect().height;
@@ -414,7 +408,9 @@ window.controller = (function(){
           if ( action ) {
             var actionKey = Object.keys(action);
             let ele = document.querySelector(action[actionKey[0]]);
-            actPoints.push({ "point" : _offset, "class" : actionKey[0], "element" : ele });
+            if ( ele ) {
+              actPoints.push({ "point" : _offset, "class" : actionKey[0], "element" : ele });
+            }
           }
         }
       }
@@ -425,12 +421,13 @@ window.controller = (function(){
           targetY = Math.min(0, targetY);
       });
 
-      var currentY = 0, ease = 0.1;
-      var currentYBG = 0, easeBG = 0.075;
+
       var run = function() {
+
           requestAnimationFrame(run);
-          currentY += Math.round((targetY - currentY) * ease,2);
-          currentYBG += Math.round((targetY - currentYBG) * easeBG,2);
+
+          currentY += Math.round( (targetY - currentY) * ease, 2);
+          currentYBG += Math.round( (targetY - currentYBG) * easeBG, 2);
 
           for (let x = 0; x < actPoints.length; x++ ) {
 
@@ -444,7 +441,6 @@ window.controller = (function(){
             } else {
               ele.classList.remove(classAdd);
             }
-
           }
 
           var t = 'translateY(' + currentY + 'px) translateZ(0)';
@@ -495,11 +491,35 @@ window.controller = (function(){
             e.preventDefault();
         });
 
-        window.addEventListener('resize', this.resize.bind(this));
+        // window.addEventListener('resize', this.resize.bind(this));
+
         this.virtualScroll();
 
       }
 
+
+    };
+
+    this.clearLetterTimeout = null;
+    this.clearLetterAnswers = function() {
+
+      var _actives = [].slice.call(document.querySelectorAll('.letr.active'));
+      _actives.forEach(function(e) {
+        e.classList.remove('active');
+      });
+
+    };
+
+    this.revealLetterAnswers = function(ele){
+
+      clearTimeout(this.clearLetterTimeout);
+      var answer = ele.getAttribute('data-answer');
+      var answers = answer.split(',');
+      for ( var x = 0; x < answers.length; x++ ) {
+        var _activateE = document.querySelector('.' + answers[x]);
+        _activateE.classList.add('active');
+      }
+      this.clearLetterTimeout = setTimeout(this.clearLetterAnswers, 4400);
 
     };
 
@@ -508,3 +528,5 @@ window.controller = (function(){
   return new Screen();
 
 })();
+
+window.controller = controller;

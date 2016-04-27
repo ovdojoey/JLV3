@@ -81,26 +81,36 @@
 
           <div class="screen--left">
             <div class="screen-center">
-              <span class="clip-text h1">27</span>
-            </div>
-          </div>
 
-          <div class="screen--left">
-            <div class="screen-center">
-              <span class="clip-text h1">40</span>
-            </div>
-          </div>
-
-          <div class="screen--left">
-            <div class="screen-center">
+              <!-- <div class="white-back"></div> -->
               <span class="clip-text h1">27</span>
+              <div class="label before-line clip-label">years on earth</div>
+
 
             </div>
           </div>
 
           <div class="screen--left">
             <div class="screen-center">
-              <span class="clip-text h1">27</span>
+              <span class="clip-text h1">30</span>
+              <div class="label before-line clip-label">projects completed</div>
+
+            </div>
+          </div>
+
+          <div class="screen--left">
+            <div class="screen-center">
+              <span class="clip-text h1">FL</span>
+              <div class="label before-line clip-label">the mouse is my neighbor</div>
+              <!-- <div class="label before-line clip-label"></div> -->
+
+
+            </div>
+          </div>
+
+          <div class="screen--left">
+            <div class="screen-center">
+              <span class="clip-text h1">?</span>
 
             </div>
           </div>
@@ -113,9 +123,28 @@
 
               <div class="overflower">
                 <h1 class="h2 in-overflower">
-                  The man behind the code
+                  Joey Lea
                 </h1>
+
               </div>
+
+              <p class="intro-desc">
+
+                Hi!  I'm Joey.  I enjoy technology, food, the company of friends, and early mornings with coffee and code.
+              </p>
+
+              <span class="label">LINKS</span>
+              <ul class="no-list">
+                <li>
+                  <a href="/resume">résumé</a>
+                </li>
+                <li>
+                  <a href="mailto:joey@w3by.com">joey@w3by.com</a>
+                </li>
+                <li>
+                  <a href="tel:1(407)484-3591">407.484.3591</a>
+                </li>
+              </ul>
 
             </div>
           </div>
@@ -129,10 +158,10 @@
                 </h1>
               </div>
               <p class="intro-desc" data-actpoint='{ "fadeOut" : ".video-about-me" }'>
-                I help people create exceptional websites.
-                I prefer to design with code, not Photoshop.  I am meticulous and enjoy the tiny details.
+                I design and develop websites and apps.
+                I am meticulous with my craft and enjoy perfecting the tiny details.
                 I am highly skilled in both front-end web design and
-                back-end software development.
+                back-end object-oriented application development.
               </p>
 
             </div>
@@ -147,9 +176,15 @@
                 </h1>
               </div>
               <p class="intro-desc">
-                I graduated from UCF.
-                I have lived in Orlando, Florida my whole life.
-                I have a dog named Duke who is pretty awesome.
+                My early life revolved around baseball and computers.
+
+                I worked for AT&amp;T wireless in my senior year of high school
+                and throughout college.
+                In 2011, I graduated from UCF with a degree in Legal Studies.
+                I (somehow) landed a coding job out of college and haven't
+                looked back since! Oh &mdash;
+                I have a dog named Duke, he's pretty awesome.
+
               </p>
 
             </div>
@@ -157,20 +192,54 @@
 
           <div class="screen--left">
             <div class="screen-center" >
-              <div class="overflower">
-                <h1 class="h2 in-overflower">
-                  shorts
-                </h1>
+              <div class="h2 header-letters">
+                <span class="letr l-p">P</span>
+                <span class="letr l-j">J</span>
+                <span class="letr l-s">S</span>
+                <span class="letr l-o">O</span>
+                <span class="letr l-t">T</span>
+                <span class="letr l-c">C</span>
+                <span class="letr l-p-2">P</span>
+                <span class="letr l-w">W</span>
+                <span class="letr l-h">H</span>
+                <span class="letr l-e">E</span>
+                <span class="letr l-v">V</span>
+                <span class="letr l-e-2">E</span>
+                <span class="letr l-a">A</span>
+                <span class="letr l-n">N</span>
+                <span class="letr l-t-2">T</span>
+                <span class="letr l-k">K</span>
+                <span class="letr l-am">&amp;</span>
+                <span class="letr l-p-3">P</span>
+                <span class="letr l-y">Y</span>
+                <span class="letr l-d">D</span>
+                <span class="letr l-o">O</span>
+                <span class="letr l-t-3">T</span>
+                <span class="letr l-s-2">S</span>
+                <span class="letr l-q">Q</span>
+                <span class="letr l-e-3">E</span>
+                <span class="letr l-s-2">S</span>
+                <span class="letr l-l">L</span>
+                <span class="letr l-v-2">V</span>
+                <span class="letr l-m">M</span>
+                <span class="letr l-e-4">E</span>
+                <span class="letr l-a-2">A</span>
+                <span class="letr l-u">U</span>
+                <span class="letr l-n-2">N</span>
+                <span class="letr l-s">S</span>
+                <span class="letr l-i">I</span>
+                <span class="letr l-c">C</span>
               </div>
-              <span class="h1">Name</span>
-              <span class="label answer">Joey</span>
-              <span class="h1">Age</span>
-              <span class="label answer">26</span>
-              <span class="h1">Projects</span>
-              <span class="label answer">30+</span>
-              <span class="h1">Languages</span>
-              <span class="label answer">HTML, Sass, CSS <br>JavaScript, PHP, SQL</span>
-
+              <div class="question-letters">
+                <span class="h1" data-answer="l-j,l-o,l-e,l-y,l-l,l-e-4,l-a-2" onclick="controller.revealLetterAnswers(this)">Name</span>
+                <span class="h1" data-answer="l-t,l-w,l-e,l-n,l-t-2,l-y,l-s-2,l-e-3,l-v-2,l-e-4,l-n-2" onclick="controller.revealLetterAnswers(this)">Age</span>
+                <span class="h1">Food</span>
+                <span class="h1">Languages</span>
+                <span class="h1">IDE</span>
+                <span class="h1">Hobby</span>
+                <span class="h1">PC/MAC</span>
+                <!-- <span class="label answer">HTML, Sass, CSS <br>JavaScript, PHP, SQL</span> -->
+              </div>
 
             </div>
           </div>
