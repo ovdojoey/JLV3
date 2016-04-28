@@ -66,7 +66,6 @@ controller = (function(){
     this.slideNumberEle = document.getElementById('slide-number');
     this.slideNumberTotalEle = document.getElementById('slide-number-total');
     this.allScreens = [].slice.call(document.querySelectorAll('.screen'));
-
     this.app = document.getElementById('app');
     this.scrollType = this.app.getAttribute('data-scroll') || 'screens';
     this.scrollSettings = {
@@ -83,28 +82,9 @@ controller = (function(){
     this.working = false;
     this.resizingScreenTimeout = null;
     this.vScroll = null;
-
-
     this.screens = {
       loading : document.querySelector('.loader')
     };
-
-    this.bindScreens = function(slide){
-      var key = slide.getAttribute('data-screen');
-      if ( key ) {
-        this.screens[key] = slide;
-      }
-    };
-
-    this.allScreens.forEach(this.bindScreens.bind(this));
-
-
-    this.menu = document.querySelector('.screen--menu');
-    this.menuContainer = document.getElementById('jl-menu');
-    this.menuOpen = false;
-
-    this.screenKeys = Object.keys( this.screens );
-
     this.backgrounds = {
       home: document.querySelector('.video-home'),
       ottoform: document.querySelector('.video-ottoform'),
@@ -112,8 +92,40 @@ controller = (function(){
       jlv3: document.querySelector('.video-jlv3'),
       juiced: document.querySelector('.video-juiced')
     };
+    this.menu = document.querySelector('.screen--menu');
+    this.menuContainer = document.getElementById('jl-menu');
+    this.menuOpen = false;
 
-    /* Touch event function */
+
+    /**
+    * Binds each screen loaded from this.allScreens to the screens object
+    * for later use
+    *
+    * @param slide - Object - the dom slide object
+    */
+    this.bindScreens = function(slide){
+      var key = slide.getAttribute('data-screen');
+      if ( key ) {
+        this.screens[key] = slide;
+      }
+    };
+
+    // runs bindScreens();
+    this.allScreens.forEach(this.bindScreens.bind(this));
+
+    // Helper function grab the keys of this.screens
+    this.screenKeys = Object.keys( this.screens );
+
+
+
+
+    /** Touch Event Listener Function
+    *
+    * Acts as a helper to reach the slide function upon a touch event from  a
+    * touch device.
+    *
+    * @param e - Event - the touch event
+    */
     this.slideTouchEvent = function(e){
       // touch event
       if (e.type === 'touchstart') {
@@ -154,6 +166,7 @@ controller = (function(){
     * Slide Event.  Fired on wheel event change
     *
     * @param e - event - the wheel event that fired
+    * @param touchDelta - event - a touch event
     */
     this.slide = function(e, touchDelta) {
 
@@ -196,7 +209,6 @@ controller = (function(){
         this.working = true;
       }
 
-      // var _deltaY = e.deltaY;
       var _screenOn;
       var _keyFrom = this.screenKeys[this.scrollSettings.slide];
       var _keyTo;
@@ -212,7 +224,6 @@ controller = (function(){
       }
 
       _keyTo = this.screenKeys[_screenOn];
-
       this.toggle(_keyFrom, _keyTo);
 
     };
@@ -261,11 +272,9 @@ controller = (function(){
       var that = this;
       this.scrollSettings.timeout = setTimeout(function(){
         that.working = false;
-      }, 1500);
+      }, 1350);
 
     };
-
-
 
 
 

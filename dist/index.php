@@ -399,6 +399,35 @@
         </div>
       </div>
 
+
+      <div class="screen screen--slides-menu fade-out" id="screen-slide-menu">
+        <div class="screen--container">
+          <div class="screen--left">
+            <div class="screen-center">
+              <nav>
+                <a class="diamond-screen">
+                  Home
+                </a>
+                <a class="diamond-screen">
+                  Ottoform
+                </a>
+                <a class="diamond-screen">
+                  Frnkrok
+                </a>
+                <a class="diamond-screen">
+                  V3
+                </a>
+                <a class="diamond-screen">
+                  Juiced
+                </a>
+              </nav>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
       <div class="screen screen--menu fade-out" id="screen-menu">
         <div class="screen--container">
           <div class="screen--left screen-collapse">
