@@ -450,12 +450,12 @@ controller = (function(){
           s["mozTransform"] = t;
           s["msTransform"] = t;
 
-          // var tB = 'translateY(' + currentYBG + 'px)';
-          // var sB = sectionBG.style;
-          // sB["transform"] = tB;
-          // sB["webkitTransform"] = tB;
-          // sB["mozTransform"] = tB;
-          // sB["msTransform"] = tB;
+          var tB = 'translateY(' + currentYBG + 'px)';
+          var sB = sectionBG.style;
+          sB["transform"] = tB;
+          sB["webkitTransform"] = tB;
+          sB["mozTransform"] = tB;
+          sB["msTransform"] = tB;
 
 
       };
@@ -517,7 +517,7 @@ controller = (function(){
 
       removeSet.forEach(function(e) {
         e.classList.remove('active');
-        e.style.left = 0;
+        e.style.left = e.getAttribute('data-left');
 
       });
 
@@ -539,8 +539,9 @@ controller = (function(){
 
       for ( var x = 0; x < answers.length; x++ ) {
         var _activateE = document.querySelector('.' + answers[x]);
+        _activateE.setAttribute('data-left', _activateE.style.left);
         var _size = Math.min((window.innerWidth / 18), 55);
-        var _left = (x * _size) + "px";
+        var _left = (x * _size) + 'px';
         _activateE.classList.add('active');
         _activateE.style.left = _left;
         this.removeLettersState.push(_activateE);

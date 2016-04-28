@@ -82,7 +82,8 @@
                 </h1>
               </div>
               <div class="overflower">
-                <a class="label after-line in-overflower" href="/me/">ABOUT ME</a>
+                <span class="label after-line in-overflower">SHORT</span> &nbsp;
+                <a class="label in-overflower" href="/me/">MORE</a>
               </div>
               <p class="intro-desc">
                 I am a full-stack web designer and software engineer.
@@ -176,7 +177,7 @@
               </div>
               <div class="overflower t-2x">
                 <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
-                <a class="label after-line in-overflower" href="https://ottoform.com" target="_blank">VISIT</a>
+                <a class="label in-overflower" href="https://ottoform.com" target="_blank">VISIT</a>
 
               </div>
               <p class="intro-desc">
@@ -232,7 +233,7 @@
               </div>
               <div class="overflower t-2x">
                 <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
-                <a class="label after-line in-overflower" href="https://frnkrok.com" target="_blank">VISIT</a>
+                <a class="label in-overflower" href="https://frnkrok.com" target="_blank">VISIT</a>
 
               </div>
               <p class="intro-desc">
@@ -295,7 +296,7 @@
               </div>
               <div class="overflower t-2x">
                 <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
-                <a class="label after-line in-overflower" href="https://v3.joeylea.com" target="_blank">VISIT</a>
+                <a class="label in-overflower" href="https://v3.joeylea.com" target="_blank">VISIT</a>
               </div>
               <p class="intro-desc">
                 Unlock achievements and meet FØRM on my mid-2016 website.
@@ -353,7 +354,7 @@
               </div>
               <div class="overflower t-2x">
                 <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
-                <a class="label after-line in-overflower" href="http://juicedcss.com" target="_blank">VISIT</a>
+                <a class="label in-overflower" href="http://juicedcss.com" target="_blank">VISIT</a>
 
               </div>
               <p class="intro-desc">

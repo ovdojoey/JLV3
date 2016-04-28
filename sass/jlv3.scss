@@ -626,7 +626,7 @@ body{
   &.video-person{
     background: $color-yellow;
   }
-  background: $color-blue;
+  background: darken($color-blue,10%);
   opacity: 0;
   visibility: visible;
 
@@ -796,7 +796,7 @@ body{
       transition: transform .4s;
       text-decoration: none;
       font-weight: 600;
-      z-index: 2;
+      z-index: 11;
 
       .h1{
         font-size: 42px;
@@ -1028,7 +1028,7 @@ body{
   }
   .question-letters{
     .h1{
-      font-size: 82px;
+      font-size: 42px;
       font-weight: 700;
       font-family: "aktiv-grotesk";
       text-transform: uppercase;
@@ -1043,6 +1043,7 @@ body{
       display: inline-block;
       &:hover{
         transform: scale(1.2);
+        color: #777;
         opacity: 1 !important;
         &:after{
           opacity: 1;
@@ -1057,9 +1058,12 @@ body{
         width: 100%;
         z-index: -1;
         height: 100%;
-        background: rgba(#111,1);
+        background: rgba(#fff,1);
         opacity: 0;
         transition: opacity 400ms;
+      }
+      @media (min-width: 800px){
+        font-size: 82px;
       }
     }
     .h1:nth-child(even) {
@@ -1068,33 +1072,41 @@ body{
     }
   }
   .header-letters{
-    margin: 40px 0;
+    margin: 20px 0 100px 0;
     line-height: 1em;
     position: relative;
     font-size: 22px;
-    @media (min-width: 600px){
+    height: 20px;
+    display: block;
+    @media (min-width: 800px){
       font-size: 60px;
     }
-    $i: 60;
-    @while $i > 0 {
-      .active:nth-child(#{$i}) { transition-delay: #{$i * 3}0ms; }
-      $i: $i - 1;
-    }
+
   }
   .letr{
     letter-spacing: -.25em;
     opacity: 0.2;
-    transition: opacity 600ms, transform 400ms;
-    position: relative;
+    transition: opacity 600ms, transform 400ms, left 400ms;
+    position: absolute;;
     display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: scale(1) translateY(0);
+    $i: 60;
+    @while $i > 1 {
+      &:nth-child(#{$i}) { left: #{$i * 15}px; transition-delay:#{$i * 5}0ms }
+      $i: $i - 1;
+    }
 
     &.active{
+      transform: scale(1.5) translateY(200%);
       opacity: 1;
-      transform: scale(1.5) translateY(-100%);
       letter-spacing: -.3em;
-      position: absolute;
-      left: 0;
       top: 0;
+      @media (min-width: 600px) {
+        transform: scale(1.5) translateY(-100%);
+
+      }
     }
 
   }
@@ -1158,50 +1170,50 @@ body{
       position: relative;
       transform: 50% 50%;
     }
-    .white-back{
-      position: absolute;
-      left: -10%;
-      height: 400px;
-      background: rgba(#fff,.9);
-      width: 110%;
-      max-width: 700px;
-      border-radius: 10px;
-      top: calc(50% - 500px);
-      box-shadow: 0 0 15px rgba(2,2,2,.1);
-      animation: inFadeIn .6s .5s 1 forwards;
-      opacity: 0;
-      border: 1px solid rgba(#222,0.3);
-      &:after{
-        content: "QUICK REFERENCE CARD";
-        position: absolute;
-        font-family: sans-serif;
-        top:0;
-        right: 0;
-        color: #ccc;
-        font-size: 10px;
-        padding: 10px;
-      }
-
-      &.fly-out{
-        animation: flyOut 1s 1 forwards;
-        @keyframes flyOut{
-          0%{
-            opacity: 1;
-          }
-          100%{
-            transform: translate(100%, 50%) rotate(50deg);
-          }
-        }
-      }
-      @media (min-width: 600px){
-        top: calc(50% - 200px);
-        width: 120%;
-      }
-
-    }
+    // .white-back{
+    //   position: absolute;
+    //   left: -10%;
+    //   height: 400px;
+    //   background: rgba(#fff,.9);
+    //   width: 110%;
+    //   max-width: 700px;
+    //   border-radius: 10px;
+    //   top: calc(50% - 500px);
+    //   box-shadow: 0 0 15px rgba(2,2,2,.1);
+    //   animation: inFadeIn .6s .5s 1 forwards;
+    //   opacity: 0;
+    //   border: 1px solid rgba(#222,0.3);
+    //   &:after{
+    //     content: "QUICK REFERENCE CARD";
+    //     position: absolute;
+    //     font-family: sans-serif;
+    //     top:0;
+    //     right: 0;
+    //     color: #ccc;
+    //     font-size: 10px;
+    //     padding: 10px;
+    //   }
+    //
+    //   &.fly-out{
+    //     animation: flyOut 1s 1 forwards;
+    //     @keyframes flyOut{
+    //       0%{
+    //         opacity: 1;
+    //       }
+    //       100%{
+    //         transform: translate(100%, 50%) rotate(50deg);
+    //       }
+    //     }
+    //   }
+    //   @media (min-width: 600px){
+    //     top: calc(50% - 200px);
+    //     width: 120%;
+    //   }
+    //
+    // }
     .h1.clip-text{
       line-height: 1em;
-      font-size: 220px;
+      font-size: 120px;
       background: url(/img/giphy.gif) 50% 50%;
       animation: portfolioAnimation 1s steps(5,end) infinite;
       background-size: cover;
@@ -1212,10 +1224,12 @@ body{
       position: relative;
       left: 0px;
       bottom: 20px;
-      opacity: 0.5;
+      opacity: 0.45;
+      transform-origin: 100% 50%;
+      transform: scale(1.5) translateZ(0);
       @media (min-width: 600px){
         left: 200px;
-        font-size: 400px;
+        font-size: 200px;
       }
     }
 
@@ -1223,11 +1237,12 @@ body{
       color: #111;
       text-transform: uppercase;
       position: absolute;
-      margin-top: -100px;
-      margin-left: -250px;
+      margin-top: -80px;
+      margin-left: 50px;
       white-space: nowrap;
       @media (min-width: 600px){
         margin-left: -40px;
+        margin-top: -100px;
       }
       &+.clip-label{
         margin-top: -88px;
@@ -1243,7 +1258,7 @@ body{
     align-content: flex-start;
     .screen--left{
       height: 100vh;
-      min-height: 800px;
+      // min-height: 800px;
     }
     .screen-center{
       align-self: center;
@@ -1582,6 +1597,7 @@ body{
   opacity: 0;
 }
 a.label{
+  border-bottom: 1px solid #fff;
   text-decoration: none;
   display: inline-block;
   &.after-line{
@@ -1600,6 +1616,8 @@ a.label{
   letter-spacing: 2px;
   font-size: 11px;
   padding: 6px 0;
+  padding-bottom: 0;
+
   &.before-line{
     &:before{
       transition: transform 300ms;

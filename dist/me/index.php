@@ -133,18 +133,30 @@
                 Hi!  I'm Joey.  I enjoy technology, food, the company of friends, and early mornings with coffee and code.
               </p>
 
-              <span class="label">LINKS</span>
+              <div class="overflower t-2x">
+                <span class="label in-overflower">SCROLL TO LEARN MORE <img class="icon icon-scroll" src="/img/scroll.svg" alt="Scroll"></span>
+              </div>
+
+              <span class="label">LINKS &amp; OLD WEBSITE VERSIONS</span>
               <ul class="no-list">
                 <li>
                   <a href="/resume">résumé</a>
                 </li>
                 <li>
-                  <a href="mailto:joey@w3by.com">joey@w3by.com</a>
+                  <a href="mailto:joey@w3by.com" target="_blank">joey@w3by.com</a>
                 </li>
                 <li>
-                  <a href="tel:1(407)484-3591">407.484.3591</a>
+                  <a href="http://old.joeylea.com" target="_blank">v1</a>
+                </li>
+                <li>
+                  <a href="http://v2.joeylea.com" target="_blank">v2</a>
+                </li>
+                <li>
+                  <a href="http://v3.joeylea.com" target="_blank">v3</a>
                 </li>
               </ul>
+
+
 
             </div>
           </div>
@@ -160,7 +172,7 @@
               <p class="intro-desc" data-actpoint='{ "fadeOut" : ".video-about-me" }'>
                 I design and develop websites and apps.
                 I am meticulous with my craft and enjoy perfecting the tiny details.
-                I am highly skilled in both front-end web design and
+                I work on both front-end web design and
                 back-end object-oriented application development.
               </p>
 
@@ -194,6 +206,7 @@
             <div class="screen-center" >
               <div class="h2 header-letters">
                 <span class="letr l-a-0">A</span>
+                <span class="letr l-m-0">M</span>
                 <span class="letr l-p">P</span>
                 <span class="letr l-j">J</span>
                 <span class="letr l-s">S</span>
@@ -242,7 +255,7 @@
                 <span class="h1" data-answer="l-s,l-t,l-e,l-a,l-k,l-am,l-p-3,l-o-2,l-t-3,l-a-2,l-t-4,l-o-3" onclick="controller.revealLetterAnswers(this)">Food</span>
                 <span class="h1" data-answer="l-j,l-s,l-do,l-p-2,l-h,l-p-3,l-do-2,l-s-2,l-a-2,l-s-3,l-s-4" onclick="controller.revealLetterAnswers(this)">Languages</span>
                 <span class="h1" data-answer="l-a-0,l-t-2,l-o-2,l-m" onclick="controller.revealLetterAnswers(this)">IDE</span>
-                <span class="h1" data-answer="l-m,l-u,l-s-4,l-i,l-c-2" onclick="controller.revealLetterAnswers(this)">Hobby</span>
+                <span class="h1" data-answer="l-m-0,l-u,l-s-4,l-i,l-c-2" onclick="controller.revealLetterAnswers(this)">Hobby</span>
                 <span class="h1" data-answer="l-a-0,l-p,l-p-2,l-l,l-e-4" onclick="controller.revealLetterAnswers(this)">PC/MAC</span>
                 <!-- <span class="label answer">HTML, Sass, CSS <br>JavaScript, PHP, SQL</span> -->
               </div>
