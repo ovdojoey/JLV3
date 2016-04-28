@@ -623,13 +623,13 @@ body{
 // }
 .video-person,
 .video-code{
+
+  background: lighten(#2ba4ea,10%);
+  opacity: 0;
+  visibility: visible;
   &.video-person{
     background: $color-yellow;
   }
-  background: darken($color-blue,10%);
-  opacity: 0;
-  visibility: visible;
-
   &.fadeIn{
     transition:  visibility 0s 0s, opacity 1s 0s;
     opacity: 1;
@@ -1258,7 +1258,7 @@ body{
     align-content: flex-start;
     .screen--left{
       height: 100vh;
-      // min-height: 800px;
+      min-height: 600px;
     }
     .screen-center{
       align-self: center;

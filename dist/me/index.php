@@ -133,9 +133,7 @@
                 Hi!  I'm Joey.  I enjoy technology, food, the company of friends, and early mornings with coffee and code.
               </p>
 
-              <div class="overflower t-2x">
-                <span class="label in-overflower">SCROLL TO LEARN MORE <img class="icon icon-scroll" src="/img/scroll.svg" alt="Scroll"></span>
-              </div>
+
 
               <span class="label">LINKS &amp; OLD WEBSITE VERSIONS</span>
               <ul class="no-list">
@@ -165,11 +163,11 @@
             <div class="screen-center">
 
               <div class="overflower" data-actpoint='{ "fadeIn" : ".video-code" }' >
-                <h1 class="h2 in-overflower">
+                <h1 class="h2 in-overflower color-white">
                   the coder
                 </h1>
               </div>
-              <p class="intro-desc" data-actpoint='{ "fadeOut" : ".video-about-me" }'>
+              <p class="intro-desc color-white" data-actpoint='{ "fadeOut" : ".video-about-me" }'>
                 I design and develop websites and apps.
                 I am meticulous with my craft and enjoy perfecting the tiny details.
                 I work on both front-end web design and
@@ -193,6 +191,8 @@
                 I worked for AT&amp;T wireless in my senior year of high school
                 and throughout college.
                 In 2011, I graduated from UCF with a degree in Legal Studies.
+              </p>
+              <p class="intro-desc">
                 I (somehow) landed a coding job out of college and haven't
                 looked back since! Oh &mdash;
                 I have a dog named Duke, he's pretty awesome.

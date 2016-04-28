@@ -4,12 +4,13 @@ var controller;
 
 (function(){
   'use strict';
-  var minTimeout = 50;
-  var maxTimeout = 2200;
+  var minTimeout = 200;
+  var maxTimeout = 1700;
   var domLoaded = false;
   var stillNeedToLoad = false;
   var fontLoaded = false;
 
+  // Try to load page as quickly as possible if fonts/content loaded
   setTimeout(function() {
 
     var htmlClass = [].slice.call(document.documentElement.classList);
@@ -23,6 +24,7 @@ var controller;
     stillNeedToLoad = true;
   }, minTimeout);
 
+  // If unable to load above, loadHome() regardless after maxTimeout is reached
   setTimeout(function(){
     if (stillNeedToLoad) {
       controller.loadHome();
@@ -40,16 +42,18 @@ var controller;
 
   });
 
-  window.handleOrientation = function(){
+  var handleOrientation = function(){
     setTimeout(function(){
       // Hide the address bar!
       window.scrollTo(0, 1);
     }, 0);
   };
 
+  window.handleOrientation = handleOrientation;
+
   window.addEventListener('load', handleOrientation, false);
 
-  window.addEventListener("deviceorientation", handleOrientation, true);
+  window.addEventListener('deviceorientation', handleOrientation, true);
 
 })();
 
@@ -59,12 +63,12 @@ controller = (function(){
 
   function Screen() {
 
-    this.slideNumberEle = document.getElementById("slide-number");
-    this.slideNumberTotalEle = document.getElementById("slide-number-total");
-    this.allScreens = [].slice.call(document.querySelectorAll(".screen"));
+    this.slideNumberEle = document.getElementById('slide-number');
+    this.slideNumberTotalEle = document.getElementById('slide-number-total');
+    this.allScreens = [].slice.call(document.querySelectorAll('.screen'));
 
-    this.app = document.getElementById("app");
-    this.scrollType = this.app.getAttribute("data-scroll") || "screens";
+    this.app = document.getElementById('app');
+    this.scrollType = this.app.getAttribute('data-scroll') || 'screens';
     this.scrollSettings = {
       slide : 1,
       timeout: null,
@@ -73,7 +77,7 @@ controller = (function(){
       distance: 0,
       timeEase: 0,
       scrollers: [],
-      rafStarted: false,
+      rafStarted: false
     };
     this.rAFStart = null;
     this.working = false;
@@ -82,17 +86,11 @@ controller = (function(){
 
 
     this.screens = {
-      loading : document.querySelector(".loader"),
-      // home : document.querySelector(".screen--home"),
-      // ottoform: document.querySelector(".screen--ottoform"),
-      // frnkrok: document.querySelector(".screen--frnkrok"),
-      // jlv3: document.querySelector(".screen--jlv3"),
-      // juiced: document.querySelector(".screen--juiced"),
-
+      loading : document.querySelector('.loader')
     };
 
     this.bindScreens = function(slide){
-      var key = slide.getAttribute("data-screen");
+      var key = slide.getAttribute('data-screen');
       if ( key ) {
         this.screens[key] = slide;
       }
@@ -101,18 +99,18 @@ controller = (function(){
     this.allScreens.forEach(this.bindScreens.bind(this));
 
 
-    this.menu = document.querySelector(".screen--menu");
-    this.menuContainer = document.getElementById("jl-menu");
+    this.menu = document.querySelector('.screen--menu');
+    this.menuContainer = document.getElementById('jl-menu');
     this.menuOpen = false;
 
     this.screenKeys = Object.keys( this.screens );
 
     this.backgrounds = {
-      home: document.querySelector(".video-home"),
-      ottoform: document.querySelector(".video-ottoform"),
-      frnkrok: document.querySelector(".video-frnkrok"),
-      jlv3: document.querySelector(".video-jlv3"),
-      juiced: document.querySelector(".video-juiced"),
+      home: document.querySelector('.video-home'),
+      ottoform: document.querySelector('.video-ottoform'),
+      frnkrok: document.querySelector('.video-frnkrok'),
+      jlv3: document.querySelector('.video-jlv3'),
+      juiced: document.querySelector('.video-juiced')
     };
 
     /* Touch event function */
@@ -169,7 +167,7 @@ controller = (function(){
       * @return integer - direction of scroll down = -1, up = 1
       */
       var returnWheelDirection = function(evt) {
-         return (evt.detail<0) ? 1 : (evt.wheelDelta>0) ? 1 : -1;
+        return (evt.detail<0) ? 1 : (evt.wheelDelta>0) ? 1 : -1;
       };
 
       var that = this;
@@ -230,34 +228,34 @@ controller = (function(){
 
       window.handleOrientation();
 
-      this.screens.home.classList.remove("active");
+      this.screens.home.classList.remove('active');
 
-      this.screens[from].classList.remove("slide-in");
-      this.screens[from].classList.remove("fade-out");
-      this.screens[from].classList.add("slide-out");
+      this.screens[from].classList.remove('slide-in');
+      this.screens[from].classList.remove('fade-out');
+      this.screens[from].classList.add('slide-out');
 
-      this.screens[to].classList.add("slide-in");
-      this.screens[to].classList.remove("slide-out");
+      this.screens[to].classList.add('slide-in');
+      this.screens[to].classList.remove('slide-out');
 
       // remove slide out from all
       var _slideCount = 0;
       for(var screen in this.screens) {
         if (screen === to) {
-          this.slideNumberEle.innerHTML = '<span class="number">' + _slideCount + '</span>';
+          this.slideNumberEle.innerHTML = '<span class=\'number\'>' + _slideCount + '</span>';
           this.scrollSettings.slide = _slideCount;
         }
         if (screen !== from) {
-          this.screens[screen].classList.remove("slide-out");
+          this.screens[screen].classList.remove('slide-out');
         }
         _slideCount++;
       }
 
       if ( this.backgrounds[from] ) {
-        this.backgrounds[from].setAttribute("data-enable", "false");
+        this.backgrounds[from].setAttribute('data-enable', 'false');
       }
 
       if ( this.backgrounds[to] ) {
-        this.backgrounds[to].setAttribute("data-enable", "true");
+        this.backgrounds[to].setAttribute('data-enable', 'true');
       }
 
       var that = this;
@@ -268,91 +266,35 @@ controller = (function(){
     };
 
 
-    this.scroll  = function(e) {
-
-      var scrollDistance = this.wheelDistance(e);
-      var _distance = this.scrollSettings.distance + scrollDistance;
-      this.scrollSettings.distance = Math.min(0,_distance);
-      this.scrollSettings.timeEase = performance.now() + 400;
-
-      if ( !this.scrollSettings.rafStarted ) {
-        window.requestAnimationFrame(this.rAF.bind(this));
-      }
-
-    };
-
-    this.easeInOutQuad = function (t, b, c, d, s) {
-        if (s === undefined) s = 1.70158;
-        return c*(t/=d)*t + b;
-    };
-
-    this.rAF = function(timestamp) {
-
-      this.scrollSettings.rafStarted = true;
-
-      if (!this.rAFStart) this.rAFStart = timestamp;
-      var progress = timestamp - this.rAFStart;
-      var _distance = this.scrollSettings.distance;
-      var _timeTo = this.scrollSettings.timeEase;
-      var easeOutQuad = this.easeInOutQuad;
-      var speedFactor = 45;
-
-      this.scrollSettings.scrollers.forEach(function(s) {
-
-
-
-        var currentPoint = parseInt(s.getAttribute("data-scrolled")) || 0;
-        var speed = (parseInt(s.getAttribute("data-ss")) || 1) * speedFactor;
-        var destinationPoint = ( _distance ) * speed;
-        var ease = Math.round(easeOutQuad(timestamp, currentPoint, (destinationPoint - currentPoint), _timeTo));
-        ease = Math.max(destinationPoint,ease);
-        // console.log(currentPoint, destinationPoint, ease);
-        // magicPoint += ease;
-        // magicPoint = ( magicPoint < 0 ) ? magicPoint : 0;
-        // ease = ( ease < 0 ) ? ease : 0;
-
-        var up = ease  + 'px';
-        s.style.webkitTransform = 'translateY('+up+') translateZ(0)';
-        s.style.MozTransform = 'translateY('+up+') translateZ(0)';
-        s.style.msTransform = 'translateY('+up+') translateZ(0)';
-        s.style.OTransform = 'translateY('+up+') translateZ(0)';
-        s.style.transform = 'translateY('+up+') translateZ(0)';
-        s.setAttribute("data-scrolled", destinationPoint);
-
-      });
-
-      // recall rAF
-      window.requestAnimationFrame(this.rAF.bind(this));
-    };
 
 
 
     this.openMenu = function() {
 
-      this.menu.classList.remove("fade-out-slow");
+      this.menu.classList.remove('fade-out-slow');
 
       for(var screen in this.screens) {
-        this.screens[screen].classList.add("fade-out-slow");
+        this.screens[screen].classList.add('fade-out-slow');
       }
 
-      this.menu.classList.add("fade-in");
+      this.menu.classList.add('fade-in');
       this.menuOpen = true;
-      this.menuContainer.classList.add("activate");
+      this.menuContainer.classList.add('activate');
 
     };
 
     this.closeMenu = function() {
 
-      this.menu.classList.remove("fade-in");
+      this.menu.classList.remove('fade-in');
 
       for(var screen in this.screens) {
-        this.screens[screen].classList.remove("fade-out-slow");
+        this.screens[screen].classList.remove('fade-out-slow');
       }
 
-      this.menu.classList.remove("fade-in");
-      this.menu.classList.add("fade-out-slow");
+      this.menu.classList.remove('fade-in');
+      this.menu.classList.add('fade-out-slow');
       this.menuOpen = false;
-      this.menuContainer.classList.remove("activate");
+      this.menuContainer.classList.remove('activate');
 
 
     };
@@ -365,13 +307,6 @@ controller = (function(){
       }
     };
 
-    this.addSmoothScrollers = function() {
-      var smooths = [].slice.call(document.querySelectorAll(".scroller"));
-      var that = this;
-      smooths.forEach(function(s) {
-        that.scrollSettings.scrollers.push(s);
-      });
-    };
 
     this.resize = function() {
       clearTimeout(this.resizingScreenTimeout);
@@ -393,15 +328,15 @@ controller = (function(){
       }
 
       this.vScroll = new vs({firefoxMultiplier: 25});
-      var section = document.getElementById("scroll-section");
-      var sectionBG = document.getElementById("scroll-section-background");
+      var section = document.getElementById('scroll-section');
+      var sectionBG = document.getElementById('scroll-section-background');
       var sectionHeight = section.getBoundingClientRect().height;
 
       var actPoints = [];
       var actPointEles = [].slice.call(document.querySelectorAll('[data-actpoint]'));
       for(var x = 0; x < actPointEles.length; x++ ) {
         let _actPoint = actPointEles[x];
-        let _actPointAction = _actPoint.getAttribute("data-actpoint") || null;
+        let _actPointAction = _actPoint.getAttribute('data-actpoint') || null;
         if ( _actPointAction ){
           var action = JSON.parse(_actPointAction);
           var _offset = _actPoint.offsetTop - window.innerHeight;
@@ -409,53 +344,53 @@ controller = (function(){
             var actionKey = Object.keys(action);
             let ele = document.querySelector(action[actionKey[0]]);
             if ( ele ) {
-              actPoints.push({ "point" : _offset, "class" : actionKey[0], "element" : ele });
+              actPoints.push({ point : _offset, class : actionKey[0], element : ele });
             }
           }
         }
       }
 
       this.vScroll.on(function(e) {
-          targetY += e.deltaY;
-          targetY = Math.max( (sectionHeight - window.innerHeight) * -1, targetY);
-          targetY = Math.min(0, targetY);
+        targetY += e.deltaY;
+        targetY = Math.max( (sectionHeight - window.innerHeight) * -1, targetY);
+        targetY = Math.min(0, targetY);
       });
 
 
       var run = function() {
 
-          requestAnimationFrame(run);
+        requestAnimationFrame(run);
 
-          currentY += Math.round( (targetY - currentY) * ease, 2);
-          currentYBG += Math.round( (targetY - currentYBG) * easeBG, 2);
+        currentY += Math.round( (targetY - currentY) * ease, 2);
+        currentYBG += Math.round( (targetY - currentYBG) * easeBG, 2);
 
-          for (let x = 0; x < actPoints.length; x++ ) {
+        for (let x = 0; x < actPoints.length; x++ ) {
 
-            let ap = actPoints[x];
-            let point = ap.point * -1;
-            let classAdd = ap.class;
-            let ele = ap.element;
+          let ap = actPoints[x];
+          let point = ap.point * -1;
+          let classAdd = ap.class;
+          let ele = ap.element;
 
-            if ( currentY < point ) {
-              ele.classList.add(classAdd);
-            } else {
-              ele.classList.remove(classAdd);
-            }
+          if ( currentY < point ) {
+            ele.classList.add(classAdd);
+          } else {
+            ele.classList.remove(classAdd);
           }
+        }
 
-          var t = 'translateY(' + currentY + 'px)';
-          var s = section.style;
-          s["transform"] = t;
-          s["webkitTransform"] = t;
-          s["mozTransform"] = t;
-          s["msTransform"] = t;
+        var t = 'translateY(' + currentY + 'px)';
+        var s = section.style;
+        s['transform'] = t;
+        s['webkitTransform'] = t;
+        s['mozTransform'] = t;
+        s['msTransform'] = t;
 
-          var tB = 'translateY(' + currentYBG + 'px)';
-          var sB = sectionBG.style;
-          sB["transform"] = tB;
-          sB["webkitTransform"] = tB;
-          sB["mozTransform"] = tB;
-          sB["msTransform"] = tB;
+        var tB = 'translateY(' + currentYBG + 'px)';
+        var sB = sectionBG.style;
+        sB['transform'] = tB;
+        sB['webkitTransform'] = tB;
+        sB['mozTransform'] = tB;
+        sB['msTransform'] = tB;
 
 
       };
@@ -471,24 +406,22 @@ controller = (function(){
     */
     this.loadHome = function() {
 
-      this.screens.loading.classList.add("out");
-      this.screens.home.classList.add("active");
+      this.screens.loading.classList.add('out');
+      this.screens.home.classList.add('active');
       this.slideNumberTotalEle.innerText = this.screenKeys.length - 1;
 
-      if ( this.scrollType === "screens" ) {
+      if ( this.scrollType === 'screens' ) {
 
-        document.body.addEventListener("wheel", this.slide.bind(this));
-        document.body.addEventListener("touchstart", this.slideTouchEvent.bind(this));
-        document.body.addEventListener("touchmove", this.slideTouchEvent.bind(this));
+        document.body.addEventListener('wheel', this.slide.bind(this));
+        document.body.addEventListener('touchstart', this.slideTouchEvent.bind(this));
+        document.body.addEventListener('touchmove', this.slideTouchEvent.bind(this));
 
       }
 
-      if ( this.scrollType === "smooth" ) {
-        // this.addSmoothScrollers();
-        // document.body.addEventListener("wheel", this.scroll.bind(this));
+      if ( this.scrollType === 'smooth' ) {
 
         document.addEventListener('touchmove', function(e) {
-            e.preventDefault();
+          e.preventDefault();
         });
 
         // window.addEventListener('resize', this.resize.bind(this));
