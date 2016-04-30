@@ -27,5 +27,10 @@
     "presets": [
       "es2015"
     ]
+  },
+  "dependencies": {
+    "doloop": "^1.0.12",
+    "front-matter": "^2.0.7",
+    "marked": "^0.3.5"
   }
 }

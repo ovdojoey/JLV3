@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joey Lea – About Me</title>
-  <link rel="stylesheet" href="/css/jlv3.css" media="screen" charset="utf-8">
-  <script src="https://use.typekit.net/ryf7prd.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
-</head>
-<body>
+<?php
+$title = 'Joey Lea - Me';
+include('../partials/base/header.php'); ?>
   <div class="loader">
     <div class="loader--circle-container">
       <span class="loader--circle">
@@ -35,13 +27,10 @@
       </div>
       <div class="social">
         <a href="https://github.com/ovdojoey" target="_blank" class="icon">
-          <span class="brandico-github"></span>
-        </a>
-        <a href="https://www.linkedin.com/in/joeylea" target="_blank" class="icon">
-          <span class="brandico-linkedin"></span>
+          <img src="/img/github-icon.svg" alt="Github">
         </a>
         <a href="https://twitter.com/ovdojoey" target="_blank" class="icon">
-          <span class="brandico-twitter-bird"></span>
+          <img src="/img/twitter-icon.svg" alt="Github">
         </a>
       </div>
     </header>
@@ -269,61 +258,7 @@
 
 
 
-      <div class="screen screen--menu fade-out" id="screen-menu">
-        <div class="screen--container">
-          <div class="screen--left screen-collapse">
-            <div class="screen-center">
-              <nav>
-
-                <a href="/" data-count="1">
-                  <div class="overflower t-8x">
-                    <span class="h1 menu--item in-overflower">Home</span>
-                  </div>
-                  <span class="menu--desc">What I've been up to recently</span>
-                </a>
-                <div class="animation-pictures-block home-animation-block"></div>
-
-                <a href="/portfolio/" data-count="2">
-                  <div class="overflower t-9x">
-                    <span class="h1 menu--item in-overflower">Portfolio</span>
-                  </div>
-                  <span class="menu--desc">A sampling of my work</span>
-
-                </a>
-                <div class="animation-pictures-block portfolio-animation-block"></div>
-
-                <a href="/writings/"  data-count="3">
-                  <div class="overflower t-10x">
-                    <span class="h1 menu--item in-overflower">Writings</span>
-                  </div>
-                  <span class="menu--desc">Words about code and other randomness</span>
-                </a>
-                <div class="animation-pictures-block writings-animation-block"></div>
-
-                <a href="/me/"  data-count="4">
-                  <div class="overflower t-11x">
-                    <span class="h1 menu--item in-overflower">Me</span>
-                  </div>
-                  <span class="menu--desc">The man behind the code</span>
-
-                </a>
-              </nav>
-
-            </div>
-          </div>
-          <div class="screen--right">
-            <div class="screen--bottom">
-
-              <div class="overflower t-12x">
-                <div class="in-overflower">
-                  <span class="label before-line">EMAIL ME</span>
-                  <div class="answer"><a href="mailto:joey@w3by.com">joey@w3by.com</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php include('../partials/base/menu.php'); ?>
 
 
     </div>

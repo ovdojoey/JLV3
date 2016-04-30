@@ -1,0 +1,27 @@
+---
+name: ++ or +1
+date: April 30, 2016
+type: short
+tags: javascript, php, iteration
+url: plus-plus.php
+---
+
+I'll admit. This concept is probably
+such a simple idea that I shouldn't even be writing about it.  But,
+ I've fallen trap to this misconception many times &mdash; alas here I am
+typing.
+
+So heres the problem...
+
+Say you have `y` which is the year, and you want to know what year next year is.
+
+One may think to be terse and write:
+
+    var newYear = y++;
+
+Or perhaps only I am silly enough to write such things.  Either way, you can probably
+spot the problem.
+
+Both `newYear` and `y` are equal to `y + 1`.
+
+That makes for tricky use of `y` later on.

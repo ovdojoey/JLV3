@@ -94,6 +94,10 @@ controller = (function(){
     };
     this.menu = document.querySelector('.screen--menu');
     this.menuContainer = document.getElementById('jl-menu');
+    this.writings = document.getElementById('writings-list');
+    this.writingsContainer = document.getElementById('writings-container');
+    this.writingBlock = document.getElementById('writing-block');
+    this.leftScreenPane = document.getElementById('left-screen-pane');
     this.menuOpen = false;
 
 
@@ -439,8 +443,103 @@ controller = (function(){
 
       }
 
+      if ( this.writings ) {
+        // intercept links
+        var links = this.writings.querySelectorAll('a');
+        var writingLinks = [].slice.call(links);
+        var that = this;
+        writingLinks.forEach(function(link) {
+          link.addEventListener('click', function(e){
+            that.writingLink(e, this);
+          });
+        });
+        window.onpopstate = this.updateReaderOnPop.bind(this);
+      }
 
     };
+
+    this.openReaderPane = function() {
+      this.leftScreenPane.classList.add('open-pane');
+      this.writingsContainer.setAttribute('data-activate', 'true');
+    };
+
+    this.closeReaderPane = function() {
+      this.leftScreenPane.classList.remove('open-pane');
+      this.writingsContainer.setAttribute('data-activate', 'false');
+    };
+
+    this.updateReaderOnPop = function(e) {
+      if ( e.state && e.state.reading && e.state.reading !== 'none' )
+        this.writingLink(null,null,e.state.reading);
+      else
+        this.closeReaderPane();
+    };
+
+    this.closeReader = function() {
+      this.closeReaderPane();
+      var stateObj = { reading: null };
+      history.replaceState(stateObj, 'Joey Lea- Writings', '/writings/');
+    };
+
+    this.writingLink = function(e, link, location) {
+
+      if (e)
+        e.preventDefault();
+
+      this.writingBlock.style.display = 'none';
+      this.openReaderPane();
+
+      var _location;
+      if ( location ) {
+        _location = location;
+      }
+      else{
+        _location = link.href;
+      }
+
+      var httpRequest = new XMLHttpRequest();
+
+      if (!httpRequest) {
+        return false;
+      }
+
+      const htmlParse = function(aHTMLString) {
+        var html = document.implementation.createDocument('http://www.w3.org/1999/xhtml', 'html', null),
+          body = document.createElementNS('http://www.w3.org/1999/xhtml', 'body');
+        html.documentElement.appendChild(body);
+
+        body.appendChild(Components.classes["@mozilla.org/feed-unescapehtml;1"]
+          .getService(Components.interfaces.nsIScriptableUnescapeHTML)
+          .parseFragment(aHTMLString, false, null, body));
+
+        return body;
+      };
+
+      const showWriting = function(){
+        if ( httpRequest.readyState === XMLHttpRequest.DONE ) {
+          if ( httpRequest.status === 200 )
+          {
+            if ( link ) {
+              var stateObj = { reading: _location };
+              history.pushState(stateObj, 'Joey Lea- Writings', _location);
+            }
+            var doc = document.implementation.createHTMLDocument("example");
+            doc.documentElement.innerHTML = httpRequest.responseText;
+            var html = doc.getElementById('writing-block');
+            this.writingBlock.innerHTML = html.innerHTML;
+            this.writingBlock.style.display = 'block';
+          } else {
+            this.writingBlock.innerHTML = 'Something went wrong';
+          }
+        }
+      };
+
+      httpRequest.onreadystatechange = showWriting.bind(this);
+      httpRequest.open('GET', _location);
+      httpRequest.send();
+
+    };
+
 
     this.clearLetterTimeout = null;
     this.removeLettersState = [];
