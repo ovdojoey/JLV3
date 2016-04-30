@@ -1167,7 +1167,7 @@ body{
       visibility: visible;
       animation: inFadeIn 400ms 400ms 1 forwards;
       overflow: auto;
-      -webkit-touch-overflow: scroll;
+      -webkit-overflow-scrolling: touch;
       // display: none;
       color: #292929;
       // font-family: serif;
