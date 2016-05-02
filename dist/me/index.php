@@ -124,14 +124,8 @@ include('../partials/base/header.php'); ?>
 
 
 
-              <span class="label">LINKS &amp; OLD WEBSITE VERSIONS</span>
+              <span class="label">OLD WEBSITE VERSIONS</span>
               <ul class="no-list">
-                <li>
-                  <a href="/resume">résumé</a>
-                </li>
-                <li>
-                  <a href="mailto:joey@w3by.com" target="_blank">joey@w3by.com</a>
-                </li>
                 <li>
                   <a href="http://old.joeylea.com" target="_blank">v1</a>
                 </li>
@@ -139,7 +133,7 @@ include('../partials/base/header.php'); ?>
                   <a href="http://v2.joeylea.com" target="_blank">v2</a>
                 </li>
                 <li>
-                  <a href="http://v3.joeylea.com" target="_blank">v3</a>
+                  <a href="https://v3.joeylea.com" target="_blank">v3</a>
                 </li>
               </ul>
 
@@ -162,6 +156,20 @@ include('../partials/base/header.php'); ?>
                 I work on both front-end web design and
                 back-end object-oriented application development.
               </p>
+              <span class="label">LINKS</span>
+              <ul class="no-list">
+                <li>
+                  <a href="/resume">résumé</a>
+                </li>
+                <li>
+                  <a href="https://codepen.io/ovdojoey/" target="_blank">Codepen</a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/ovdojoey/" target="_blank">twitter</a>
+                </li>
+              </ul>
+
+
 
             </div>
           </div>
@@ -187,6 +195,15 @@ include('../partials/base/header.php'); ?>
                 I have a dog named Duke, he's pretty awesome.
 
               </p>
+              <span class="label">LINKS</span>
+              <ul class="no-list">
+                <li>
+                  <a href="https://instagram.com/ovdojoey" target="_blank">Instagram</a>
+                </li>
+                <li>
+                  <a href="mailto:joey@w3by.com?Subject=Hi">Say Hi</a>
+                </li>
+              </ul>
 
             </div>
           </div>

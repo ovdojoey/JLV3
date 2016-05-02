@@ -11,35 +11,39 @@ var loop = 0;
 DoLoop()
 .cd('writings/')
 .readEncoding('utf8')
+.sortBy('asc')
 .loop( function( filename, data ) {
 
   var _nextLoopIdx = loop + 1;
   var _prevLoopIdx = loop - 1;
   _prevLoopIdx = (_prevLoopIdx < 0) ? 0 : _prevLoopIdx;
 
-
-  // var _nextFile = this.allFiles[_nextLoopIdx];
-  // if ( nextFile ) {
-  //
-  //
-  //
-  // }
-
-
-
   var content = fm(data);
+  var words = content.body;
+  var wordsCount = words.split(' ').length;
   content.body = marked(content.body);
   var type = content.attributes.type;
   var url = content.attributes.url;
   var date = content.attributes.date;
   var name = content.attributes.name;
-  var bodyContent = '<?php include_once("../partials/writings/writingHeader.php"); ?><h1>' + name + '</h1><time>' + date + '</time>' + content.body + '<?php include_once("../partials/writings/writingFooter.php"); ?>';
+  /*
+  <div class="overflower t-5x">
+    <a href="#" class="in-overflower" onclick="controller.toggle('home', 'ottoform');">
+      <span class="title">OTTOFORM</span>
+      <span class="description">Setup contact forms in seconds</span>
+    </a>
+  </div>*/
+
+  var liHeader = '<li class="project-grid-li"><div class="overflower t-'+ loop +'x"><a class="in-overflower" href="/writings/' + url + '"><span class="title">';
+  var liFooter = '</span><span class="description">' + wordsCount + ' words. <strong>Under</strong>: ' + content.attributes.tags  + '</span></a></div></li>';
+
+  var bodyContent = '<?php $title="' + name.replace('"','&quot;') + '"; include_once("../partials/writings/writingHeader.php"); ?><h1>' + name + '</h1><time>' + date + '</time>' + content.body + '<?php include_once("../partials/writings/writingFooter.php"); ?>';
 
   if ( type === 'short' ) {
-    shortList += '<li class="project-grid-li"><a href="/writings/' + url + '">' + name + '</a></li>';
+    shortList += liHeader + name + liFooter;
   }
   else if ( type === 'long' ) {
-    longList += '<li class="project-grid-li"><a href="/writings/' + url + '">' + name + '</a></li>';
+    longList += liHeader + name + liFooter;
   }
 
   fs.writeFile('dist/writings/' + url, bodyContent, function (err) {

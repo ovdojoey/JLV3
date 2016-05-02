@@ -42,18 +42,18 @@ var controller;
 
   });
 
-  var handleOrientation = function(){
+  var scrollToTop = function(){
     setTimeout(function(){
       // Hide the address bar!
       window.scrollTo(0, 1);
     }, 0);
   };
 
-  window.handleOrientation = handleOrientation;
+  window.scrollToTop = scrollToTop;
 
-  window.addEventListener('load', handleOrientation, false);
+  window.addEventListener('load', scrollToTop, false);
 
-  window.addEventListener('deviceorientation', handleOrientation, true);
+  window.addEventListener('deviceorientation', scrollToTop, true);
 
 })();
 
@@ -98,6 +98,8 @@ controller = (function(){
     this.writingsContainer = document.getElementById('writings-container');
     this.writingBlock = document.getElementById('writing-block');
     this.leftScreenPane = document.getElementById('left-screen-pane');
+    this.writingProgressLoader = document.getElementById('writing-progress-bar');
+
     this.menuOpen = false;
 
 
@@ -241,7 +243,7 @@ controller = (function(){
         return false;
       }
 
-      window.handleOrientation();
+      window.scrollToTop();
 
       this.screens.home.classList.remove('active');
 
@@ -330,7 +332,7 @@ controller = (function(){
     };
 
     var currentY = 0, ease = 0.1;
-    var currentYBG = 0, easeBG = 0.0725;
+    var currentYBG = 0, easeBG = 0.085;
     var targetY = 0;
 
     this.virtualScroll = function(destroy) {
@@ -434,10 +436,11 @@ controller = (function(){
       if ( this.scrollType === 'smooth' ) {
 
         document.addEventListener('touchmove', function(e) {
-          e.preventDefault();
+          if ( e.target && e.target.id !== 'writing-block' && e.target.parentNode.id !== 'writing-block')
+            e.preventDefault();
         });
 
-        // window.addEventListener('resize', this.resize.bind(this));
+        window.addEventListener('resize', this.resize.bind(this));
 
         this.virtualScroll();
 
@@ -466,6 +469,8 @@ controller = (function(){
     this.closeReaderPane = function() {
       this.leftScreenPane.classList.remove('open-pane');
       this.writingsContainer.setAttribute('data-activate', 'false');
+      window.document.title =  'Joey Lea - Writings';
+
     };
 
     this.updateReaderOnPop = function(e) {
@@ -478,7 +483,8 @@ controller = (function(){
     this.closeReader = function() {
       this.closeReaderPane();
       var stateObj = { reading: null };
-      history.replaceState(stateObj, 'Joey Lea- Writings', '/writings/');
+      history.pushState(stateObj, 'Joey Lea- Writings', '/writings/');
+
     };
 
     this.writingLink = function(e, link, location) {
@@ -487,6 +493,9 @@ controller = (function(){
         e.preventDefault();
 
       this.writingBlock.style.display = 'none';
+
+      this.writingProgressLoader.className = 'progress-bar';
+
       this.openReaderPane();
 
       var _location;
@@ -528,15 +537,22 @@ controller = (function(){
             var html = doc.getElementById('writing-block');
             this.writingBlock.innerHTML = html.innerHTML;
             this.writingBlock.style.display = 'block';
+            this.writingProgressLoader.classList.add('finish');
+            this.writingBlock.scrollTop = 0;
+            window.document.title = doc.title || 'Joey Lea - Writings';
+            targetY = 0;
+
           } else {
             this.writingBlock.innerHTML = 'Something went wrong';
           }
         }
       };
 
+      this.writingProgressLoader.classList.add('start');
       httpRequest.onreadystatechange = showWriting.bind(this);
       httpRequest.open('GET', _location);
       httpRequest.send();
+
 
     };
 

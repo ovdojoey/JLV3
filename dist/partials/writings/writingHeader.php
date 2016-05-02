@@ -1,5 +1,5 @@
 <?php
-$title = 'Joey Lea - Writings';
+$title = ($title) ? $title : 'Joey Lea - Writings';
 include('../partials/base/header.php');
 ?>
   <div class="loader">
@@ -49,7 +49,7 @@ include('../partials/base/header.php');
     </footer>
 
     <div class="screen-bgs">
-      <div class="screen--video video-about-me" data-screen="home" data-enable="true" role="presentation">
+      <div class="screen--video video-writings" data-screen="home" data-enable="true" role="presentation">
       </div>
     </div>
     <div class="screens">
@@ -62,6 +62,7 @@ include('../partials/base/header.php');
         <div class="screen--container" style="height: auto; position:absolute;" id="scroll-section">
           <div class="screen--left">
             <div class="writings-panel" data-activate="<?php if(!$notOpen) echo 'true'; ?>" id="writings-container">
+              <div class="progress-bar" id="writing-progress-bar"></div>
               <div class="exit" onclick="controller.closeReader()">
                 &times;
               </div>

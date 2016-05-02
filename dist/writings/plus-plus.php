@@ -1,5 +1,5 @@
-<?php include_once("../partials/writings/writingHeader.php"); ?><h1>++ or +1</h1><time>April 30, 2016</time><p>I&#39;ll admit. This concept is probably
-such a simple idea that I shouldn&#39;t even be writing about it.  But,
+<?php $title="++ or +1"; include_once("../partials/writings/writingHeader.php"); ?><h1>++ or +1</h1><time>April 30, 2016</time><p>I&#39;ll admit. This concept is probably
+such a simple one that I shouldn&#39;t even be writing about it.  But,
  I&#39;ve fallen trap to this misconception many times &mdash; alas here I am
 typing.</p>
 <p>So heres the problem...</p>

@@ -1,4 +1,4 @@
-<?php include_once("../partials/writings/writingHeader.php"); ?><h1>Building a Mobile App</h1><time>January 30, 2014</time><p class="home-tagline"><span class="tk-futura-pt">Editorial Note: this is an older blog post written back in 2014.</span></p>
+<?php $title="Building a Mobile App"; include_once("../partials/writings/writingHeader.php"); ?><h1>Building a Mobile App</h1><time>January 30, 2014</time><p class="home-tagline"><span class="tk-futura-pt">Editorial Note: this is an older blog post written back in 2014.</span></p>
 
 <p class="home-tagline" style="text-align: left;">Build a mobile app? &nbsp;Pssh… easy!&nbsp;I mean how hard could it be? I’m a <em><strong>web</strong><b>master&nbsp;</b></em>after all, and&nbsp;they don’t call us&nbsp;masters&nbsp;for nothing. &nbsp;“<em>I</em><i>t will be a slam-dunk,”</i>&nbsp;I told myself.</p>
 <p class="home-tagline">After some&nbsp;much needed&nbsp;convincing that coding the mobile app&nbsp;was in fact <em>doable</em>, I dove head-first into the unknown and started my journey of building an app using Javascript, CSS and HTML.</p>

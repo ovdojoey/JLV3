@@ -36,6 +36,8 @@
             <span class="menu--desc">The man behind the code</span>
 
           </a>
+          <div class="animation-pictures-block me-animation-block"></div>
+
         </nav>
 
       </div>

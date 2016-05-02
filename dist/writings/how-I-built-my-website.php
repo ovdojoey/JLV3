@@ -1,7 +1,5 @@
-<?php include_once("../partials/writings/writingHeader.php"); ?><h1>How I Built This Website</h1><time>May 1, 2016</time><p>This is one of the cooler websites I&#39;ve worked on.  It has a bit of PHP, and a
-lot of JavaScript, HTML and Sass.  I keep track of my writings section using my
-own <code>doloop</code> npm module that loops through a folder of markdown files.  Not to
-toot my own horn &mdash; but it&#39;s pretty neat!</p>
+<?php $title="How I Built This Website"; include_once("../partials/writings/writingHeader.php"); ?><h1>How I Built This Website</h1><time>May 1, 2016</time><p>This is one of the cooler websites I&#39;ve worked on.  It has a bit of PHP, and a
+lot of JavaScript, HTML and Sass. </p>
 <p>First, the best place to figure out how it works is to take a look at the source
 code over at <a href="https://github.com/ovdojoey/JLV3">https://github.com/ovdojoey/JLV3</a>.  It&#39;s actually my fourth
 official version, but what can you do.</p>
@@ -11,9 +9,10 @@ to the end user.  One of the most debated is scrolljacking.</p>
 <p>When you jack someone&#39;s scroll, people get mad.  And rightfully so. Messing with
 the scroll is typically a UX no-no.  But, I decided that it would add to my website
 mainly because there is no ability to scroll on this website. Everything you see
-is contained in the viewport.  Thus, the user cannot actually
-scroll at all.  So I&#39;d really consider the technique to be scroll supplementing
-&mdash; Scrollmenting.</p>
+on the homepage is contained in the viewport.  Thus, the user cannot actually
+scroll at all.  So I&#39;d really consider the technique to be scroll supplementing.
+On the other pages scrolling is done using a technique called Virtual Scroll by
+Bartek Drozdz.</p>
 <h2 id="html5-history">HTML5 History</h2>
 <p>Using <code>pushState</code> and <code>replaceState</code> can allow you to modify the URL&#39;s and the
 browser history, edging you closer to a web application rather than a set of pages.

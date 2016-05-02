@@ -1,0 +1,38 @@
+---
+name: How I Built This Website
+date: May 1, 2016
+type: long
+tags: launch, html5, javascript, css
+url: how-I-built-my-website.php
+---
+This is one of the cooler websites I've worked on.  It has a bit of PHP, and a
+lot of JavaScript, HTML and Sass. 
+
+First, the best place to figure out how it works is to take a look at the source
+code over at https://github.com/ovdojoey/JLV3.  It's actually my fourth
+official version, but what can you do.
+
+Below, I will cover some of the features that this site has, many of which may be invisible
+to the end user.  One of the most debated is scrolljacking.
+
+## Scrolljacking
+When you jack someone's scroll, people get mad.  And rightfully so. Messing with
+the scroll is typically a UX no-no.  But, I decided that it would add to my website
+mainly because there is no ability to scroll on this website. Everything you see
+on the homepage is contained in the viewport.  Thus, the user cannot actually
+scroll at all.  So I'd really consider the technique to be scroll supplementing.
+On the other pages scrolling is done using a technique called Virtual Scroll by
+Bartek Drozdz.
+
+## HTML5 History
+Using `pushState` and `replaceState` can allow you to modify the URL's and the
+browser history, edging you closer to a web application rather than a set of pages.
+I decided to make use of HTML5 History API's because I
+wanted to be able to load content without causing page reloads, and to have full
+control over the user experience when they are jumping from article to article.
+
+## ECMAScript 6
+I love some of the new features of ES6 and had to take advantage of them in this
+project. To use ES6, I simply added Babel to my gulp tooling setup.
+
+More to come.  If you have any questions, feel free to reach out and ask me!
