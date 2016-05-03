@@ -42,19 +42,6 @@ var controller;
 
   });
 
-  var scrollToTop = function(){
-    setTimeout(function(){
-      // Hide the address bar!
-      window.scrollTo(0, 1);
-    }, 0);
-  };
-
-  window.scrollToTop = scrollToTop;
-
-  window.addEventListener('load', scrollToTop, false);
-
-  window.addEventListener('deviceorientation', scrollToTop, true);
-
 })();
 
 controller = (function(){
@@ -242,8 +229,6 @@ controller = (function(){
         this.working = false;
         return false;
       }
-
-      window.scrollToTop();
 
       this.screens.home.classList.remove('active');
 
@@ -435,8 +420,18 @@ controller = (function(){
 
       if ( this.scrollType === 'smooth' ) {
 
+        const isParentWritingBlock = function(target, treeDepth) {
+          treeDepth = treeDepth || 0;
+          if (treeDepth > 6) {
+            treeDepth = 0;
+            return false;
+          }
+          if ( !target.parentNode ) return false;
+          return (target.id !== 'writing-block') ? isParentWritingBlock(target.parentNode, ++treeDepth) : true ;
+        };
+
         document.addEventListener('touchmove', function(e) {
-          if ( e.target && e.target.id !== 'writing-block' && e.target.parentNode.id !== 'writing-block')
+          if ( e.target && !isParentWritingBlock(e.target))
             e.preventDefault();
         });
 
@@ -512,17 +507,17 @@ controller = (function(){
         return false;
       }
 
-      const htmlParse = function(aHTMLString) {
-        var html = document.implementation.createDocument('http://www.w3.org/1999/xhtml', 'html', null),
-          body = document.createElementNS('http://www.w3.org/1999/xhtml', 'body');
-        html.documentElement.appendChild(body);
-
-        body.appendChild(Components.classes["@mozilla.org/feed-unescapehtml;1"]
-          .getService(Components.interfaces.nsIScriptableUnescapeHTML)
-          .parseFragment(aHTMLString, false, null, body));
-
-        return body;
-      };
+      // const htmlParse = function(aHTMLString) {
+      //   var html = document.implementation.createDocument('http://www.w3.org/1999/xhtml', 'html', null),
+      //     body = document.createElementNS('http://www.w3.org/1999/xhtml', 'body');
+      //   html.documentElement.appendChild(body);
+      //
+      //   body.appendChild(Components.classes["@mozilla.org/feed-unescapehtml;1"]
+      //     .getService(Components.interfaces.nsIScriptableUnescapeHTML)
+      //     .parseFragment(aHTMLString, false, null, body));
+      //
+      //   return body;
+      // };
 
       const showWriting = function(){
         if ( httpRequest.readyState === XMLHttpRequest.DONE ) {
@@ -532,7 +527,7 @@ controller = (function(){
               var stateObj = { reading: _location };
               history.pushState(stateObj, 'Joey Lea- Writings', _location);
             }
-            var doc = document.implementation.createHTMLDocument("example");
+            var doc = document.implementation.createHTMLDocument('writing-doc');
             doc.documentElement.innerHTML = httpRequest.responseText;
             var html = doc.getElementById('writing-block');
             this.writingBlock.innerHTML = html.innerHTML;

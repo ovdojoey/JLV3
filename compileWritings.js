@@ -3,6 +3,12 @@ var marked = require('marked');
 var fm = require('front-matter');
 var fs = require('fs');
 
+marked.setOptions({
+  highlight: function (code) {
+    return require('highlight.js').highlightAuto(code).value;
+  }
+});
+
 var lastFilename;
 var nextFilename;
 var shortList = '';

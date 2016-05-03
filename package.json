@@ -29,8 +29,9 @@
     ]
   },
   "dependencies": {
-    "doloop": "^1.0.12",
+    "doloop": "^1.0.16",
     "front-matter": "^2.0.7",
+    "highlight.js": "^9.3.0",
     "marked": "^0.3.5"
   }
 }

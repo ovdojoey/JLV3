@@ -361,8 +361,8 @@ body{
 }
 .aside{
   position: absolute;
-  left: 5%;
-  bottom: 50%;
+  left: 2%;
+  bottom: 100%;
   width: 100px;
   height: 50px;
   display: block;
@@ -373,7 +373,10 @@ body{
   &.hide{
     display: none;
   }
-
+  @media (min-width: 800px){
+    left: 5%;
+    bottom: 50%;
+  }
   .aside--number,.aside--slash{
     display: block;
     line-height: 10px;
@@ -1258,6 +1261,100 @@ body{
       font-size: 18px;
       height: 80%;
       // font-size: 14px;
+      .hljs {
+        display: block;
+        overflow-x: auto;
+        padding: 0.5em;
+        background: #F0F0F0;
+      }
+
+
+      /* Base color: saturation 0; */
+
+      .hljs,
+      .hljs-subst {
+        color: #444;
+      }
+
+      .hljs-comment {
+        color: #888888;
+      }
+
+      .hljs-keyword,
+      .hljs-attribute,
+      .hljs-selector-tag,
+      .hljs-meta-keyword,
+      .hljs-doctag,
+      .hljs-name {
+        font-weight: bold;
+      }
+
+
+      /* User color: hue: 0 */
+
+      .hljs-type,
+      .hljs-string,
+      .hljs-number,
+      .hljs-selector-id,
+      .hljs-selector-class,
+      .hljs-quote,
+      .hljs-template-tag,
+      .hljs-deletion {
+        color: #880000;
+      }
+
+      .hljs-title,
+      .hljs-section {
+        color: #880000;
+        font-weight: bold;
+      }
+
+      .hljs-regexp,
+      .hljs-symbol,
+      .hljs-variable,
+      .hljs-template-variable,
+      .hljs-link,
+      .hljs-selector-attr,
+      .hljs-selector-pseudo {
+        color: #BC6060;
+      }
+
+
+      /* Language color: hue: 90; */
+
+      .hljs-literal {
+        color: #78A960;
+      }
+
+      .hljs-built_in,
+      .hljs-bullet,
+      .hljs-code,
+      .hljs-addition {
+        color: #397300;
+      }
+
+
+      /* Meta color: hue: 200 */
+
+      .hljs-meta {
+        color: #1f7199;
+      }
+
+      .hljs-meta-string {
+        color: #4d99bf;
+      }
+
+
+      /* Misc effects */
+
+      .hljs-emphasis {
+        font-style: italic;
+      }
+
+      .hljs-strong {
+        font-weight: bold;
+      }
+
       h1{
         font-family: "lust-display-didone";
         text-align: left;
@@ -1328,6 +1425,14 @@ body{
       ol {
       	padding-left:1.2em;
       	}
+      pre {
+        white-space: pre-wrap;
+        background: #f0f0f0;
+        padding: 12px;
+        code{
+          background: transparent;
+        }
+      }
       blockquote {
       	margin-left: 1em;
       	padding-left: 1em;
@@ -1336,7 +1441,7 @@ body{
       code {
       	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
       	font-size: .9em;
-      	background: white;
+      	background: #f0f0f0;
       	}
       a {
       	color: #2484c1;
@@ -1426,7 +1531,7 @@ body{
       font-weight: 700;
       font-family: "aktiv-grotesk";
       text-transform: uppercase;
-      color: #fff;
+      color: #555;
       opacity: 0.35;
       cursor: pointer;
       transition: opacity 300ms, transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -1437,7 +1542,7 @@ body{
       display: inline-block;
       &:hover{
         transform: scale(1.2);
-        color: #777;
+        color: #444;
         opacity: 1 !important;
         &:after{
           opacity: 1;
@@ -1545,7 +1650,7 @@ body{
     content: '';
     width: 100%;
     height: 100%;
-    background: rgba(#c0c0c0,0.45);
+    background: rgba(#fff,0.45);
     // height: 5000px;
     // background: linear-gradient(rgba(223, 242, 250, 0), rgba(223, 242, 250, 0), rgb(248, 245, 238), rgb(248, 245, 238), rgb(236, 249, 255), rgb(236, 249, 255), rgb(246, 244, 236), rgb(246, 244, 236), rgb(237, 245, 211), rgb(237, 245, 211), rgb(242, 248, 246), rgb(242, 248, 246), rgb(250, 240, 192), rgb(250, 240, 192), rgb(243, 247, 248), rgb(243, 247, 248), rgb(235, 250, 236), rgb(235, 250, 236), rgb(247, 241, 239), rgb(247, 241, 239), rgb(247, 245, 253), rgb(247, 245, 253), rgb(247, 243, 243), rgb(247, 243, 243), rgb(245, 237, 251), rgb(245, 237, 251));
     // background: rgba($color-green,0.8);

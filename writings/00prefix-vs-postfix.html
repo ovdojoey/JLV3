@@ -1,0 +1,41 @@
+---
+name: Prefix vs Postfix
+date: May 2, 2016
+type: long
+tags: javascript, php, increment operator
+url: prefix-vs-postfix.php
+---
+
+So, I've run into a small flub disgused as learning experience.
+I was writing up a short post about using
+<a href="/writings/plus-plus.php">the increment operator</a>
+and I learned something new.
+
+The increment and decrement operators in JS (and many other langauges) have two styles of
+functioning, either as `postfix` or `prefix`.
+
+If you are like me, you are probably most familar with the postfix style, or
+writing your increment as `i++`.  It's likely you are
+not using the value returned from this function, rather it's probably in a loop.
+
+But, for giggles, lets say you need to know right away what `i++` is.
+
+    var i = 0; console.log(i++);
+
+So, what gets logged? You may think 1, but due to the way postfix works,
+you'll actually see `0`.
+
+The function returns `i` before the increment takes place.
+That means if you write  `var plus = i++` and expect to have `plus` equal `i + 1` you'll be in
+for a whirl.  Thus, prefix and postfix operators come in to play.
+
+## Prefix
+`++i` returns the incremented value right away.  This allows you to reference
+the incremented value before using `i` later on in the script, like so:
+
+    var i = 2016;
+    var newYear = ++i;
+    console.log('Next year is ' + newYear + '. The year after is ' + ++i);
+
+## Postfix
+Unlike prefix, the variable value is returned before the operation takes place.

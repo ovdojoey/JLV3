@@ -2,7 +2,7 @@
 name: ++ or +1
 date: April 30, 2016
 type: short
-tags: javascript, php, iteration
+tags: javascript, php, iteration, increment operator
 url: plus-plus.php
 ---
 
@@ -17,9 +17,13 @@ Say you have `y` which is the year, and you want to know what year next year is.
 
 One may think to be terse and write:
 
-    var newYear = y++;
+    var newYear = ++y;
 
-Or perhaps only I am silly enough to write such things.  Either way, you can probably
+
+Note: you may be tempted to use y++. But, y++ won't work here. Why you ask?
+Because of <a href="/writings/prefix-vs-postfix.php">Prefix vs Postfix</a>.
+
+Perhaps only I am silly enough to write such things.  Either way, you can probably
 spot the problem.
 
 Both `newYear` and `y` are equal to `y + 1`.

@@ -1,5 +1,5 @@
 <?php
-$title = ($title) ? $title : 'Joey Lea - Writings';
+$title = (isset($title)) ? $title : 'Joey Lea - Writings';
 include('../partials/base/header.php');
 ?>
   <div class="loader">
@@ -61,7 +61,7 @@ include('../partials/base/header.php');
         </div>
         <div class="screen--container" style="height: auto; position:absolute;" id="scroll-section">
           <div class="screen--left">
-            <div class="writings-panel" data-activate="<?php if(!$notOpen) echo 'true'; ?>" id="writings-container">
+            <div class="writings-panel" data-activate="<?php if(!isset($notOpen)) echo 'true'; ?>" id="writings-container">
               <div class="progress-bar" id="writing-progress-bar"></div>
               <div class="exit" onclick="controller.closeReader()">
                 &times;

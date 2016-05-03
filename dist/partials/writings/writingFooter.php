@@ -3,7 +3,7 @@
               </div>
 
             </div>
-            <div class="screen-center <?php if(!$notOpen) echo 'open-pane'; ?>" id="left-screen-pane">
+            <div class="screen-center <?php if(!isset($notOpen)) echo 'open-pane'; ?>" id="left-screen-pane">
 
 
               <div class="overflower">
