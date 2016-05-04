@@ -62,38 +62,60 @@ include('../partials/base/header.php'); ?>
               <ul class="port-items">
 
                 <li class="port--item">
-                  <span class="number">1</span>
-                  <div class="title">Ottoform</div>
-                  <div class="img-container">
-                    <img src="/img/walrus.jpeg" title="Ottoform" alt="Ottoform">
-                  </div>
+                  <a href="/portfolio/ottoform/">
+                    <span class="number">1</span>
+                    <span class="label">PERSONAL PROJECT</span>
+                    <div class="title">Ottoform</div>
+                    <div class="img-container">
+                      <img src="/img/walrus.jpeg" title="Ottoform" alt="Ottoform">
+                    </div>
+                  </a>
                 </li>
 
                 <li class="port--item">
-                  <span class="number">2</span>
-                  <div class="title">Frnkrok</div>
-                  <div class="img-container">
-                    <img src="/img/frnkrok_crowd_sq.png" title="Frnkrok" alt="Frnkrok">
-                  </div>
+                  <a href="/portfolio/frnkrok/">
+                    <span class="number">2</span>
+                    <span class="label">CLIENT PROJECT</span>
+                    <div class="title">Frnkrok</div>
+                    <div class="img-container">
+                      <img src="/img/frnkrok_crowd_sq.png" title="Frnkrok" alt="Frnkrok">
+                    </div>
+                  </a>
                 </li>
 
 
                 <li class="port--item">
-                  <span class="number">3</span>
-                  <div class="title">Juiced</div>
-                  <div class="img-container">
-                    <img src="/img/juiced.jpeg" title="Juiced" alt="Juiced">
-                  </div>
+                  <a href="/portfolio/juiced/">
+                    <span class="number">3</span>
+                    <span class="label">OPEN SOURCE</span>
+                    <div class="title">Juiced</div>
+                    <div class="img-container">
+                      <img src="/img/juiced.jpeg" title="Juiced" alt="Juiced">
+                    </div>
+                  </a>
                 </li>
 
                 <li class="port--item">
-                  <span class="number">4</span>
-                  <div class="title">V3</div>
-                  <div class="img-container">
-                    <img src="/img/leaves.jpeg" title="V3" alt="V3">
-                  </div>
+                  <a href="/portfolio/v3/">
+                    <span class="number">4</span>
+                    <span class="label">PERSONAL PROJECT</span>
+                    <div class="title">V3</div>
+                    <div class="img-container">
+                      <img src="/img/leaves.jpeg" title="V3" alt="V3">
+                    </div>
+                  </a>
                 </li>
 
+                <li class="port--item">
+                  <a href="/portfolio/pates-law/">
+                    <span class="number">5</span>
+                    <span class="label">CLIENT PROJECT</span>
+                    <div class="title">Pates Law</div>
+                    <div class="img-container">
+                      <img src="/img/orlando_clear_sky.jpg" title="Pates Law Group" alt="Pates Law">
+                    </div>
+                  </a>
+                </li>
 
               </ul>
             </div>
