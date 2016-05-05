@@ -1,5 +1,5 @@
 <?php
-$title = 'Joey Lea - Me';
+$title = 'Joey Lea - Portfolio';
 include('../partials/base/header.php'); ?>
   <div class="loader">
     <div class="loader--circle-container">
@@ -61,18 +61,18 @@ include('../partials/base/header.php'); ?>
             <div class="screen-center">
               <ul class="port-items">
 
-                <li class="port--item">
+                <li class="port--item" data-color-back="blue">
                   <a href="/portfolio/ottoform/">
                     <span class="number">1</span>
                     <span class="label">PERSONAL PROJECT</span>
                     <div class="title">Ottoform</div>
                     <div class="img-container">
-                      <img src="/img/walrus.jpeg" title="Ottoform" alt="Ottoform">
+                      <img src="/img/walrus_port.jpg" title="Ottoform" alt="Ottoform">
                     </div>
                   </a>
                 </li>
 
-                <li class="port--item">
+                <li class="port--item" data-color-back="purple">
                   <a href="/portfolio/frnkrok/">
                     <span class="number">2</span>
                     <span class="label">CLIENT PROJECT</span>
@@ -84,35 +84,79 @@ include('../partials/base/header.php'); ?>
                 </li>
 
 
-                <li class="port--item">
+                <li class="port--item" data-color-back="red">
                   <a href="/portfolio/juiced/">
                     <span class="number">3</span>
                     <span class="label">OPEN SOURCE</span>
                     <div class="title">Juiced</div>
                     <div class="img-container">
-                      <img src="/img/juiced.jpeg" title="Juiced" alt="Juiced">
+                      <img src="/img/juiced_port.jpg" title="Juiced" alt="Juiced">
                     </div>
                   </a>
                 </li>
 
-                <li class="port--item">
+                <li class="port--item" data-color-back="gray">
                   <a href="/portfolio/v3/">
                     <span class="number">4</span>
                     <span class="label">PERSONAL PROJECT</span>
                     <div class="title">V3</div>
                     <div class="img-container">
-                      <img src="/img/leaves.jpeg" title="V3" alt="V3">
+                      <img src="/img/leaves_port.jpg" title="V3" alt="V3">
                     </div>
                   </a>
                 </li>
 
-                <li class="port--item">
+                <li class="port--item" data-color-back="darkblue">
                   <a href="/portfolio/pates-law/">
                     <span class="number">5</span>
                     <span class="label">CLIENT PROJECT</span>
                     <div class="title">Pates Law</div>
                     <div class="img-container">
-                      <img src="/img/orlando_clear_sky.jpg" title="Pates Law Group" alt="Pates Law">
+                      <img src="/img/orlando_clear_sky_port.jpg" title="Pates Law Group" alt="Pates Law">
+                    </div>
+                  </a>
+                </li>
+
+                <li class="port--item" data-color-back="white">
+                  <a href="/portfolio/promo-only-uk/">
+                    <span class="number">6</span>
+                    <span class="label">COMPANY PROJECT</span>
+                    <div class="title">PO UK</div>
+                    <div class="img-container no-bg">
+                      <img src="/img/UKMascotBulldog.png" title="UK Mascot" alt="Promo Only UK">
+                    </div>
+                  </a>
+                </li>
+
+                <li class="port--item" data-color-back="yellow">
+                  <a href="/portfolio/welli/">
+                    <span class="number">7</span>
+                    <span class="label">PERSONAL PROJECT</span>
+                    <div class="title">Welli</div>
+                    <div class="img-container">
+                      <img src="/img/welli.jpg" title="Welli" alt="Welli">
+                    </div>
+                  </a>
+                </li>
+
+                <li class="port--item" data-color-back="red">
+                  <a href="/portfolio/anne-marie-bowen/">
+                    <span class="number">8</span>
+                    <span class="label">CLIENT PROJECT</span>
+                    <div class="title">Bowen Law</div>
+                    <div class="img-container">
+                      <img src="/img/trees_port.jpg" title="Anne-Marie Bowen" alt="Bowen Law">
+                    </div>
+                  </a>
+                </li>
+
+                <li class="port--item" data-color-back="darkpurple">
+                  <a href="/portfolio/promo-only/">
+                    <span class="number">9</span>
+                    <span class="label">COMPANY PROJECT</span>
+                    <div class="title">Promo Only</div>
+                    <div class="img-container">
+                      <img src="/img/dj_outside.jpg" title="Promo Only Website" alt="Promo Only">
                     </div>
                   </a>
                 </li>

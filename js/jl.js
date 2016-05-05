@@ -62,10 +62,8 @@ controller = (function(){
       pos: null,
       distance: 0,
       timeEase: 0,
-      scrollers: [],
-      rafStarted: false
+      scrollers: []
     };
-    this.rAFStart = null;
     this.working = false;
     this.resizingScreenTimeout = null;
     this.vScroll = null;
@@ -319,12 +317,21 @@ controller = (function(){
     var currentY = 0, ease = 0.1;
     var currentYBG = 0, easeBG = 0.085;
     var targetY = 0;
+    var rAF;
 
+
+    /** this.virtualScroll
+    * Creates the virtual scroll instance
+    *
+    * @param boolean destroy - if true fires .off() method on vScroll and mututates
+    * object into a new vs instance.
+    */
     this.virtualScroll = function(destroy) {
 
       if ( destroy ) {
         targetY = currentY;
         this.vScroll.off();
+        window.cancelAnimationFrame(rAF);
       }
 
       this.vScroll = new vs({firefoxMultiplier: 25});
@@ -359,7 +366,7 @@ controller = (function(){
 
       var run = function() {
 
-        requestAnimationFrame(run);
+        rAF = requestAnimationFrame(run);
 
         currentY += Math.round( (targetY - currentY) * ease, 2);
         currentYBG += Math.round( (targetY - currentYBG) * easeBG, 2);
@@ -506,18 +513,6 @@ controller = (function(){
       if (!httpRequest) {
         return false;
       }
-
-      // const htmlParse = function(aHTMLString) {
-      //   var html = document.implementation.createDocument('http://www.w3.org/1999/xhtml', 'html', null),
-      //     body = document.createElementNS('http://www.w3.org/1999/xhtml', 'body');
-      //   html.documentElement.appendChild(body);
-      //
-      //   body.appendChild(Components.classes["@mozilla.org/feed-unescapehtml;1"]
-      //     .getService(Components.interfaces.nsIScriptableUnescapeHTML)
-      //     .parseFragment(aHTMLString, false, null, body));
-      //
-      //   return body;
-      // };
 
       const showWriting = function(){
         if ( httpRequest.readyState === XMLHttpRequest.DONE ) {
