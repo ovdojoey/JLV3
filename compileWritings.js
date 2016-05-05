@@ -20,43 +20,41 @@ DoLoop()
 .sortBy('asc')
 .loop( function( filename, data ) {
 
-  var _nextLoopIdx = loop + 1;
-  var _prevLoopIdx = loop - 1;
-  _prevLoopIdx = (_prevLoopIdx < 0) ? 0 : _prevLoopIdx;
+  // var _nextLoopIdx = loop + 1;
+  // var _prevLoopIdx = loop - 1;
+  // _prevLoopIdx = (_prevLoopIdx < 0) ? 0 : _prevLoopIdx;
 
   var content = fm(data);
   var words = content.body;
   var wordsCount = words.split(' ').length;
   content.body = marked(content.body);
   var type = content.attributes.type;
+  var draft = content.attributes.draft;
   var url = content.attributes.url;
   var date = content.attributes.date;
   var name = content.attributes.name;
-  /*
-  <div class="overflower t-5x">
-    <a href="#" class="in-overflower" onclick="controller.toggle('home', 'ottoform');">
-      <span class="title">OTTOFORM</span>
-      <span class="description">Setup contact forms in seconds</span>
-    </a>
-  </div>*/
 
-  var liHeader = '<li class="project-grid-li"><div class="overflower t-'+ loop +'x"><a class="in-overflower" href="/writings/' + url + '"><span class="title">';
-  var liFooter = '</span><span class="description">' + wordsCount + ' words. <strong>Under</strong>: ' + content.attributes.tags  + '</span></a></div></li>';
+  if ( !draft ) {
 
-  var bodyContent = '<?php $title="' + name.replace('"','&quot;') + '"; include_once("../partials/writings/writingHeader.php"); ?><h1>' + name + '</h1><time>' + date + '</time>' + content.body + '<?php include_once("../partials/writings/writingFooter.php"); ?>';
+    var liHeader = '<li class="project-grid-li"><div class="overflower t-'+ loop +'x"><a class="in-overflower" href="/writings/' + url + '"><span class="title">';
+    var liFooter = '</span><span class="description">' + wordsCount + ' words. <strong>Under</strong>: ' + content.attributes.tags  + '</span></a></div></li>';
 
-  if ( type === 'short' ) {
-    shortList += liHeader + name + liFooter;
+    var bodyContent = '<?php $title="' + name.replace('"','&quot;') + '"; include_once("../partials/writings/writingHeader.php"); ?><h1>' + name + '</h1><time>' + date + '</time>' + content.body + '<?php include_once("../partials/writings/writingFooter.php"); ?>';
+
+    if ( type === 'short' ) {
+      shortList += liHeader + name + liFooter;
+    }
+    else if ( type === 'long' ) {
+      longList += liHeader + name + liFooter;
+    }
+
+    fs.writeFile('dist/writings/' + url, bodyContent, function (err) {
+      if (err) return console.log(err);
+    });
+
+    lastFilename = filename;
+    
   }
-  else if ( type === 'long' ) {
-    longList += liHeader + name + liFooter;
-  }
-
-  fs.writeFile('dist/writings/' + url, bodyContent, function (err) {
-    if (err) return console.log(err);
-  });
-
-  lastFilename = filename;
 
   loop++;
 })

@@ -1,5 +1,5 @@
 <?php $title="How I Built This Website"; include_once("../partials/writings/writingHeader.php"); ?><h1>How I Built This Website</h1><time>May 1, 2016</time><p>This is one of the cooler websites I&#39;ve worked on.  It has a bit of PHP, and a
-lot of JavaScript, HTML and Sass. </p>
+lot of JavaScript, HTML and Sass.</p>
 <p>First, the best place to figure out how it works is to take a look at the source
 code over at <a href="https://github.com/ovdojoey/JLV3">https://github.com/ovdojoey/JLV3</a>.  It&#39;s actually my fourth
 official version, but what can you do.</p>
@@ -19,7 +19,7 @@ browser history, edging you closer to a web application rather than a set of pag
 I decided to make use of HTML5 History API&#39;s because I
 wanted to be able to load content without causing page reloads, and to have full
 control over the user experience when they are jumping from article to article.</p>
-<h2 id="ecmascript-6">ECMAScript 6</h2>
+<h2 id="ecmascript-2015">ECMAScript 2015</h2>
 <p>I love some of the new features of ES6 and had to take advantage of them in this
 project. To use ES6, I simply added Babel to my gulp tooling setup.</p>
 <p>More to come.  If you have any questions, feel free to reach out and ask me!</p>
