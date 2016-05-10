@@ -60,9 +60,7 @@ controller = (function(){
       timeout: null,
       videoTimeout: null,
       pos: null,
-      distance: 0,
-      timeEase: 0,
-      scrollers: []
+      distance: 0
     };
     this.working = false;
     this.resizingScreenTimeout = null;
@@ -415,7 +413,12 @@ controller = (function(){
 
       this.screens.loading.classList.add('out');
       this.screens.home.classList.add('active');
-      this.slideNumberTotalEle.innerText = this.screenKeys.length - 1;
+
+      if ( this.slideNumberTotalEle ) {
+
+        this.slideNumberTotalEle.innerText = this.screenKeys.length - 1;
+        
+      }
 
       if ( this.scrollType === 'screens' ) {
 

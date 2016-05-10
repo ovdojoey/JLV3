@@ -9,7 +9,7 @@ include('../partials/base/header.php'); ?>
     </div>
   </div>
   <div class="app" id="app" data-scroll="smooth">
-    <header class="header">
+    <header class="header dark">
       <div class="menu" id="jl-menu">
 
         <a class="exit-btn" onclick="controller.toggleMenu();" title="Exit">
@@ -35,11 +35,6 @@ include('../partials/base/header.php'); ?>
       </div>
     </header>
     <footer class="footer">
-      <div class="aside hide">
-        <span class="aside--number" id="slide-number">1</span>
-        <span class="aside--slash">/</span>
-        <span class="aside--number number-two" id="slide-number-total">3</span>
-      </div>
 
       <div class="copyright">
         Copyright Joey Lea.
@@ -54,15 +49,6 @@ include('../partials/base/header.php'); ?>
       </div>
       <div class="screen--video video-person" data-screen="code" data-enable="false" role="presentation">
       </div>
-      <!-- <div class="screen--video video-ottoform" role="presentation">
-      </div>
-      <div class="screen--video video-frnkrok" role="presentation">
-        <video autoplay muted loop class="fullscreen">
-            <source src="/video/frnkrok-hq.mp4" type="video/mp4"  />
-        </video>
-      </div>
-      <div class="screen--video video-jlv3" role="presentation"></div>
-      <div class="screen--video video-juiced" role="presentation"></div> -->
     </div>
     <div class="screens">
        <div  class="screen screen--about-me" id="screen-home" data-screen="home">
@@ -119,7 +105,7 @@ include('../partials/base/header.php'); ?>
 
               <p class="intro-desc">
 
-                Hi!  I'm Joey.  I enjoy technology, food, the company of friends, and early mornings with coffee and code.
+                Hi!  I'm Joey.  I enjoy technology, music, the company of friends, and early mornings with coffee and code.
               </p>
 
 
@@ -183,7 +169,7 @@ include('../partials/base/header.php'); ?>
                 </h1>
               </div>
               <p class="intro-desc">
-                My early life revolved around baseball and computers.
+                My early life revolved around baseball, music and computers.
 
                 I worked for AT&amp;T wireless in my senior year of high school
                 and throughout college.
@@ -202,6 +188,9 @@ include('../partials/base/header.php'); ?>
                 </li>
                 <li>
                   <a href="mailto:joey@w3by.com?Subject=Hi">Say Hi</a>
+                </li>
+                <li>
+                  <a href="https://soundcloud.com/joey-lea/">My Music</a>
                 </li>
               </ul>
 

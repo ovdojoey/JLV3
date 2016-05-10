@@ -9,7 +9,7 @@ include('../partials/base/header.php'); ?>
     </div>
   </div>
   <div class="app" id="app" data-scroll="smooth">
-    <header class="header">
+    <header class="header dark">
       <div class="menu" id="jl-menu">
 
         <a class="exit-btn" onclick="controller.toggleMenu();" title="Exit">
