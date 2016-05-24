@@ -642,14 +642,14 @@ body{
 .video-person,
 .video-code{
 
-  background: lighten(#2ba4ea,10%);
+  // background: lighten(#2ba4ea,10%);
 
-  background: #E3FF8E;
+  background:#fff;
   opacity: 0;
   visibility: visible;
   &.video-person{
     background: $color-green;
-      background: #A4E2E2;
+    background: #A4E2E2;
   }
   &.fadeIn{
     transition:  visibility 0s 0s, opacity 1s 0s;
@@ -1543,7 +1543,8 @@ body{
     content: '';
     width: 100%;
     height: 100%;
-    background: rgba(244,244,225,0.45);
+    background: rgba(244,244,235,0.45);
+    // background: rgba(147,148,142,0.45);
     z-index: -1;
     min-height: 100vh;
   }
@@ -1779,12 +1780,14 @@ body{
 
 }
 .screen--about-me{
+  // background: #eee;
   &.active{
     display: block;
   }
   .label{
     color: #222;
   }
+
   .question-letters{
     .h1{
       font-size: 42px;
@@ -1910,7 +1913,8 @@ body{
     content: '';
     width: 100%;
     height: 100%;
-    background: rgba(#fff,0.45);
+    background: rgba(235,235,235,0.45);
+    // background: rgba(#ccc, 0.5);
     // height: 5000px;
     // background: linear-gradient(rgba(223, 242, 250, 0), rgba(223, 242, 250, 0), rgb(248, 245, 238), rgb(248, 245, 238), rgb(236, 249, 255), rgb(236, 249, 255), rgb(246, 244, 236), rgb(246, 244, 236), rgb(237, 245, 211), rgb(237, 245, 211), rgb(242, 248, 246), rgb(242, 248, 246), rgb(250, 240, 192), rgb(250, 240, 192), rgb(243, 247, 248), rgb(243, 247, 248), rgb(235, 250, 236), rgb(235, 250, 236), rgb(247, 241, 239), rgb(247, 241, 239), rgb(247, 245, 253), rgb(247, 245, 253), rgb(247, 243, 243), rgb(247, 243, 243), rgb(245, 237, 251), rgb(245, 237, 251));
     // background: rgba($color-green,0.8);

@@ -131,12 +131,12 @@ include('../partials/base/header.php'); ?>
           <div class="screen--left">
             <div class="screen-center">
 
-              <div class="overflower" data-actpoint='{ "fadeIn" : ".video-code" }' >
+              <div class="overflower">
                 <h1 class="h2 in-overflower color-white">
                   the coder
                 </h1>
               </div>
-              <p class="intro-desc color-white" data-actpoint='{ "fadeOut" : ".video-about-me" }'>
+              <p class="intro-desc color-white">
                 I design and develop websites and apps.
                 I am meticulous with my craft and enjoy perfecting the tiny details.
                 I work on both front-end web design and
@@ -151,7 +151,7 @@ include('../partials/base/header.php'); ?>
                   <a href="https://codepen.io/ovdojoey/" target="_blank">Codepen</a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/ovdojoey/" target="_blank">twitter</a>
+                  <a href="https://www.linkedin.com/in/joeylea" target="_blank">LinkedIn</a>
                 </li>
               </ul>
 

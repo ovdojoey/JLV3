@@ -64,7 +64,7 @@ include('../partials/base/header.php'); ?>
                 <li class="port--item" data-color-back="blue">
                   <a href="/portfolio/ottoform/">
                     <span class="number">1</span>
-                    <span class="label">PERSONAL PROJECT</span>
+                    <span class="label">SAAS PROJECT</span>
                     <div class="title">Ottoform</div>
                     <div class="img-container">
                       <img src="/img/walrus_port.jpg" title="Ottoform" alt="Ottoform">
@@ -78,7 +78,7 @@ include('../partials/base/header.php'); ?>
                     <span class="label">CLIENT PROJECT</span>
                     <div class="title">Frnkrok</div>
                     <div class="img-container">
-                      <img src="/img/frnkrok_crowd_sq.png" title="Frnkrok" alt="Frnkrok">
+                      <img src="/img/frnkrok_crowd_sq_sm.png" title="Frnkrok" alt="Frnkrok">
                     </div>
                   </a>
                 </li>

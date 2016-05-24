@@ -313,7 +313,7 @@ controller = (function(){
     };
 
     var currentY = 0, ease = 0.1;
-    var currentYBG = 0, easeBG = 0.085;
+    var currentYBG = 0, easeBG = 0.14;
     var targetY = 0;
     var rAF;
 
@@ -417,7 +417,7 @@ controller = (function(){
       if ( this.slideNumberTotalEle ) {
 
         this.slideNumberTotalEle.innerText = this.screenKeys.length - 1;
-        
+
       }
 
       if ( this.scrollType === 'screens' ) {
