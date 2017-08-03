@@ -312,7 +312,7 @@ controller = (function(){
       }, 100);
     };
 
-    var currentY = 0, ease = 0.1;
+    var currentY = 0, ease = 0.12;
     var currentYBG = 0, easeBG = 0.14;
     var targetY = 0;
     var rAF;

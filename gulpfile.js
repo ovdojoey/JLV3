@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var babel = require('gulp-babel');
-var babelify = require("babelify");
+var babelify = require('babelify');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
@@ -38,7 +38,7 @@ gulp.task('sass', function() {
   gulp.src('./sass/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
-        cascade: false
+      cascade: false
     }))
     .pipe(cleanCSS())
     .pipe(gulp.dest('./dist/css'));

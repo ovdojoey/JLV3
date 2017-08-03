@@ -48,7 +48,7 @@
         <div class="overflower t-12x">
           <div class="in-overflower">
             <span class="label before-line">EMAIL ME</span>
-            <div class="answer"><a href="mailto:joey@w3by.com">joey@w3by.com</a></div>
+            <div class="answer"><a href="mailto:ovdojoey@gmail.com">ovdojoey@gmail.com</a></div>
           </div>
         </div>
       </div>

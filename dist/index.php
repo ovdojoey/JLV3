@@ -1,5 +1,5 @@
 <?php
-$title = 'Joey Lea - Web Developer &amp; Full-stack Engineer';
+$title = 'Joey Lea - Web Developer &amp; Front-end Engineer';
 include('partials/base/header.php'); ?>
   <div class="loader">
     <div class="loader--circle-container">
@@ -152,61 +152,6 @@ include('partials/base/header.php'); ?>
         </div>
       </div>
 
-      <div class="screen screen--ottoform fade-out" id="screen-ottoform" data-screen="ottoform">
-
-        <div class="screen--container">
-          <div class="screen--left screen-collapse">
-            <div class="screen-center">
-
-              <span class="label absolute"><a href="#" onclick="controller.toggle('ottoform', 'home');">&larr;</a> PERSONAL PROJECT | <a href="/portfolio/">VIEW ALL <img src="/img/grid_icon.svg" class="icon" alt="Portfolio" /></a></span>
-              <div class="overflower">
-                <h1 class="h1 in-overflower">
-                  Ottoform
-                </h1>
-              </div>
-              <div class="overflower t-2x">
-                <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
-                <a class="label in-overflower" href="https://ottoform.com" target="_blank">VISIT</a>
-
-              </div>
-              <p class="intro-desc">
-                The easiest form you will ever create.
-              </p>
-
-            </div>
-          </div>
-
-          <div class="screen--right">
-            <div class="screen-center">
-              <div class="overflower">
-                <div class="in-overflower">
-                  <span class="label">START DATE</span>
-                  <div class="answer">April, 2016</div>
-                </div>
-              </div>
-              <div class="overflower t-2x">
-                <div class="in-overflower">
-                  <span class="label">STATUS</span>
-                  <div class="answer">Beta &amp; Early Dev</div>
-                </div>
-              </div>
-              <div class="overflower t-3x">
-                <div class="in-overflower">
-                  <span class="label">TECH USED</span>
-                  <div class="answer">Lumen, HTML, Sass, PHP, JS</div>
-                </div>
-              </div>
-              <div class="overflower t-4x">
-                <div class="in-overflower">
-                  <span class="label">WEBSITE</span>
-                  <div class="answer"><a href="https://ottoform.com" target="_blank">https://ottoform.com</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
 
       <div class="screen screen--frnkrok fade-out" id="screen-frnkrok" data-screen="frnkrok">
 
@@ -266,6 +211,62 @@ include('partials/base/header.php'); ?>
               </div>
 
 
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="screen screen--ottoform fade-out" id="screen-ottoform" data-screen="ottoform">
+
+        <div class="screen--container">
+          <div class="screen--left screen-collapse">
+            <div class="screen-center">
+
+              <span class="label absolute"><a href="#" onclick="controller.toggle('ottoform', 'home');">&larr;</a> PERSONAL PROJECT | <a href="/portfolio/">VIEW ALL <img src="/img/grid_icon.svg" class="icon" alt="Portfolio" /></a></span>
+              <div class="overflower">
+                <h1 class="h1 in-overflower">
+                  Ottoform
+                </h1>
+              </div>
+              <div class="overflower t-2x">
+                <span class="label after-line in-overflower">PROJECT BRIEF</span> &nbsp;
+                <a class="label in-overflower" href="https://ottoform.com" target="_blank">VISIT</a>
+
+              </div>
+              <p class="intro-desc">
+                The easiest form you will ever create.
+              </p>
+
+            </div>
+          </div>
+
+          <div class="screen--right">
+            <div class="screen-center">
+              <div class="overflower">
+                <div class="in-overflower">
+                  <span class="label">START DATE</span>
+                  <div class="answer">April, 2016</div>
+                </div>
+              </div>
+              <div class="overflower t-2x">
+                <div class="in-overflower">
+                  <span class="label">STATUS</span>
+                  <div class="answer">Beta &amp; Early Dev</div>
+                </div>
+              </div>
+              <div class="overflower t-3x">
+                <div class="in-overflower">
+                  <span class="label">TECH USED</span>
+                  <div class="answer">Lumen, HTML, Sass, PHP, JS</div>
+                </div>
+              </div>
+              <div class="overflower t-4x">
+                <div class="in-overflower">
+                  <span class="label">WEBSITE</span>
+                  <div class="answer"><a href="https://ottoform.com" target="_blank">https://ottoform.com</a></div>
+                </div>
+              </div>
             </div>
           </div>
 

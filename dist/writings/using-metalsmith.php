@@ -1,5 +1,5 @@
 <?php $title="Using Metalsmith"; include_once("../partials/writings/writingHeader.php"); ?><h1>Using Metalsmith</h1><time>January 30, 2016</time><p><strong>UPDATE</strong> I still enjoy Metalsmith.  But, as of right now it&#39;s not part of my build.
-I was able to get the same functionality using my own doloop npm module.</p>
+I was able to get the same functionality using my own <a href="https://github.com/ovdojoey/doloop" target="_blank">doloop npm module</a>.</p>
 <p class="home-tagline">
   Building this website was my first time using Metalsmith, and I must say... I really like it!
   I think there are a few things that I need to improve in my flow

@@ -58,7 +58,7 @@ include('../partials/base/header.php'); ?>
             <div class="screen-center">
 
               <!-- <div class="white-back"></div> -->
-              <span class="clip-text h1">27</span>
+              <span class="clip-text h1">28</span>
               <div class="label before-line clip-label">years on earth</div>
 
 
@@ -75,8 +75,8 @@ include('../partials/base/header.php'); ?>
 
           <div class="screen--left">
             <div class="screen-center">
-              <span class="clip-text h1">FL</span>
-              <div class="label before-line clip-label">the mouse is my neighbor</div>
+              <span class="clip-text h1">WA</span>
+              <div class="label before-line clip-label">amazon is my neighbor</div>
               <!-- <div class="label before-line clip-label"></div> -->
 
 
@@ -138,14 +138,13 @@ include('../partials/base/header.php'); ?>
               </div>
               <p class="intro-desc color-white">
                 I design and develop websites and apps.
-                I am meticulous with my craft and enjoy perfecting the tiny details.
                 I work on both front-end web design and
                 back-end object-oriented application development.
               </p>
               <span class="label">LINKS</span>
               <ul class="no-list">
                 <li>
-                  <a href="/resume">résumé</a>
+                  <a href="https://github.com/ovdojoey">github</a>
                 </li>
                 <li>
                   <a href="https://codepen.io/ovdojoey/" target="_blank">Codepen</a>
@@ -171,14 +170,13 @@ include('../partials/base/header.php'); ?>
               <p class="intro-desc">
                 My early life revolved around baseball, music and computers.
 
-                I worked for AT&amp;T wireless in my senior year of high school
-                and throughout college.
+                I worked for AT&amp;T in my senior year of high school
+                and throughout college building websites as a hobby on the side.
                 In 2011, I graduated from UCF with a degree in Legal Studies.
               </p>
               <p class="intro-desc">
-                I (somehow) landed a coding job out of college and haven't
-                looked back since! Oh &mdash;
-                I have a dog named Duke, he's pretty awesome.
+                I somehow landed a coding job out of college and haven't looked back since! Oh &mdash;
+                I have a dog named Cooper, he's very awesome.
 
               </p>
               <span class="label">LINKS</span>
@@ -187,7 +185,7 @@ include('../partials/base/header.php'); ?>
                   <a href="https://instagram.com/ovdojoey" target="_blank">Instagram</a>
                 </li>
                 <li>
-                  <a href="mailto:joey@w3by.com?Subject=Hi">Say Hi</a>
+                  <a href="mailto:ovdojoey@gmail.com.com?Subject=Hi">Say Hi</a>
                 </li>
                 <li>
                   <a href="https://soundcloud.com/joey-lea/">My Music</a>
@@ -233,11 +231,14 @@ include('../partials/base/header.php'); ?>
                 <span class="letr l-s-3">S</span>
                 <span class="letr l-l">L</span>
                 <span class="letr l-v-2">V</span>
+                <span class="letr l-i-2">I</span>
                 <span class="letr l-m">M</span>
                 <span class="letr l-e-4">E</span>
                 <span class="letr l-a-3">A</span>
+                <span class="letr l-g">G</span>
                 <span class="letr l-u">U</span>
                 <span class="letr l-n-2">N</span>
+                <span class="letr l-h-2">H</span>
                 <span class="letr l-s-4">S</span>
                 <span class="letr l-i">I</span>
                 <span class="letr l-c-2">C</span>
@@ -246,7 +247,7 @@ include('../partials/base/header.php'); ?>
               </div>
               <div class="question-letters">
                 <span class="h1" data-answer="l-j,l-o,l-e,l-y,l-l,l-e-4,l-a-3" onclick="controller.revealLetterAnswers(this)">Name</span>
-                <span class="h1" data-answer="l-t,l-w,l-e,l-n,l-t-2,l-y,l-do-2,l-s-2,l-e-3,l-v-2,l-e-4,l-n-2" onclick="controller.revealLetterAnswers(this)">Age</span>
+                <span class="h1" data-answer="l-t,l-w,l-e,l-n,l-t-2,l-y,l-do-2,l-e-3,l-i-2,l-g,l-h-2,l-t-4" onclick="controller.revealLetterAnswers(this)">Age</span>
                 <span class="h1" data-answer="l-s,l-t,l-e,l-a,l-k,l-am,l-p-3,l-o-2,l-t-3,l-a-2,l-t-4,l-o-3" onclick="controller.revealLetterAnswers(this)">Food</span>
                 <span class="h1" data-answer="l-j,l-s,l-do,l-p-2,l-h,l-p-3,l-do-2,l-s-2,l-a-2,l-s-3,l-s-4" onclick="controller.revealLetterAnswers(this)">Languages</span>
                 <span class="h1" data-answer="l-a-0,l-t-2,l-o-2,l-m" onclick="controller.revealLetterAnswers(this)">IDE</span>

@@ -62,7 +62,7 @@ include('../partials/base/header.php'); ?>
               <ul class="port-items">
 
                 <li class="port--item" data-color-back="blue">
-                  <a href="/portfolio/ottoform/">
+                  <a href="https://ottoform.com/" target="_blank">
                     <span class="number">1</span>
                     <span class="label">SAAS PROJECT</span>
                     <div class="title">Ottoform</div>
@@ -73,7 +73,7 @@ include('../partials/base/header.php'); ?>
                 </li>
 
                 <li class="port--item" data-color-back="purple">
-                  <a href="/portfolio/frnkrok/">
+                  <a href="https://frnkrok.com/" target="_blank">
                     <span class="number">2</span>
                     <span class="label">CLIENT PROJECT</span>
                     <div class="title">Frnkrok</div>
@@ -85,7 +85,7 @@ include('../partials/base/header.php'); ?>
 
 
                 <li class="port--item" data-color-back="red">
-                  <a href="/portfolio/juiced/">
+                  <a href="http://juicedcss.com/" target="_blank">
                     <span class="number">3</span>
                     <span class="label">OPEN SOURCE</span>
                     <div class="title">Juiced</div>
@@ -96,7 +96,7 @@ include('../partials/base/header.php'); ?>
                 </li>
 
                 <li class="port--item" data-color-back="gray">
-                  <a href="/portfolio/v3/">
+                  <a href="https://v3.joeylea.com" target="_blank">
                     <span class="number">4</span>
                     <span class="label">PERSONAL PROJECT</span>
                     <div class="title">V3</div>
@@ -107,18 +107,18 @@ include('../partials/base/header.php'); ?>
                 </li>
 
                 <li class="port--item" data-color-back="darkblue">
-                  <a href="/portfolio/pates-law/">
+                  <a href="http://compasslawfirm.com"  target="_blank">
                     <span class="number">5</span>
                     <span class="label">CLIENT PROJECT</span>
-                    <div class="title">Pates Law</div>
+                    <div class="title">Compass Law</div>
                     <div class="img-container">
-                      <img src="/img/orlando_clear_sky_port.jpg" title="Pates Law Group" alt="Pates Law">
+                      <img src="/img/orlando_clear_sky_port.jpg" title="Compass Law" alt="Compass Law">
                     </div>
                   </a>
                 </li>
 
                 <li class="port--item" data-color-back="white">
-                  <a href="/portfolio/promo-only-uk/">
+                  <a href="https://promoonly.uk" target="_blank">
                     <span class="number">6</span>
                     <span class="label">COMPANY PROJECT</span>
                     <div class="title">PO UK</div>
@@ -129,7 +129,7 @@ include('../partials/base/header.php'); ?>
                 </li>
 
                 <li class="port--item" data-color-back="yellow">
-                  <a href="/portfolio/welli/">
+                  <a href="http://gowelli.com/" target="_blank">
                     <span class="number">7</span>
                     <span class="label">PERSONAL PROJECT</span>
                     <div class="title">Welli</div>
@@ -140,7 +140,7 @@ include('../partials/base/header.php'); ?>
                 </li>
 
                 <li class="port--item" data-color-back="red">
-                  <a href="/portfolio/anne-marie-bowen/">
+                  <a href="http://bowenbankruptcylaw.com" target="_blank">
                     <span class="number">8</span>
                     <span class="label">CLIENT PROJECT</span>
                     <div class="title">Bowen Law</div>
@@ -151,7 +151,7 @@ include('../partials/base/header.php'); ?>
                 </li>
 
                 <li class="port--item" data-color-back="darkpurple">
-                  <a href="/portfolio/promo-only/">
+                  <a href="https://promoonly.com" target="_blank">
                     <span class="number">9</span>
                     <span class="label">COMPANY PROJECT</span>
                     <div class="title">Promo Only</div>
