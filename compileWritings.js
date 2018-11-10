@@ -37,9 +37,9 @@ DoLoop()
   if ( !draft ) {
 
     var liHeader = '<li class="project-grid-li"><div class="overflower t-'+ loop +'x"><a class="in-overflower" href="/writings/' + url + '"><span class="title">';
-    var liFooter = '</span><span class="description">' + wordsCount + ' words. <strong>Under</strong>: ' + content.attributes.tags  + '</span></a></div></li>';
+    var liFooter = '</span><span class="description">' + date + '. ' + wordsCount + ' words.</span></a></div></li>';
 
-    var bodyContent = '<?php $title="' + name.replace('"','&quot;') + '"; include_once("../partials/writings/writingHeader.php"); ?><h1>' + name + '</h1><time>' + date + '</time>' + content.body + '<?php include_once("../partials/writings/writingFooter.php"); ?>';
+    var bodyContent = '<?php $title="' + name.replace('"','&quot;') + '"; include_once("../partials/writings/writingHeader.php"); ?><h1>' + name + '</h1><time>' + date + '</time>' + content.body + '<footer><strong>Tagged under:</strong> ' + content.attributes.tags + '</footer><?php include_once("../partials/writings/writingFooter.php"); ?>';
 
     if ( type === 'short' ) {
       shortList += liHeader + name + liFooter;
@@ -53,7 +53,7 @@ DoLoop()
     });
 
     lastFilename = filename;
-    
+
   }
 
   loop++;

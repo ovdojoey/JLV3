@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Cartmine</title>
+</head>
+<body>
+    <h2>Shopping store</h2>
+    <ul>
+        <li>
+            TSHIRT -
+            <button
+                data-cartmine-item
+                data-amount="945"
+                data-id="tshirt">ADD
+            </button>
+        </li>
+        <li>
+            DIGITAL DOWNLOAD -
+            <button
+                data-cartmine-item
+                data-amount="240"
+                data-id="dl_213">ADD
+            </button>
+        </li>
+        <li>
+            TSHIRT 2 -
+            <button
+                data-cartmine-item
+                data-amount="1200"
+                data-id="tshirt2">ADD
+            </button>
+        </li>
+        <li>
+            TSHIRT 3 -
+            <button
+                data-cartmine-item
+                data-amount="300"
+                data-id="tshirt3">ADD
+            </button>
+        </li>
+        <li>
+            TSHIRT 4 -
+            <button
+                data-cartmine-item
+                data-id="tshirt4"
+                data-amount="500"
+                data-description="Extra cool T-Shirt2"
+            >
+                ADD
+            </button>
+        </li>
+        <li>
+            <!-- Note: when you want more than one add button for the same item, use data-id-ref  -->
+            TSHIRT 4 (reference) -
+            <button
+                data-cartmine-item
+                data-ref="tshirt4"
+            >
+                ADD
+            </button>
+        </li>
+    </ul>
+
+    <button data-cartmine-checkout>
+        Checkout
+    </button>
+
+    <!-- Include the Cartmine script -->
+    <script src="cartmine_min.js"
+        data-cartmine
+        data-testing="true"
+        data-checkout-url="process_charge.php">
+    </script>
+
+    <!-- Include the Stripe checkout code (optional if intergrating with Stripe) -->
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+
+    <!-- Custom checkout handler with Stripe integration. -->
+    <script>
+        Cartmine.onCheckout(() => {
+            StripeCheckout.configure({
+                key: 'pk_test_g6do5S237ekq10r65BnxO6S0', // Your public stripe key
+                token: (token) => {
+                    // Transaction is finished.
+                    Cartmine.submit({ token });
+                }
+            }).open({
+                amount: Cartmine.getSubtotal()
+            });
+        });
+    </script>
+
+</body>
+</html>

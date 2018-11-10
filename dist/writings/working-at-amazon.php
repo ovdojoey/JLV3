@@ -8,4 +8,4 @@ influence the roadmap of our org, work on some (mostly) sweet projects, and real
 the leadership principles they talk about from Day One.  It&#39;s been an amazing journey.</p>
 <p>I don&#39;t know what the future holds, but I do feel very lucky to have made an impact at the company thus far.</p>
 <p>🎉</p>
-<?php include_once("../partials/writings/writingFooter.php"); ?>
+<footer><strong>Tagged under:</strong> amazon, front-end engineer, seattle</footer><?php include_once("../partials/writings/writingFooter.php"); ?>

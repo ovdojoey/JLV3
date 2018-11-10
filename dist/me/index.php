@@ -58,7 +58,7 @@ include('../partials/base/header.php'); ?>
             <div class="screen-center">
 
               <!-- <div class="white-back"></div> -->
-              <span class="clip-text h1">28</span>
+              <span class="clip-text h1">29</span>
               <div class="label before-line clip-label">years on earth</div>
 
 
@@ -67,16 +67,16 @@ include('../partials/base/header.php'); ?>
 
           <div class="screen--left">
             <div class="screen-center">
-              <span class="clip-text h1">30</span>
-              <div class="label before-line clip-label">projects completed</div>
+              <span class="clip-text h1" style="letter-spacing: -20px">NFLX</span>
+              <div class="label before-line clip-label">currently working @ Netflix</div>
 
             </div>
           </div>
 
           <div class="screen--left">
             <div class="screen-center">
-              <span class="clip-text h1">WA</span>
-              <div class="label before-line clip-label">amazon is my neighbor</div>
+              <span class="clip-text h1">BAY</span>
+              <div class="label before-line clip-label">tech is my neighbor</div>
               <!-- <div class="label before-line clip-label"></div> -->
 
 
@@ -175,7 +175,8 @@ include('../partials/base/header.php'); ?>
                 In 2011, I graduated from UCF with a degree in Legal Studies.
               </p>
               <p class="intro-desc">
-                I somehow landed a coding job out of college and haven't looked back since! Oh &mdash;
+                I somehow landed a coding job out of college and haven't looked back since! I've worked
+                for Amazon and I'm currently at Netflix. My passion outside of work is making music (check it in the link below!). Oh &mdash;
                 I have a dog named Cooper, he's very awesome.
 
               </p>
@@ -213,6 +214,8 @@ include('../partials/base/header.php'); ?>
                 <span class="letr l-e">E</span>
                 <span class="letr l-v">V</span>
                 <span class="letr l-e-2">E</span>
+                <span class="letr l-n-0">N</span>
+                <span class="letr l-y">Y</span>
                 <span class="letr l-a">A</span>
                 <span class="letr l-n">N</span>
                 <span class="letr l-t-2">T</span>
@@ -244,13 +247,14 @@ include('../partials/base/header.php'); ?>
                 <span class="letr l-c-2">C</span>
                 <span class="letr l-t-4">T</span>
                 <span class="letr l-o-3">O</span>
+                <span class="letr l-e-4">E</span>
               </div>
               <div class="question-letters">
                 <span class="h1" data-answer="l-j,l-o,l-e,l-y,l-l,l-e-4,l-a-3" onclick="controller.revealLetterAnswers(this)">Name</span>
-                <span class="h1" data-answer="l-t,l-w,l-e,l-n,l-t-2,l-y,l-do-2,l-e-3,l-i-2,l-g,l-h-2,l-t-4" onclick="controller.revealLetterAnswers(this)">Age</span>
+                <span class="h1" data-answer="l-t,l-w,l-e,l-n-0,l-t-2,l-y,l-n,l-i-2,l-n-2,l-e-4" onclick="controller.revealLetterAnswers(this)">Age</span>
                 <span class="h1" data-answer="l-s,l-t,l-e,l-a,l-k,l-am,l-p-3,l-o-2,l-t-3,l-a-2,l-t-4,l-o-3" onclick="controller.revealLetterAnswers(this)">Food</span>
                 <span class="h1" data-answer="l-j,l-s,l-do,l-p-2,l-h,l-p-3,l-do-2,l-s-2,l-a-2,l-s-3,l-s-4" onclick="controller.revealLetterAnswers(this)">Languages</span>
-                <span class="h1" data-answer="l-a-0,l-t-2,l-o-2,l-m" onclick="controller.revealLetterAnswers(this)">IDE</span>
+                <span class="h1" data-answer="l-a-0,l-t-2,l-o-2,l-m" onclick="controller.revealLetterAnswers(this)">Editor</span>
                 <span class="h1" data-answer="l-m-0,l-u,l-s-4,l-i,l-c-2" onclick="controller.revealLetterAnswers(this)">Hobby</span>
                 <span class="h1" data-answer="l-a-0,l-p,l-p-2,l-l,l-e-4" onclick="controller.revealLetterAnswers(this)">PC/MAC</span>
                 <!-- <span class="label answer">HTML, Sass, CSS <br>JavaScript, PHP, SQL</span> -->

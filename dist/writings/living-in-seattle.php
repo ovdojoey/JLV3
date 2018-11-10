@@ -2,4 +2,4 @@
  was the scariest thing I have ever done. But, the journey has been full of awesome people
  and wonderful experiences.</p>
 <p>Here&#39;s to the PNW. 🍹</p>
-<?php include_once("../partials/writings/writingFooter.php"); ?>
+<footer><strong>Tagged under:</strong> seattle, PNW, life</footer><?php include_once("../partials/writings/writingFooter.php"); ?>

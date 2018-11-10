@@ -3,4 +3,4 @@ Each version of my website has built upon the last and I hope this one stays in
 production for some time.</p>
 <p>Oh, and today is my Birthday too.  So Happy Birthday me!</p>
 <h1 id="-">🎉</h1>
-<?php include_once("../partials/writings/writingFooter.php"); ?>
+<footer><strong>Tagged under:</strong> launch, html5, javascript, css</footer><?php include_once("../partials/writings/writingFooter.php"); ?>

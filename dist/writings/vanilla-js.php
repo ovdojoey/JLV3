@@ -2,4 +2,4 @@
 means no magic sugar support for query selectors and XML requests.</p>
 <p>But, it&#39;s fairly easy
 stuff to patch in with npm packages or to write up custom though.</p>
-<?php include_once("../partials/writings/writingFooter.php"); ?>
+<footer><strong>Tagged under:</strong> javascript</footer><?php include_once("../partials/writings/writingFooter.php"); ?>

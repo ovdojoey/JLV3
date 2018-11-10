@@ -22,4 +22,4 @@ var newYear = ++i;
 console.<span class="hljs-built_in">log</span>('Next <span class="hljs-built_in">year</span> <span class="hljs-keyword">is</span> ' + newYear + '. The <span class="hljs-built_in">year</span> <span class="hljs-keyword">after</span> <span class="hljs-keyword">is</span> ' + ++i);
 </code></pre><h2 id="postfix">Postfix</h2>
 <p>Unlike prefix, the variable value is returned before the operation takes place.</p>
-<?php include_once("../partials/writings/writingFooter.php"); ?>
+<footer><strong>Tagged under:</strong> javascript, php, increment operator</footer><?php include_once("../partials/writings/writingFooter.php"); ?>

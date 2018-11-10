@@ -15,4 +15,4 @@ I was able to get the same functionality using my own <a href="https://github.co
 <p class="home-tagline">
   I hope to be making another blog post about using Metalsmith with more in-depth techincal discussions.  Stay tuned.
 </p>
-<?php include_once("../partials/writings/writingFooter.php"); ?>
+<footer><strong>Tagged under:</strong> javascript, metalsmith</footer><?php include_once("../partials/writings/writingFooter.php"); ?>

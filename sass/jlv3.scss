@@ -81,9 +81,9 @@ body{
       left: 10%;
       top: 10px;
       .a{
-        stroke-dasharray: 1800;
-        stroke-dashoffset: 1500;
-        animation: buildInOutLine 1s 1 forwards;
+        stroke-dasharray: 440;
+        stroke-dashoffset: 440;
+        animation: buildInOutLine 4s 1 forwards;
         @keyframes buildInOutLine {
           100%{
             stroke-dashoffset: 0;
@@ -668,8 +668,8 @@ body{
   background: #fff;
 }
 .video-about-me{
-  background: #fff url(/img/me_white.jpg) 50% 50% no-repeat;
-  background-size: 1000px;
+  background: #fff url(/img/light-sf-joe.jpg) 50% 50% no-repeat;
+  background-size: 300px;
   opacity: 0;
   transform: translateZ(0);
   &[data-enable='true']{
@@ -678,6 +678,9 @@ body{
   &.fadeOut{
     opacity: 0;
     transition:  visibility 0s 0s, opacity 1s .1s;
+  }
+  @media (min-width: 800px) {
+      background-size: 650px;
   }
 }
 .video-home{
@@ -1263,6 +1266,9 @@ body{
       position: relative;
       z-index: 11;
       text-align: center;
+      height: 85px;
+      line-height: 85px;
+      white-space: nowrap;
     }
     #writing-block{
       padding: 12px 20px;
@@ -1275,7 +1281,7 @@ body{
       color: #292929;
       // font-family: serif;
       font-size: 18px;
-      height: 80%;
+      height: calc(100% - 145px);
       // font-size: 14px;
       .hljs {
         display: block;
@@ -1380,14 +1386,15 @@ body{
         text-transform: uppercase;
         font-size: 11px;
         color: #444;
+        margin-bottom: 20px;
+        display: block;
       }
       // @import url(http://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic&subset=latin);
-      font: 1em "Vollkorn", Palatino, Times;
+      font: 0.85em "Vollkorn", Palatino, Times;
     	color: #333;
     	line-height: 1.4;
     	text-align: justify;
       header, nav, article, footer {
-      	width: 700px;
       	margin:0 auto;
       	}
       article {
@@ -1397,6 +1404,10 @@ body{
       	}
       footer {
       	margin-bottom:50px;
+        margin-top: 50px;
+        padding-top: 25px;
+        border-top: 3px solid #222;
+        font-size: 0.8em;
       	}
       video {
       	margin: 2em 0;
@@ -1877,18 +1888,20 @@ body{
     li{
       display: inline-block;
       a{
-        padding: 5px 10px 5px 0;
+        padding: 5px 10px 5px;
         font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
         // border: 1px solid #222;
         text-decoration: none;
-        font-size: 10px;
-        font-weight: 100;
+        font-size: 12px;
+        font-weight: 300;
         text-transform: uppercase;
-        color: #666;
+        color: #555;
         letter-spacing: 1px;
+        background: rgba(255,255,255,0.3);
 
         &:hover{
           color: #222;
+          background: rgba(255,255,255,0.5);
         }
       }
     }
@@ -1913,7 +1926,7 @@ body{
     content: '';
     width: 100%;
     height: 100%;
-    background: rgba(235,235,235,0.45);
+    background: rgba(232,232,232,0.45);
     // background: rgba(#ccc, 0.5);
     // height: 5000px;
     // background: linear-gradient(rgba(223, 242, 250, 0), rgba(223, 242, 250, 0), rgb(248, 245, 238), rgb(248, 245, 238), rgb(236, 249, 255), rgb(236, 249, 255), rgb(246, 244, 236), rgb(246, 244, 236), rgb(237, 245, 211), rgb(237, 245, 211), rgb(242, 248, 246), rgb(242, 248, 246), rgb(250, 240, 192), rgb(250, 240, 192), rgb(243, 247, 248), rgb(243, 247, 248), rgb(235, 250, 236), rgb(235, 250, 236), rgb(247, 241, 239), rgb(247, 241, 239), rgb(247, 245, 253), rgb(247, 245, 253), rgb(247, 243, 243), rgb(247, 243, 243), rgb(245, 237, 251), rgb(245, 237, 251));

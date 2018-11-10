@@ -23,4 +23,4 @@ control over the user experience when they are jumping from article to article.<
 <p>I love some of the new features of ES6 and had to take advantage of them in this
 project. To use ES6, I simply added Babel to my gulp tooling setup.</p>
 <p>More to come.  If you have any questions, feel free to reach out and ask me!</p>
-<?php include_once("../partials/writings/writingFooter.php"); ?>
+<footer><strong>Tagged under:</strong> launch, html5, javascript, css</footer><?php include_once("../partials/writings/writingFooter.php"); ?>
